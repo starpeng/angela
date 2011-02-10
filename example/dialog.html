@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>dialog</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        #infor h3
+        {
+            cursor:pointer;
+        }
+        #infor p.attr
+        {
+            display:none;
+            margin:5px 0;
+        }
+        #infor span.note
+        {
+            color:#a0a0a0;
+            font-size:12px;
+        }
+        #demo1, #demo2, #demo3, #demo4, #demo5
+        {
+            margin:10px;
+            width:500px;
+        }
+        #demo3
+        {
+            height : 300px;
+        }
+        .titleIcon
+        {
+            background:url(icon001.png) no-repeat center;
+        }
+        .titleIcon1
+        {
+            background:url(icon002.png) no-repeat center;
+        }
+        </style>
+    </head>
+    <body>
+        <h3>dialog</h3>
+        <nav>
+            <div id="navigation">
+            </div>
+        </nav>
+        <div id="output">
+            <h3>状态显示:</h3>
+            <p></p>
+        </div>
+        <div id="infor">
+            <h3>属性参数说明(点击显示隐藏)：</h3>
+            <p class="attr">dlgClass : "uiBlueBigBorder  uiCornerAll uiBlueBoxShadow",<span class="note">//添加到dialog控件的类</span></p>
+            <p class="attr">titleBarClass : "ui40BlueGradientBG",<span class="note">//标题栏的背景类</span></p>
+            <p class="attr">position : null,<span class="note">//对话框位置，默认是null,可以设置为"center", "leftTop", 或者[Int, Int]</span></p>
+            <p class="attr">zIndex : 1000,<span class="note">//dialog控件的z-index,若position为null，该值无效</span></p>
+            <p class="attr">draggable : false,<span class="note">//是否可以拖动</span></p>
+            <p class="attr">resizable : false,<span class="note">//是否可以拉伸大小</span></p>
+            <p class="attr">modal : false,<span class="note">//是否modal模式</span></p>
+            <p class="attr">buttonSet : null,<span class="note">//dialog的按钮</span></p>
+            <p class="attr">minHeight : 300,<span class="note">//最小高度</span></p>
+            <p class="attr">maxHeight : 700,<span class="note">//最大高度</span></p>
+            <p class="attr">minWidth : 400,<span class="note">//最小宽度</span></p>
+            <p class="attr">maxWidth : 1000,<span class="note">//最大宽度</span></p>
+            <p class="attr">active : true,<span class="note">//是否为active</span></p>
+            <p class="attr">minmizable : true,<span class="note">//是否显示最小化图标</span></p>
+            <p class="attr">closable : true,<span class="note">//是否显示关闭图标</span></p>
+            <p class="attr">noTitle : false,<span class="note">//是否无标题栏</span></p>
+            <p class="attr">titleIcon : null,<span class="note">//标题栏图标</span></p>
+            <p class="attr">controlButton : true,<span class="note">//是不有标题栏上的控件按钮（最小化，关闭等）</span></p>
+            <p class="attr">autoOpen : true,<span class="note">//创建完成是否自动打开dialog</span></p>
+            <p class="attr">destroyOnClose : true,<span class="note">//关闭时是否销毁dialog</span></p>
+            <p class="attr">closeAnimate : "slideUp",<span class="note">//关闭时调用的动画函数</span></p>
+            <p class="attr">openAnimate : "slideDown",<span class="note">//打开时调用的动画函数</span></p>
+            <p class="attr">beforeClose : null,<span class="note">//关闭前调用</span></p>
+            <p class="attr">close : null,<span class="note">//关闭后调用</span></p>
+            <p class="attr">beforeOpen : null,<span class="note">//打开前调用</span></p>
+            <p class="attr">open : null,<span class="note">//打开后调用</span></p>
+            <p class="attr">beforeMin : null,<span class="note">//最小化前调用</span></p>
+            <p class="attr">min : null,<span class="note">//最小化后调用</span></p>
+            <p class="attr">beforeResume : null,<span class="note">//还原前调用</span></p>
+            <p class="attr">resume : null,<span class="note">//还原后调用</span></p>
+            <p class="attr">dragStart : null,<span class="note">//拖动前调用</span></p>
+            <p class="attr">draging : null,<span class="note">//拖动时调用</span></p>
+            <p class="attr">dragStop : null,<span class="note">//拖动结束时调用</span></p>
+            <p class="attr">resizeStart : null,<span class="note">//拉缩时调用</span></p>
+            <p class="attr">resizing : null,<span class="note">//拉伸时调用</span></p>
+            <p class="attr">resizeStop : null<span class="note">//拉伸结束时调用</span></p>
+        </div>
+        <div id="demo1" title="对话框一">
+            <div>
+                <span>歌曲：</span>
+                <input name="music" type="text" size="20" />
+                <br />
+                <span>歌手：</span>
+                <input name="singer" type="text" size="20" />
+                <br />
+                <span>地址：</span>
+                <input name="url" type="text" size="20" />
+                <br />
+                <p>
+                    请教一个问题，怎么用jquery获取checkbox的tooltip属性？北京时间11月14日消息，根据国外媒体报道，下周即将在美国旧金山举行的Web 2.0大会上，目前互联网的两大巨头谷歌与Facebook将分别公布各自对下一代互联网服务的展望。
+                </p>
+            </div>
+        </div>
+        
+        <div id="demo2" title="对话框二">
+            <div>
+                <span>歌曲：</span>
+                <input name="music" type="text" size="20" />
+                <br />
+                <span>歌手：</span>
+                <input name="singer" type="text" size="20" />
+                <br />
+                <span>地址：</span>
+                <input name="url" type="text" size="20" />
+                <br />
+                <p>
+                    请教一个问题，怎么用jquery获取checkbox的tooltip属性？北京时间11月14日消息，根据国外媒体报道，下周即将在美国旧金山举行的Web 2.0大会上，目前互联网的两大巨头谷歌与Facebook将分别公布各自对下一代互联网服务的展望。
+                </p>
+            </div>
+        </div>
+        
+        <div id="demo3" title="对话框三">
+            <div>
+                <span>歌曲：</span>
+                <input name="music" type="text" size="20" />
+                <br />
+                <span>歌手：</span>
+                <input name="singer" type="text" size="20" />
+                <br />
+                <span>地址：</span>
+                <input name="url" type="text" size="20" />
+                <br />
+                <p>
+                    请教一个问题，怎么用jquery获取checkbox的tooltip属性？北京时间11月14日消息，根据国外媒体报道，下周即将在美国旧金山举行的Web 2.0大会上，目前互联网的两大巨头谷歌与Facebook将分别公布各自对下一代互联网服务的展望。
+                </p>
+            </div>
+        </div>
+        
+        
+        <div id="demo4" title="对话框四">
+            <div>
+                <span>歌曲：</span>
+                <input name="music" type="text" size="20" />
+                <br />
+                <span>歌手：</span>
+                <input name="singer" type="text" size="20" />
+                <br />
+                <span>地址：</span>
+                <input name="url" type="text" size="20" />
+                <br />
+                <p>
+                    请教一个问题，怎么用jquery获取checkbox的tooltip属性？北京时间11月14日消息，根据国外媒体报道，下周即将在美国旧金山举行的Web 2.0大会上，目前互联网的两大巨头谷歌与Facebook将分别公布各自对下一代互联网服务的展望。
+                </p>
+            </div>
+        </div>
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            var msg = $("#output p");
+            $("#demo1").dialog();
+            $("#demo2").dialog({
+                titleBarClass : "ui40RoyalBlueGradientBG",
+                position : "center",
+                draggable : true,
+                resizable : true,
+                modal : true,
+                titleIcon : "titleIcon",
+                buttonSet : {
+                    "确定" : function()
+                    {
+                        msg.html("对话框二:点击确定!!!");
+                        return false;
+                    },
+                    "取消" : function()
+                    {
+                        msg.html("对话框二:点击取消!!!");
+                    }
+                },
+                beforeClose : function()
+                {
+                    msg.html("对话框二:beforeClose!!!");
+                },
+                close : function()
+                {
+                    msg.html("对话框二:close!!!");
+                },
+                beforeMin : function()
+                {
+                    msg.html("对话框二:beforeMin!!!");
+                },
+                min : function()
+                {
+                    msg.html("对话框二:min!!!");
+                },
+                beforeResume : function()
+                {
+                    msg.html("对话框二:beforeResume!!!");
+                },
+                resume : function()
+                {
+                    msg.html("对话框二:resume!!!");
+                },
+                dragStart : function()
+                {
+                    msg.html("对话框二:dragStart!!!");
+                },
+                draging : function()
+                {
+                    msg.html("对话框二:draging!!!");
+                },
+                dragStop : function()
+                {
+                    msg.html("对话框二:dragStop!!!");
+                },
+                resizeStart : function()
+                {
+                    msg.html("对话框二:resizeStart!!!");
+                },
+                resizing : function()
+                {
+                    msg.html("对话框二:resizing!!!");
+                },
+                resizeStop : function()
+                {
+                    msg.html("对话框二:resizeStop!!!");
+                }
+            });
+            alert($("#demo2").dialog("titleIcon"));
+            $("#demo2").dialog("titleIcon", "titleIcon1");
+            $("#demo3").dialog({
+               minmizable : false,
+               closeable : false
+            });
+            $("#demo3").dialog("title");
+            $("#demo3").dialog("title", "修改标题");
+            $("#demo4").dialog({
+                noTitle : true
+            });
+            $("#infor h3").click(function()
+            {
+               $(this).nextAll().toggle(); 
+            });
+        });
+    </script>
+</html>

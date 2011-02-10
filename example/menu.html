@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>menu</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        #infor h3
+        {
+            cursor:pointer;
+        }
+        #infor p.attr
+        {
+            display:none;
+            margin:5px 0;
+        }
+        #infor span.note
+        {
+            color:#a0a0a0;
+            font-size:12px;
+        }
+        #demo1
+        {
+            height:40px;
+            overflow:hidden;
+        }
+        #demo2
+        {
+            width:180px;
+            margin:20px;
+        }
+        .titleIcon
+        {
+            background:url(icon001.png) no-repeat center;
+        }
+        </style>
+    </head>
+    <body>
+        <h3></h3>
+        <nav>
+            <div id="navigation">
+            </div>
+        </nav>
+        <div id="infor">
+            <h3>属性参数说明(点击显示隐藏)：</h3>
+            <p class="attr">menuClass : "ui40BlueGradientBG uiBlueBorder uiBorderNoLeft uiBorderNoRight",<span class="note">//添加到menu的类</span></p>
+            <p class="attr">topLevelListItemClass : "uiBlueBigBorder uiBorderLeft",<span class="note">//添加到顶层列表（水平）元素的类</span></p>
+            <p class="attr">topLevelVerticalListItemClass : "uiBlueBigBorder uiBorderTop",<span class="note">////添加到顶层列表（垂直）元素的类</span></p>
+            <p class="attr">subLevelListClass : "uiBlueCss3GradientBG uiBlueBigBorder uiCornerAll",<span class="note">//添加到子列表的类</span></p>
+            <p class="attr">url : null,<span class="note">//menu数据源，JSON格式</span></p>
+            <p class="attr">hoverColor : "#000",<span class="note">//hover状态时，列表字体颜色</span></p>
+            <p class="attr">checkPosEachTime : false,<span class="note">//是否每次显示子列表的时候都重新计算子列表位置（适合于列表位置不固定的情况）</span></p>
+            <p class="attr">openNewWindow : false,<span class="note">//是否以新页面打开</span></p>
+            <p class="attr">vertical : false,<span class="note">//垂直</span></p>
+            <p class="attr">error : null,<span class="note">//加载JSON数据出错时调用</span></p>
+            <p class="attr">click : null,<span class="note">//点击列表元素时调用</span></p>
+            <p class="attr">hideAllSubList : null<span class="note">//所有子列表隐藏时调用</span></p>
+        </div>
+        <div id="output">
+            <h3>状态显示:</h3>
+            <p></p>
+        </div>
+        <div id="demo1">
+        </div>
+        <div id="demo2">
+        </div>
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            var msg = $("#output p");
+            $("#infor h3").click(function()
+            {
+               $(this).nextAll().toggle(); 
+            });
+            $("#demo1").menu({
+                url : "./menu.json",
+                hoverColor : "#0f0",
+                checkPosEachTime : true,
+                click : function()
+                {
+                    msg.html("demo1:click.......");
+                },
+                error : function()
+                {
+                    msg.html("demo1:error.......");
+                },
+                hideAllSubList : function()
+                {
+                    msg.html("demo1:hideAllSubList.......");
+                }
+            });
+            $("#demo2").menu({
+               url : "./menuVertical.json",
+               vertical : true 
+            });
+        });
+    </script>
+</html>

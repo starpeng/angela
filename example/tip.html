@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>tip</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        #infor h3
+        {
+            cursor:pointer;
+        }
+        #infor p.attr
+        {
+            display:none;
+            margin:5px 0;
+        }
+        #infor span.note
+        {
+            color:#a0a0a0;
+            font-size:12px;
+        }
+        #demo1
+        {
+            width:400px;
+            border:1px solid red;
+            margin:250px auto;
+        }
+        #tipTop, #tipBottom
+        {
+            width:200px;
+        }
+        </style>
+    </head>
+    <body>
+        <h3></h3>
+        <nav>
+            <div id="navigation">
+            </div>
+        </nav>
+        <div id="infor">
+            <h3>属性参数说明(点击显示隐藏)：</h3>
+            <p class="attr">change : null<span class="note">//change完成时回调，参数必须为Function</span></p>
+        </div>
+        <div id="output">
+            <h3>状态显示:</h3>
+            <p></p>
+        </div>
+        <div id="demo1">
+            <p>
+                我的tip测试
+            </p>
+        </div>
+        <div id="tipTop">
+            <div>属性参数说明(点击显示隐藏)消息提示测试</div>
+        </div>
+        <div id="tipBottom">
+            <div>属性参数说明(点击显示隐藏)消息提示测试</div>
+        </div>
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            var msg = $("#output p");
+            $("#infor h3").click(function()
+            {
+               $(this).nextAll().toggle(); 
+            });
+            $("#tipTop").tip({
+                target : $("#demo1"),
+                direction : "top"
+            });
+            $("#tipBottom").tip({
+                target : $("#demo1"),
+                direction : "bottom"
+            });
+        });
+    </script>
+</html>
