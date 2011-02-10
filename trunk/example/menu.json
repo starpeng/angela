@@ -1,0 +1,33 @@
+{"menu" : [
+    {"content" : "home", "href" : "default.html"},
+    {"content" : "jQuery", "pos" : "bottom", "children" : [
+        {"content" : "jPlayer", "href" : "angelaView.html?src=http://www.jplayer.org/"},
+        {"content" : "flowPlayer", "href" : "angelaView.html?src=http://flowplayer.org/"},
+        {"content" : "javascript加密算法", "href" : "angelaView.html?src=http://code.google.com/p/crypto-js/"},
+        {"content" : "表单验证", "href" : "angelaView.html?src=http://code.google.com/p/validity/"}
+    ]},
+    {"content" : "vicanso", "pos" : "bottom", "children" : [
+        {"content" : "autoComplete", "href" : "angelaView.html?src=vicanso/autoComplete.html", "listIcon" : "titleIcon"},
+        {"content" : "音乐播放器", "href" : "angelaView.html?src=vicanso/musicPlayer.html"},
+        {"content" : "文件管理器", "href" : "angelaView.html?src=vicanso/fileManager.html"},
+        {"content" : "动画效果", "href" : "angelaView.html?src=vicanso/animate.html"},
+        {"content" : "中文拼音", "href" : "angelaView.html?src=vicanso/chineseSpell.html"},
+        {"content" : "幻灯片"}
+    ]},
+    {"content" : "HTML5", "pos" : "bottom", "children" : [
+        {"content" : "CSS3"},
+        {"content" : "HTML标签"}
+    ]},
+    {"content" : "angela", "pos" : "bottom", "children" : [
+        {"content" : "accordion", "href" : "angelaView.html?src=angelaExample/accordion.html"},
+        {"content" : "buttonSet", "href" : "angelaView.html?src=angelaExample/buttonSet.html"},
+        {"content" : "dialog", "href" : "angelaView.html?src=angelaExample/dialog.html"},
+        {"content" : "dropDownList", "href" : "angelaView.html?src=angelaExample/dropDownList.html"},
+        {"content" : "menu", "href" : "angelaView.html?src=angelaExample/menu.html"},
+        {"content" : "progressBar", "href" : "angelaView.html?src=angelaExample/progressBar.html"},
+        {"content" : "slide", "href" : "angelaView.html?src=angelaExample/slide.html"},
+        {"content" : "tabs", "href" : "angelaView.html?src=angelaExample/tabs.html"},
+        {"content" : "tip", "href" : "angelaView.html?src=angelaExample/tip.html"}
+    ]},
+    {"content" : "news", "href" : "news.html"}
+]}

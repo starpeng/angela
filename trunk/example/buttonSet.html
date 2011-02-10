@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>buttonSet</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        #infor h3
+        {
+            cursor:pointer;
+        }
+        #infor p.attr
+        {
+            display:none;
+            margin:5px 0;
+        }
+        #infor span.note
+        {
+            color:#a0a0a0;
+            font-size:12px;
+        }
+        #demo1, #demo2, #demo3, #demo4, #demo5
+        {
+            margin:10px;
+        }
+        .buttonIcon1
+        {
+            background:url(icon001.png) no-repeat center;
+        }
+        .buttonIcon2
+        {
+            background:url(icon002.png) no-repeat center;
+        }
+        </style>
+    </head>
+    <body>
+        <h3>buttonSet</h3>
+        <nav>
+            <div id="navigation">
+            </div>
+        </nav>
+        <div id="infor">
+            <h3>属性参数说明(点击显示隐藏)：</h3>
+            <p class="attr">btnClass : "ui40BlueGradientBG",<span class="note">//添加到button的类</span></p>
+            <p class="attr">btnSetClass: "uiCornerAll uiBlueBoxShadow",<span class="note">// //添加到buttonSet控件中的类，默认的类是圆角，蓝色阴影</span></p>
+            <p class="attr">btnSetBorderClass : "uiBlueBorder",<span class="note">//buttonSet的边框类</span></p>
+            <p class="attr">btnHoverClass : "ui40RoyalBlueGradientBG",<span class="note">//hover时的类名（用于指定背景）</span></p>
+            <p class="attr">btnSelectedClass : "ui40BlackGradientBG",<span class="note">//选择时的类名（用于指定背景）</span></p>
+            <p class="attr">btnPressClass : "ui40BlackGradientBG",<span class="note">//按下时的类名（用于指定背景）</span></p>
+            <p class="attr">btnWidth : null,<span class="note">//button宽度</span></p>
+            <p class="attr">btnMargin : null,<span class="note">//button之间的间距</span></p>
+            <p class="attr">iconArray : null,<span class="note">//指定button图标类名的数组</span></p>
+            <p class="attr">disabled : false,<span class="note">//禁用标志</span></p>
+            <p class="attr">defaultSelectedItem : null,<span class="note">//默认选择的元素</span></p>
+            <p class="attr">vertical : false,<span class="note">//button垂直排列标志</span></p>
+            <p class="attr">click : null<span class="note">//button点击事件</span></p>
+        </div>
+        <div id="output">
+            <h3>状态显示:</h3>
+            <p></p>
+        </div>
+        <h3>单选按钮:</h3>
+        <div id="demo1">
+            <span class="uiRadio" group="abc">测试1测测试1测11</span><span class="uiRadio" group="abc">测试2</span><span class="uiRadio" group="abc">测试3</span><span class="uiRadio" group="abc">测试4</span>
+        </div>
+        <br />
+        <h3>复选按钮:</h3>
+        <div id="demo2">
+            <span class="uiCheckBox">测试1</span><span class="uiCheckBox">测试2</span><span class="uiCheckBox">测试3</span>
+        </div>
+        <br />
+        <h3>单选按钮（带图标）:</h3>
+        <div id="demo3">
+            <span class="uiImgRadio" group="abc">测试1测试1测1</span><span class="uiImgRadio" group="abc">测试2</span><span class="uiImgRadio" group="abc">测试3</span>
+        </div>
+        <br />
+        <h3>复选按钮（带图标）:</h3>
+        <div id="demo4">
+            <span class="uiImgCheckBox">测试1</span><span class="uiImgCheckBox">测试2</span><span class="uiImgCheckBox">测试3</span>
+        </div>
+        <br />
+        <h3>普通按钮</h3>
+        <div id="demo5">
+            <span>测试1测试1测试1测1</span><span>测试2</span><span>测试3</span><span>测试4</span><span>测试5</span>
+        </div>
+        <br />
+        <h3>普通按钮</h3>
+        <div id="demo6"><span>测试1</span><span>测试2</span><span>测试3</span><span>测试4</span><span>测试5</span></div>
+        <br />
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $("#demo1").buttonSet({
+                btnClass : "ui40RoyalBlueGradientBG",
+                btnHoverClass : "ui40BlackGradientBG",
+                btnSelectedClass : "ui40BlueGradientBG",
+                btnPressClass : "ui40BlueGradientBG",
+                defaultSelectedItem : 0
+            });
+            $("#demo2").buttonSet({
+                btnWidth : 180
+            });
+            $("#demo3").buttonSet({
+                btnMargin : 10
+            });
+            $("#demo4").buttonSet();
+            $("#demo5").buttonSet({
+                iconArray : ["buttonIcon1", "buttonIcon2"],
+                click : function()
+                {
+                    $("#output p").html("普通按钮　click index:" + $(this).index());
+                }
+            });
+            $("#demo5").buttonSet("buttonText", 0, "文本测试");
+            $("#demo5").buttonSet("buttonIcon", 1, "buttonIcon1");
+            $("#demo6").buttonSet({
+                vertical : true
+            });
+            $("#infor h3").click(function()
+            {
+               $(this).nextAll().toggle(); 
+            });
+            $("#demo1").buttonSet("val", 1);
+            $("#demo2").buttonSet("val", 0, true);
+            setTimeout(function(){$("#demo2").buttonSet("val", 0, false);}, 2000);
+        });
+    </script>
+</html>
