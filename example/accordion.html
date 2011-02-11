@@ -64,23 +64,6 @@
             <div id="navigation">
             </div>
         </nav>
-        <div id="infor">
-            <h3>属性参数说明(点击显示隐藏)：</h3>
-            <p class="attr">accordionClass : "uiBlueBigBorder uiCornerAll uiBlueBoxShadow", <span class="note">//添加到accordion控件中的类，默认的类是蓝色边框，圆角，蓝色阴影 </span></p>
-            <p class="attr">titleBarClass : "ui30BlueGradientBG",<span class="note">//添加到accordion控件中标题的类，默认的类是30px的蓝色渐变背景图</span></p>
-            <p class="attr">activeClass : "ui40BlueGradientBG",<span class="note">//选中展开元素类名</span></p>
-            <p class="attr">itemTitleBarClass : "ui40BlackGradientBG"<span class="note">//元素标题默认背景类</span></p>
-            <p class="attr">active : [0],<span class="note">//默认展开元素,参数可以是"all", Array</span></p>
-            <p class="attr">height : "auto",<span class="note">//元素高度，参数可以是"auto", Int</span></p>
-            <p class="attr">event : "click",<span class="note">//展开事件,参数可以是"click", "mouseover"等</span></p>
-            <p class="attr">toggle : false,<span class="note">//event触发时元素是否可以展开/隐藏切换</span></p>
-            <p class="attr">hideOthers : true,<span class="note">//展开一个元素的时候是否默隐藏其他元素</span></p>
-            <p class="attr">titleIcon : null,<span class="note">//窗口图标,若要定义窗口图标，设置其为图标的类名（图标大小24*24）</span></p>
-            <p class="attr">animated : "toggle",<span class="note">//显示隐藏调用的方法</span></p>
-            <p class="attr">disabled : false,<span class="note">//禁用标志</span></p>
-            <p class="attr">changeStart : null,<span class="note">//event触发时的回调事件，返回false则阻止默认行为，参数必须为Function</span></p>
-            <p class="attr">change : null<span class="note">//change完成时回调，参数必须为Function</span></p>
-        </div>
         <div id="output">
             <h3>状态显示:</h3>
             <p></p>
@@ -198,10 +181,6 @@
                 toggle : true,
                 hideOthers : false,
                 titleIcon : "titleIcon"
-            })
-            $("#infor h3").click(function()
-            {
-               $(this).nextAll().toggle(); 
             });
             $("#demo1").accordion("add", '<div title="Web大提升"><p>，使之有平均28%的提高。他们同时致力于改善相关开发工具。  </p></div>');
             $("#demo1").accordion("activate", -2);
