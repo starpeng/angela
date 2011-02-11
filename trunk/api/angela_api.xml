@@ -3494,7 +3494,7 @@ $("#demo").progressBar("value", 0.6);
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>"uiBlackBorder uiCornerAll"</defaultValue>
+                <defaultValue>"uiBlackBorder defaultSliderBG uiCornerAll"</defaultValue>
             </signature>
             <desc>设置添加到slider的类</desc>
             <longdesc>
