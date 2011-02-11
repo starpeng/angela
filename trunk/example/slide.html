@@ -85,12 +85,23 @@
                 }
             });
             $("#demo2").slide({
-                noSlide : true
+                noUserEvent : true
             });
             $("#demo3").slide({
                 sliderClass : "ui10GreenGradientBG ",
-                sliderTop : 0
+                sliderTop : 0,
+                noUserEvent : true
             });
+            function test()
+            {
+                var currentValue = $("#demo3").slide("sliderLength") + 10;
+                $("#demo3").slide("sliderLength", currentValue);
+                if($("#demo3").slide("sliderLength") >= currentValue)
+                {
+                    setTimeout(test, 1000);
+                }
+            }
+            test();
         });
     </script>
 </html>
