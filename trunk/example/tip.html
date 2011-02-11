@@ -56,10 +56,6 @@
             <div id="navigation">
             </div>
         </nav>
-        <div id="infor">
-            <h3>属性参数说明(点击显示隐藏)：</h3>
-            <p class="attr">change : null<span class="note">//change完成时回调，参数必须为Function</span></p>
-        </div>
         <div id="output">
             <h3>状态显示:</h3>
             <p></p>
@@ -84,10 +80,6 @@
         $(function()
         {
             var msg = $("#output p");
-            $("#infor h3").click(function()
-            {
-               $(this).nextAll().toggle(); 
-            });
             $("#tipTop").tip({
                 target : $("#demo1"),
                 direction : "top"

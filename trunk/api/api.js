@@ -19,33 +19,17 @@ $( function()
     });
     var contentWidth = $("#apiDlg > .content").width();
     var contentHeight = $("#apiDlg > .content").height();
-    var serchTabsWidth = $("#searchTabs").height(contentHeight - 4).tabs({
-        closableArray : [],
-        tabsItemWidth : 80,
-        tabsItemMargin : 10,
-        change : function(e)
-        {
-            setSearchTabsData($(this).index(".tabItem"));
-        }
-    }).outerWidth(true);
-    setSearchTabsEvent();
-    $("#demoContainer").width(contentWidth - serchTabsWidth - 10).height(contentHeight - 4).dialog({
-        controlButton : false
-    });
     var apiJsonData= null ;
     $.get("angela_api.xml", function(data)
     {
         apiJsonData = $.xml2json(data);
+        setSearchTabsData(0);
     });
     
     function setSearchTabsData(index)
     {
         if(apiJsonData == null)
         {
-            setTimeout(function()
-            {
-                setSearchTabsData(index);
-            }, 300);
             return ;
         }
         var html = "";
@@ -63,6 +47,20 @@ $( function()
         }
         $("#searchTabs").tabs("item", index, "<ul>" + html + "</ul>");
     }
+    
+    var serchTabsWidth = $("#searchTabs").height(contentHeight - 4).tabs({
+        closableArray : [],
+        tabsItemWidth : 80,
+        tabsItemMargin : 10,
+        change : function(e)
+        {
+            setSearchTabsData($(this).index(".tabItem"));
+        }
+    }).outerWidth(true);
+    setSearchTabsEvent();
+    $("#demoContainer").width(contentWidth - serchTabsWidth - 10).height(contentHeight - 4).dialog({
+        controlButton : false
+    });
     
     function setSearchTabsEvent()
     {
@@ -172,7 +170,7 @@ $( function()
                     demoHTML += "</div>";
                     var func = new Function(item.code);
                     var demoObj = $("#demo");
-                    clearTimeout(window.globalTimer);
+                    //clearTimeout(window.globalTimer);
                     if(demoObj.length != 0)
                     {
                         demoObj[$.angela.widget.widget.call(demoObj)]("destroy");

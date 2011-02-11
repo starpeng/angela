@@ -51,18 +51,6 @@
             <div id="navigation">
             </div>
         </nav>
-        <div id="infor">
-            <h3>属性参数说明(点击显示隐藏)：</h3>
-            <p class="attr">dropDownListClass : "ui40BlueGradientBG uiCornerAll uiBlueBigBorder",<span class="note">//添加到dropDownList的类</span></p>
-            <p class="attr">selectListClass : "uiBlueCss3GradientBG uiCornerAll uiBlueBigBorder uiBlueBoxShadow",<span class="note">//添加到列表的类</span></p>
-            <p class="attr">pageSize : 5,<span class="note">//显示的数量</span></p>
-            <p class="attr">multiple : false,<span class="note">//是否复选列表</span></p>
-            <p class="attr">dropListType : "normal",<span class="note">//普通模式，可设置为"normal", "search"</span></p>
-            <p class="attr">searchTip : "查找",<span class="note">//当类型为"search"时，输入栏的提示文字</span></p>
-            <p class="attr">listItemHoverClass : "ui40RoyalBlueGradientBG",<span class="note">//列表hover时添加的类</span></p>
-            <p class="attr">click : null,<span class="note">//点击dropDownList的向下按钮时触发</span></p>
-            <p class="attr">change : null<span class="note">//当列表选择变化时触发</span></p>        
-        </div>
         <div id="output">
             <h3>状态显示:</h3>
             <p></p>
@@ -143,10 +131,6 @@
                 {
                     msg.html("示例三input:" + $(this).val());
                 }
-            });
-            $("#infor h3").click(function()
-            {
-               $(this).nextAll().toggle(); 
             });
         });
     </script>

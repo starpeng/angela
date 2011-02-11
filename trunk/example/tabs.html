@@ -56,16 +56,6 @@
             <div id="navigation">
             </div>
         </nav>
-        <div id="infor">
-            <h3>属性参数说明(点击显示隐藏)：</h3>
-            <p class="attr">tabsClass : "uiBlueBigBorder uiCornerAll uiBlueBoxShadow",<span class="note">//</span></p>
-            <p class="attr">titleBarClass : "ui40BlueGradientBG",<span class="note">//</span></p>
-            <p class="attr">closableArray : "all",<span class="note">//可关闭的元素:"all", Array</span></p>
-            <p class="attr">click : null,<span class="note">//点击时调用</span></p>
-            <p class="attr">close : null,<span class="note">//关闭时调用</span></p>
-            <p class="attr">leftClick : null,<span class="note">//点击往左时调用</span></p>
-            <p class="attr">rightClick : null<span class="note">//点击往右时调用</span></p>
-        </div>
         <div id="output">
             <h3>状态显示:</h3>
             <p></p>
@@ -158,10 +148,6 @@
         $(function()
         {
             var msg = $("#output p");
-            $("#infor h3").click(function()
-            {
-               $(this).nextAll().toggle(); 
-            });
             $("#demo1").tabs({
                 closableArray : [1, 2, 3],
                 click : function()

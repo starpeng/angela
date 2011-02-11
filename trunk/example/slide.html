@@ -52,17 +52,6 @@
             <div id="navigation">
             </div>
         </nav>
-        <div id="infor">
-            <h3>属性参数说明(点击显示隐藏)：</h3>
-            <p class="attr">slideClass : "ui10BlueGradientBG uiBlueBorder uiCornerAll",<span class="note">//</span></p>
-            <p class="attr">sliderClass : "uiBlackBorder uiCornerAll",<span class="note">//游标的类</span></p>
-            <p class="attr">slideValue : 0,<span class="note">//slide的值</span></p>
-            <p class="attr">noSlide : false,<span class="note">//是否禁止手动设置slide</span></p>
-            <p class="attr">min : 0,<span class="note">//</span></p>
-            <p class="attr">max : 300,<span class="note">//</span></p>
-            <p class="attr">click : null,<span class="note">//点击slide时调用</span></p>
-            <p class="attr">slide : null<span class="note">//slide的值变化时调用</span></p>
-        </div>
         <div id="output">
             <h3>状态显示:</h3>
             <p></p>
@@ -80,10 +69,6 @@
         $(function()
         {
             var msg = $("#output p");
-            $("#infor h3").click(function()
-            {
-               $(this).nextAll().toggle(); 
-            });
             $("#demo1").slide({
                 slideValue : 150,
                 min : 100,

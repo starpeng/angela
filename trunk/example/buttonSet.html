@@ -58,22 +58,6 @@
             <div id="navigation">
             </div>
         </nav>
-        <div id="infor">
-            <h3>属性参数说明(点击显示隐藏)：</h3>
-            <p class="attr">btnClass : "ui40BlueGradientBG",<span class="note">//添加到button的类</span></p>
-            <p class="attr">btnSetClass: "uiCornerAll uiBlueBoxShadow",<span class="note">// //添加到buttonSet控件中的类，默认的类是圆角，蓝色阴影</span></p>
-            <p class="attr">btnSetBorderClass : "uiBlueBorder",<span class="note">//buttonSet的边框类</span></p>
-            <p class="attr">btnHoverClass : "ui40RoyalBlueGradientBG",<span class="note">//hover时的类名（用于指定背景）</span></p>
-            <p class="attr">btnSelectedClass : "ui40BlackGradientBG",<span class="note">//选择时的类名（用于指定背景）</span></p>
-            <p class="attr">btnPressClass : "ui40BlackGradientBG",<span class="note">//按下时的类名（用于指定背景）</span></p>
-            <p class="attr">btnWidth : null,<span class="note">//button宽度</span></p>
-            <p class="attr">btnMargin : null,<span class="note">//button之间的间距</span></p>
-            <p class="attr">iconArray : null,<span class="note">//指定button图标类名的数组</span></p>
-            <p class="attr">disabled : false,<span class="note">//禁用标志</span></p>
-            <p class="attr">defaultSelectedItem : null,<span class="note">//默认选择的元素</span></p>
-            <p class="attr">vertical : false,<span class="note">//button垂直排列标志</span></p>
-            <p class="attr">click : null<span class="note">//button点击事件</span></p>
-        </div>
         <div id="output">
             <h3>状态显示:</h3>
             <p></p>
@@ -139,10 +123,6 @@
             $("#demo5").buttonSet("buttonIcon", 1, "buttonIcon1");
             $("#demo6").buttonSet({
                 vertical : true
-            });
-            $("#infor h3").click(function()
-            {
-               $(this).nextAll().toggle(); 
             });
             $("#demo1").buttonSet("val", 1);
             $("#demo2").buttonSet("val", 0, true);

@@ -52,16 +52,6 @@
             <div id="navigation">
             </div>
         </nav>
-        <div id="infor">
-            <h3>属性参数说明(点击显示隐藏)：</h3>
-            <p class="attr">progressBarClass : "ui40BlueGradientBG uiBlueBorder",<span class="note">//添加到progressBar的类</span></p>
-            <p class="attr">progressBlockClass : "ui10GreenGradientBG",<span class="note">//进度条中的块元素</span></p>
-            <p class="attr">blockWidth : 12,<span class="note">//块的宽度</span></p>
-            <p class="attr">value : 0,<span class="note">//进度条（小于等于1）</span></p>
-            <p class="attr">type : "normal",<span class="note">//类型:"normal", "scroll"(来回滚动)</span></p>
-            <p class="attr">scrollTime : 3000,<span class="note">//滚动的时间</span></p>
-            <p class="attr">scrollValue : 0.19<span class="note">//滚动条占总长度的比例</span></p>
-        </div>
         <div id="output">
             <h3>状态显示:</h3>
             <p></p>
@@ -79,10 +69,6 @@
         $(function()
         {
             var msg = $("#output p");
-            $("#infor h3").click(function()
-            {
-               $(this).nextAll().toggle(); 
-            });
             $("#demo1").progressBar({
                 value : 0.1
             });
