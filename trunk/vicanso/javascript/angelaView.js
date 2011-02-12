@@ -8,5 +8,7 @@ $(function()
 	$("#angelaView").find("iframe").attr("src", src).end().dialog({
 	    controlButton : false
 	});
-	$("#aboutDlg").dialog();
+	$("#aboutDlg").dialog({
+	    minimize : false
+	});
 });
