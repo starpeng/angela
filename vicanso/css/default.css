@@ -1,0 +1,105 @@
+*
+{
+	margin:0;
+	padding:0;	
+}
+body
+{
+	font-family: "Times New Roman", "\5B8B\4F53";
+}
+
+#navigation
+{
+    height:40px;
+}
+
+#content
+{
+	width:1000px;
+	height:1110px;
+	margin:auto;
+	overflow:hidden;
+}
+#plugInList
+{
+	margin:10px 0;
+}
+#plugInList div
+{
+    width:236px;
+    height:155px;
+	margin:0 15px 0 0;
+	display:inline-block;
+	cursor:pointer;
+	background:#000;
+	*display:inline;
+	*zoom:1;
+}
+#plugInList div.lastImg
+{
+    margin:0;
+}
+#plugInList .title
+{
+	font-size:32px;
+	line-height:48px;
+	font-weight:900;
+	color:#a0a0a0;
+	padding-left:5px;
+	display:block;
+}
+#leftContainer
+{
+	width:690px;
+	float:left;
+}
+#rightContainer
+{
+	width:300px;
+	float:right;
+}
+#welcomeMsg p
+{
+    text-indent:2em;
+}
+#exampleContainer
+{
+    height:620px;
+    margin:20px 0 0 0;
+}
+#exampleContainer p
+{
+    padding:10px;
+}
+#exampleContainer h3, #exampleContainer img
+{
+    cursor:pointer;
+}
+#plugDemo
+{
+	margin:0 0 10px;
+}
+#plugDemo img
+{
+    cursor:pointer;
+}
+#hotDownloadList li
+{
+	font-size:16px;
+	line-height:24px;
+	padding:0 5px;
+}
+#hotDownloadList a
+{
+	text-decoration:none;
+	color:black;
+}
+#aboutDlg
+{
+	margin:auto;
+	width:1000px;
+}
+#plugDemo p, #aboutDlg p
+{
+	text-indent:2em;
+}
