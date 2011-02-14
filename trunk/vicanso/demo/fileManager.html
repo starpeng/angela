@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>fileManager</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="Administrator" />
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+            *
+            {
+                margin:0;
+                padding:0;
+            }
+            #fileManager
+            {
+                width:920px;
+                height:520px;
+                margin:0 20px;
+                overflow:auto;
+            }
+            #fileManager .fileManagerPanel
+            {
+                padding:0;
+                margin:0;
+            }
+            #fileManager .controlPanel
+            {
+                height:45px;
+            }
+            #fileManager .fileManagerControlButtons
+            {
+                float:left;
+                margin:2px;
+            }
+            #fileManager .fileContainer
+            {
+                height:430px;
+                overflow:auto;
+            }
+            
+            .fileManagerDlg .forwardDisable
+            {
+                background:url(fileManager/forwardDisable.png) no-repeat;
+            }
+            .fileManagerDlg .forward
+            {
+                background:url(fileManager/forward.png) no-repeat;
+            }
+            .fileManagerDlg .backwardDisable
+            {
+                background:url(fileManager/backwardDisable.png) no-repeat;
+            }
+            .fileManagerDlg .backward
+            {
+                background:url(fileManager/backward.png) no-repeat;
+            }
+            .fileManagerDlg .upperDisable
+            {
+                background:url(fileManager/upperDisable.png) no-repeat;
+            }
+            .fileManagerDlg .upper
+            {
+                background:url(fileManager/upper.png) no-repeat;
+            }
+            .fileManagerDlg .infoDisable
+            {
+                background:url(fileManager/infoDisable.png) no-repeat;
+            }
+            .fileManagerDlg .info
+            {
+                background:url(fileManager/info.png) no-repeat;
+            }
+            .fileManagerDlg .deleteDisable
+            {
+                background:url(fileManager/deleteDisable.png) no-repeat;
+            }
+            .fileManagerDlg .delete
+            {
+                background:url(fileManager/delete.png) no-repeat;
+            }
+            .fileManagerDlg .txtFile
+            {
+                background:url(fileManager/textFile.png) no-repeat top center;
+            }
+            .fileManagerDlg .file
+            {
+                background:url(fileManager/file.png) no-repeat top center;
+            }
+            .fileManagerDlg .folder
+            {
+                background:url(fileManager/folder.png) no-repeat top center;
+            }
+            .fileManagerDlg .fileItem
+            {
+                width:72px;
+                height:32px;
+                margin:5px;
+                padding:64px 0 0 0;
+                cursor:pointer;
+                text-align:center;
+                overflow:hidden;
+                font-size:14px;
+                line-height:16px;
+                float:left;
+                list-style:none;
+            }
+            .fileManagerDlg .fileItem span
+            {
+                width:100%;
+                display:block;
+                overflow:hidden;
+            }
+            .fileManagerDlg .fileSelected
+            {
+                margin:4px;
+                border:1px solid #6f829f;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <header>
+                <h3>fileManager</h3>
+            </header>
+            <div>
+                <div id="fileManager" class="fileManagerDlg" title="文件管理器">
+                    <div class="fileManagerPanel">
+                        <div class="controlPanel">
+                            <div class="fileManagerControlButtons"><span>后退</span><span>前进</span><span>向上</span><span>属性</span><span>删除</span></div>
+                        </div>
+                        <div class="fileContainer">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+    $(function()
+    {   
+        var rootPath = "root:\\";
+        var backwardPathArr = [];
+        var forwardPathArr = [];
+        
+        var currentPath;   
+        function getFileListJSON(path)
+        {
+            /*for Test*/
+            if(path == rootPath)
+            {
+                path = "root";
+            }
+            var flagIndex = path.indexOf("\\");
+            if(flagIndex != -1)
+            {
+                var tmpArr = [];
+                if(path[path.length - 1] == "\\")
+                {
+                    path = path.substring(0, path.length - 1);
+                }
+                for(var i = path.length - 1; i > 0; i--)
+                {
+                    if(path[i] != "\\")
+                    {
+                        tmpArr.push(path[i]);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                if(tmpArr.length != 0)
+                {
+                    path = tmpArr.reverse().join("");
+                }
+            }
+            $.getJSON(path + ".json", {"path" : path}, function(data)
+            {
+                var html = "";
+                currentPath = data.path;
+                var buttons = $("#fileManager .fileManagerControlButtons").children("span");
+                if(currentPath != rootPath)
+                {
+                    buttons.eq(2).children().addClass("upper");
+                }
+                else
+                {
+                    buttons.eq(2).children().removeClass("upper");
+                }
+                if(backwardPathArr.length != 0)
+                {
+                    buttons.eq(0).children().addClass("backward");
+                }
+                else
+                {
+                    buttons.eq(0).children().removeClass("backward");
+                }
+                if(forwardPathArr.length != 0)
+                {
+                    buttons.eq(1).children().addClass("forward");
+                }
+                else
+                {
+                    buttons.eq(1).children().removeClass("forward");
+                }
+                buttons.eq(3).children().removeClass("info")
+                    .end().end().eq(4).children().removeClass("delete");
+                if(typeof data.dirs != "undefined")
+                {
+                    $.each(data.dirs, function(i, item)
+                    {
+                        html += ('<li class="fileItem folder"><span>' + item.name + '</span></li>');
+                    });
+                }
+                if(typeof data.files != "undefined")
+                {
+                    $.each(data.files, function(i, item)
+                    {
+                        html += ('<li class="fileItem file"><span>' + item.name + '</span></li>');
+                    });
+                }
+                $("#fileManager .fileContainer ul").html(html);
+            });
+        }
+        
+        $("#fileManager").dialog();
+        $("#fileManager .fileManagerControlButtons").buttonSet({
+            btnSetClass: "uiCornerAll",
+            iconArray : ["backwardDisable", "forwardDisable", "upperDisable", "infoDisable", "deleteDisable"],
+            click : function()
+            {
+                var obj = $(this).children();
+                var path;
+                if(obj.hasClass("upper"))
+                {
+                    var index = currentPath.substring(0, currentPath.length -1).lastIndexOf("\\") + 1;
+                    path = currentPath.substring(0, index);
+                    backwardPathArr.push(currentPath);
+                    getFileListJSON(path);
+                }
+                else if (obj.hasClass("backward"))
+                {
+                    path = backwardPathArr.pop();
+                    forwardPathArr.push(currentPath);
+                    getFileListJSON(path);
+                }
+                else if(obj.hasClass("forward"))
+                {
+                    path = forwardPathArr.pop();
+                    backwardPathArr.push(currentPath);
+                    getFileListJSON(path);
+                }
+            }
+        });
+        $("#fileManager .fileContainer").click(function(e)
+        {
+           var target = $(e.target);
+           
+           if(!target.hasClass("fileItem"))
+           {
+               if(target.parent("li").hasClass("fileItem"))
+               {
+                   target = target.parent("li");
+               }
+               else
+               {
+                   target = null;
+               }
+           } 
+           if(target != null)
+           {
+               target.addClass("fileSelected").siblings(".fileSelected").removeClass("fileSelected");
+               $("#fileManager .fileManagerControlButtons").children("span").eq(3).children().addClass("info")
+                    .end().end().eq(4).children().addClass("delete");
+           }
+           else
+           {
+               $(this).find(".fileSelected").removeClass("fileSelected");
+               $("#fileManager .fileManagerControlButtons").children("span").eq(3).children().removeClass("info")
+                    .end().end().eq(4).children().removeClass("delete");
+           }
+        })
+        .dblclick(function(e)
+        {
+           var target = $(e.target);
+           if(!target.hasClass("fileItem"))
+           {
+               if(target.parent("li").hasClass("fileItem"))
+               {
+                   target = target.parent("li");
+               }
+               else
+               {
+                   target = null;
+               }
+           }
+           if(target != null)
+           {
+               if(target.hasClass("folder"))
+               {
+                   backwardPathArr.push(currentPath);
+                   getFileListJSON(currentPath + target.children().text());
+               }
+           }
+        });
+        
+        getFileListJSON(rootPath);
+    });
+    </script>
+</html>
