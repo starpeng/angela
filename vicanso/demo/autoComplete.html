@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>autoComplete</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="Administrator" />
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        #autoCompleteDemo
+        {
+            width:300px;
+        }
+        </style>
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>autoComplete</h1>
+            </header>
+            <div>
+                <div id="autoCompleteDemo">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+    $(function()
+    {
+        var dataArray = ["我的测试", "我的书本", "我的生活", "我的练习", "我的东西", "我的电脑", "我的文档"];
+        var autoObj = $("#autoCompleteDemo");
+        var focusFlag = false;
+        autoObj.dropDownList({
+            dropListType : "search",
+            showAll : true,
+            input : function()
+            {
+                if(!focusFlag)
+                {
+                   return false; 
+                }
+                var key = $(this).val();
+                var tmp = [];
+                $.each(dataArray, function(i, item)
+                {
+                    if(item.indexOf(key) != -1)
+                    {
+                        tmp.push(item);
+                    }
+                });
+                autoObj.dropDownList("setList", tmp);                
+                autoObj.dropDownList("showSelectList");
+            },
+            blur : function(e)
+            {
+                focusFlag = false;
+                autoObj.dropDownList("hideSelectList");
+            },
+            focus : function()
+            {  
+                focusFlag = true;    
+                autoObj.dropDownList("showSelectList");          
+            }
+        });
+
+    });
+    </script>
+</html>

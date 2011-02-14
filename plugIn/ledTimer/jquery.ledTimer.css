@@ -1,0 +1,56 @@
+.ledTimer .numberIcon
+{
+	width:22px;
+	height:37px;
+	display:inline-block;
+	background-image:url(images/ledNumber.png);
+	background-repeat:no-repeat;
+}
+.ledTimer .numberIcon
+{
+	+display:inline;
+	-display:inline;
+}
+.ledTimer .numberZero
+{
+}
+.ledTimer .numberOne
+{
+	background-position:-23px;
+}
+.ledTimer .numberTwo
+{
+	background-position:-45px;
+}
+.ledTimer .numberThree
+{
+	background-position:-67px;
+}
+.ledTimer .numberFour
+{
+	background-position:-89px;
+}
+.ledTimer .numberFive
+{
+	background-position:-111px;
+}
+.ledTimer .numberSix
+{
+	background-position:-133px;
+}
+.ledTimer .numberSeven
+{
+	background-position:-155px;
+}
+.ledTimer .numberEight
+{
+	background-position:-177px;
+}
+.ledTimer .numberNine
+{
+	background-position:-199px;
+}
+.ledTimer .numberDot
+{
+	background-position:-221px;
+}
