@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>musicPlayer</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="Administrator" />
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
+        <link rel="stylesheet" href="../../plugIn/ledTimer/jquery.ledTimer.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        #playerPanel
+        {
+            width:800px;
+            height:690px;
+            overflow:hidden;
+        }
+        #lrcPanel
+        {
+            width:300px;
+            float:right;
+            display:inline-block;
+            *display:inline;
+            *zoom:1;
+        }
+        #lrcPanel span
+        {
+            display:block;
+            text-align:center;
+            line-height:32px;
+        }
+        #musicPlayer
+        {
+            width:450px;
+            margin:0 0 0 30px;
+            display:inline-block;
+            *display:inline;
+            *zoom:1;
+        }
+        #musicPlayer .playerPanel
+        {
+            padding:2px 0;
+            margin:0;
+        }
+        #musicPlayer .infoContainer
+        {
+            height:100px;
+        }
+        #musicPlayer .timePanel
+        {
+            height:37px;
+            width:120px;
+            margin:auto;
+        }
+        #musicPlayer .volueSetting
+        {
+            width:120px;
+            height:10px;
+            float:right;
+            margin:-15px 2px 0 0;
+        }
+        #musicPlayer .playInfo
+        {
+            height:40px;
+            text-align:center;
+            line-height:40px;
+        }
+        #musicPlayer .playTimeProgress
+        {
+            height:10px;
+            margin:0 2px;
+        }
+        #musicPlayer .controlButtonSet
+        {
+            margin:5px 2px;
+        }
+        #musicPlayer .functionButtonSet
+        {
+            margin:5px 2px 0 2px;
+        }
+        #musicPlayer .musicList
+        {
+            width:440px;            
+            height:430px;
+            margin:0 2px;
+            color:#f0f0f0;
+            overflow:auto;
+        }
+        #musicPlayer .musicList .title
+        {
+            height:30px;
+            text-indent:1em;
+        }
+        #musicPlayer .musicList ul
+        {
+            height:400px;
+            overflow:auto;
+        }
+        #musicPlayer .musicList li
+        {
+            height:40px;
+            line-height:40px;
+            list-style:inside decimal;
+            +list-style:outside decimal;
+            text-indent:1em;
+            cursor:pointer;
+        }
+        </style>
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>musicPlayer</h1>
+            </header>
+            <div id="playerPanel">
+                <div id="musicPlayer" title="音乐播放器">
+                    <div class="playerPanel">
+                        <div class="infoContainer">
+                            <div class="timePanel"></div>
+                            <div class="volueSetting"></div>
+                            <div class="playInfo">正在缓冲......</div>
+                            <div class="playTimeProgress"></div>
+                        </div>
+                        <div class="controlButtonSet"><span>上一首</span><span>暂停</span><span>停止</span><span>下一首</span></div>
+                        <div class="musicList uiBlueBigBorder uiBlueBoxShadow uiCornerAll">
+                            <div class="title ui30BlueGradientBG">播放列表</div>
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="functionButtonSet"><span>添加</span><span>删除</span><span>查找</span><span>设置</span></div>
+                    </div>
+                </div>
+                <div id="lrcPanel">
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript" src="../../plugIn/ledTimer/jquery.ledTimer.min.js"></script>
+    <script type="text/javascript" src="../../plugIn/jqplayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="musicPlayer/musicPlayer.js"></script>
+    <script type="text/javascript">
+    $(function()
+    {
+        
+        var liItemBG = {
+            initial : "ui40BlackGradientBG",
+            hover : "ui40RoyalBlueGradientBG",
+            play : "ui40BlueGradientBG"
+        }
+        var musicList = [
+            {url : "http://nczx.bbzx.wuxi.cn/MyImages/2010-9/f6aeba0b-95a4-4f11-9448-12e8e820567d.mp3", music : "传奇", artist : "王菲"},
+            {url : "http://220.170.192.71/clip.tom.com/yule/shiting/linjunjiejd.mp3", music : "记得", artist : "林俊杰"},
+            {url : "http://image.2bama.net/music/2010-4/1914281808055162.mp3", music : "就算世界无童话", artist : "卫兰"},
+            {url : "http://www.lztc520.com/yinyue/123.mp3", music : "你知道我在等你们分手吗", artist : "卫兰"},
+            {url : "http://wap.tcwap.net/bbs/upload/2009/02/08/212222750.mp3", music : "顺流逆流", artist : "徐小凤"},
+            {url : "http://v.cztv.com/fm9968/fm968/201008/12.%E5%B7%A6%E5%8D%8A%E8%BE%B9%E7%BF%85%E8%86%80-%E8%AE%B8%E9%A3%9E.mp3", music : "左半边翅膀", artist : "许飞"},
+            {url : "http://www.ihu9.com/minihome/mediaPlay/music/ChaQu.mp3", music : "插曲", artist : "郑秀文"},
+            {url : "http://s1.tshuiyi.com/files/file/2010/1008/shimao3149/audio/1286528429181.mp3", music : "烟花易冷", artist : "周杰伦"},
+            {url : "http://zhangmenshiting.baidu.com/service/8cab398ad68d5c99181d249d161fa91a.mp3", music : "暖暖", artist : "梁静茹"},
+            {url : "http://www.3wanmei.com/TheNewPerfectWorld.mp3", music : "完美新世界", artist : "林俊杰"}
+        ];
+        var musicListHTML = "";
+        $.each(musicList, function(n, item)
+        {
+            var itemClass = liItemBG.initial;
+            if(n == 0)
+            {
+                itemClass = liItemBG.play;
+            }
+            musicListHTML += ("<li class='" + itemClass + "'>" + item.music + "-" + item.artist + "</li>");
+        });
+        $("#musicPlayer .musicList ul").html(musicListHTML).mouseover(function(e)
+        {
+            var target = $(e.target);
+            if(target.hasClass(liItemBG.play))
+            {
+                
+            }
+            else
+            {
+                target.removeClass(liItemBG.initial).addClass(liItemBG.hover);
+            }
+        }).mouseout(function(e)
+        {
+            var target = $(e.target);
+            if(target.hasClass(liItemBG.play))
+            {
+                
+            }
+            else
+            {
+                target.removeClass(liItemBG.hover).addClass(liItemBG.initial);
+            }
+        })
+        .click(function(e)
+        {
+            var target = $(e.target);
+            target.siblings("." + liItemBG.play).removeClass(liItemBG.play).addClass(liItemBG.initial);
+            target.removeClass(liItemBG.hover).removeClass(liItemBG.initial).addClass(liItemBG.play);
+            var index = target.index();
+            $.MusicPlayer.playByIndex(index);
+            
+        });
+        $("#musicPlayer .controlButtonSet").buttonSet({
+            btnSetClass: "uiCornerAll",
+            click : function()
+            {
+                var index = $(this).index();
+                switch(index)
+                {
+                    case 0:
+                        $.MusicPlayer.playPrev();
+                    break;
+                    case 1:
+                        if($(this).html() == "暂停")
+                        {
+                            $.MusicPlayer.pause();
+                            $(this).html("播放");
+                        }
+                        else
+                        {
+                            $.MusicPlayer.play();
+                            $(this).html("暂停");
+                        }
+                    break;
+                    case 2:
+                        $.MusicPlayer.stop();
+                        $(this).prev().html("播放");
+                    break;
+                    case 3:
+                        $.MusicPlayer.playNext();
+                    break;
+                }
+            }
+        });
+        $("#musicPlayer .functionButtonSet").buttonSet({
+            btnSetClass: "uiCornerAll",
+            click : function()
+            {
+                
+            }
+        });
+        
+        $("#musicPlayer").dialog();
+        var playTimeProgress = $("#musicPlayer .playTimeProgress").slide({
+            noSlide : true
+        });
+        $("#musicPlayer .volueSetting").slide();
+        var timePanel = $("#musicPlayer .timePanel");
+        $.ledTimer.setTimer(timePanel, "00:00");
+        
+        
+        /*播放时间*/
+        var currentTimeStr = "";
+        function progressChange(playedTime, totalTime, percent, start)
+        {
+            if(start)
+            {
+                var obj = $("#musicPlayer .playInfo");
+                obj.html(obj.html().replace("正在缓冲", "正在播放"));
+                currentTimeStr = "00:00";
+            }
+            if(musicLrcJSON != null)
+            {
+                if(playedTime == musicLrcJSON[musicLrcIndex].lrc.substring(0, 5))
+                {
+                    $("#lrcPanel span:first").css("color", "red");
+                }
+                else if(playedTime == musicLrcJSON[musicLrcIndex + 1].lrc.substring(0, 5))
+                {
+                    $("#lrcPanel span").eq(1).css("color", "red").end().eq(0).remove();
+                    musicLrcIndex++;
+                }
+            }
+            
+            /*
+            var lrcList = $("#lrcPanel span");
+            if(lrcList.length > 1)
+            {
+                if(playedTime == lrcList.eq(0).attr("timeStr").substring(0, 5))
+                {
+                    lrcList.eq(0).css("color", "red");
+                }
+                else if(playedTime == lrcList.eq(1).attr("timeStr").substring(0, 5))
+                {
+                    lrcList.eq(1).css("color", "red");
+                    lrcList.eq(0).remove();
+                }
+            }
+            */
+            if(playedTime != currentTimeStr)
+            {
+                $.ledTimer.setTimer(timePanel, playedTime);
+                playTimeProgress.slide("setSlide", percent);
+                currentTimeStr = playedTime;
+            }
+        }
+        
+        /*初始化播放器*/
+        $.MusicPlayer.init({
+            musicList : musicList,
+            progressChange : progressChange,
+            play : function(index)
+            {
+                var item = $("#musicPlayer .musicList ul li").eq(index);
+                item.siblings("." + liItemBG.play).removeClass(liItemBG.play).addClass(liItemBG.initial);
+                item.removeClass(liItemBG.hover).removeClass(liItemBG.initial).addClass(liItemBG.play);
+                $("#musicPlayer .playInfo").html("正在缓冲：" + item.html());
+                var musicList = item.html().split("-");
+                $("#lrcPanel").html("<span>正在查找歌词，请稍候.....</span>");
+                setMusicLrc(musicList[1], musicList[0]);
+            }
+        });
+        
+        var musicLrcAjax = null;
+        var musicLrcJSON = null;
+        var musicLrcIndex = 0;
+        function setMusicLrc(artist, music)
+        {
+            musicLrcJSON = null;
+            musicLrcIndex = 0;
+            if(musicLrcAjax != null)
+            {
+                musicLrcAjax.abort();
+            }
+            musicLrcAjax = $.getJSON("../active/getMusicLrc.ashx", {"artist" : artist, "music" : music}, function(data)
+            {
+                musicLrcAjax = null;
+                if(data != null)
+                {
+                    var html = "";
+                    $.each(data, function(i, item)
+                    {
+                        html += ('<span timeStr="' + item.time + '">' + item.lrc + '</span>');
+                    });
+                    $("#lrcPanel").html(html);
+                    musicLrcJSON = data;
+                }
+                else
+                {
+                    $("#lrcPanel").html("<span>查找歌词失败!</span>");
+                }
+            });
+        }
+    });
+    </script>
+</html>
