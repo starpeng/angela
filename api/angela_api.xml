@@ -1326,6 +1326,39 @@ $("#demo").buttonSet("val", 1, true);
             <category name="Function"/>
             <category name="Version 0.6.0"/>
         </entry>
+        <entry type="function" name="buttonSet.removeButton" returnValue="jQuery">
+            <signature>
+                <added>0.6.0</added>
+                <argument name="index" type="Number" optional="false">
+                    <desc>指定button位置</desc>
+                </argument>
+            </signature>
+            <desc>根据index的位置删除button，并返回。若index未定义，则返回buttonSet对象</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").buttonSet();
+window.globalTimer = setTimeout(function()
+{
+    $("#demo").buttonSet("removeButton", 1);
+}, 2000);
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="buttonSet"/>
+            <category name="Function"/>
+            <category name="Version 0.6.0"/>
+        </entry>
         <entry type="attribute" name="buttonSet.checkBox">
             <signature>
                 <added>0.6.0</added>

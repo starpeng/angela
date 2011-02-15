@@ -3,6 +3,9 @@ $(function()
 	$("#navigation").menu({
 		url : "./menu.json"
 	});
+	$("#plugInList").dialog({
+	    controlButton : false
+	});
 	$("#hotDownloadList").accordion({
 		height : 220
 	});
