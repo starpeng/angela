@@ -1022,6 +1022,45 @@ $("#demo").accordion("titleIcon", "iconTest1");
             <category name="Attributes"/>
             <category name="Version 0.6.0"/>
         </entry>
+        <entry type="attribute" name="buttonSet.iconFloatArray">
+            <signature>
+                <added>0.6.0</added>
+                <type>Array</type>
+                <defaultValue>null</defaultValue>
+            </signature>
+            <desc>设置button的图标的位置，可以为"left"或者"right"，若数组为null则默认为"left",若数组长度小于button数量，后面几个button相同</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").buttonSet({
+   iconArray : ["iconTest1", "iconTest2"],
+   iconFloatArray : ["right", "left", "right"]
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+.iconTest1
+{
+    background:url(icon001.png) no-repeat center left;
+}
+.iconTest2
+{
+    background:url(icon002.png) no-repeat center left;
+}
+                    ]]>
+                </css>
+            </example>
+            <category name="buttonSet"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
         <entry type="attribute" name="buttonSet.disabled">
             <signature>
                 <added>0.6.0</added>

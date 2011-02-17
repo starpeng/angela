@@ -3,6 +3,18 @@ $(function()
 	$("#navigation").menu({
 		url : "./menu.json"
 	});
+
+
+    $("#plugInList a").fancybox({
+        'overlayColor'      : '#0f0f0f',
+
+        'overlayOpacity'    : 0.7
+
+    });
+	$("#plugInList .plugInImage").click(function()
+	{
+	    $("#plugInList a").eq($(this).index()).click();
+	});
 	$("#plugInList").dialog({
 	    controlButton : false
 	});
