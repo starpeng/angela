@@ -40,8 +40,8 @@
         }
         #demo1, #demo2, #demo3
         {
-            width:400px;
-            height:10px;
+            width:300px;
+            height:400px;
             margin:20px;
         }
         </style>
@@ -56,7 +56,45 @@
             <h3>状态显示:</h3>
             <p></p>
         </div>
-        <div id="demo1">
+        <div id="demo1" title="音乐列表">
+            <div>
+                <ul number="0">
+                    <li number="1">列表1</li>
+                    <li>列表2</li>
+                    <li>列表3</li>
+                    <li>列表4</li>
+                    <li>列表5</li>
+                    <li>列表6</li>
+                    <li>列表7</li>
+                    <li>列表8</li>
+                    <li>列表9</li>
+                    <li>列表10</li>
+                </ul>
+                <ul number="1">
+                    <li number="2">列表11</li>
+                    <li>列表11</li>
+                    <li>列表31</li>
+                    <li>列表41</li>
+                    <li>列表5</li>
+                    <li>列表6</li>
+                    <li>列表7</li>
+                    <li>列表8</li>
+                    <li>列表9</li>
+                    <li>列表10</li>
+                </ul>
+                <ul number="2">
+                    <li>列表22</li>
+                    <li>列表22</li>
+                    <li>列表31</li>
+                    <li>列表41</li>
+                    <li>列表5</li>
+                    <li>列表6</li>
+                    <li>列表7</li>
+                    <li>列表8</li>
+                    <li>列表9</li>
+                    <li>列表10</li>
+                </ul>
+             </div>
         </div>
         <div id="demo2">
         </div>
@@ -71,37 +109,7 @@
         $(function()
         {
             var msg = $("#output p");
-            $("#demo1").slide({
-                slideValue : 150,
-                min : 100,
-                max : 300,
-                click : function()
-                {
-                    msg.html("demo1:click...");
-                },
-                slide : function()
-                {
-                    msg.html("demo1:slide...");
-                }
-            });
-            $("#demo2").slide({
-                noUserEvent : true
-            });
-            $("#demo3").slide({
-                sliderClass : "ui10LightBlueGradientBG ",
-                sliderTop : 0,
-                noUserEvent : true
-            });
-            function test()
-            {
-                var currentValue = $("#demo3").slide("sliderLength") + 10;
-                $("#demo3").slide("sliderLength", currentValue);
-                if($("#demo3").slide("sliderLength") >= currentValue)
-                {
-                    setTimeout(test, 1000);
-                }
-            }
-            test();
+            $("#demo1").list();
         });
     </script>
 </html>
