@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>menu</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        #infor h3
+        {
+            cursor:pointer;
+        }
+        #infor p.attr
+        {
+            display:none;
+            margin:5px 0;
+        }
+        #infor span.note
+        {
+            color:#a0a0a0;
+            font-size:12px;
+        }
+        #demo
+        {
+            height:40px;
+            overflow:hidden;
+        }
+        .titleIcon
+        {
+            background:url(../icon001.png) no-repeat center;
+        }
+        </style>
+    </head>
+    <body>
+        <h3>menu</h3>
+        <p>默认模式(若看不到效果是由于部分浏览器禁止了本地页面通过ajax请求本地数据)。调用代码如下所示：<br />$("#demo").menu({ <br />
+            url : "./menu.json" <br />
+        });</p>
+        <div id="demo">
+        </div>
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $("#demo").menu({
+                url : "./menu.json"
+            });
+        });
+    </script>
+</html>

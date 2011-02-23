@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>default</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        #infor h3
+        {
+            cursor:pointer;
+        }
+        #infor p.attr
+        {
+            display:none;
+            margin:5px 0;
+        }
+        #infor span.note
+        {
+            color:#a0a0a0;
+            font-size:12px;
+        }
+        #demo
+        {
+            width:10px;
+            height:400px;
+            margin:20px;
+        }
+        </style>
+    </head>
+    <body>
+        <h3>slide</h3>
+        <p>垂直模式，并设定了slider的长度及位置。调用代码如下所示：<br />$("#demo").slide({ <br />
+            sliderLeft : 1, <br />
+            sliderLength : 40, <br />
+            mode : "vertical" <br />
+        });</p>
+        <div id="demo">
+        </div>
+    </body>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $("#demo").slide({
+                sliderLeft : 1,
+                sliderLength : 40,
+                mode : "vertical"
+            });
+        });
+    </script>
+</html>

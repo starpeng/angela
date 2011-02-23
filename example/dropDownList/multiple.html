@@ -7,11 +7,12 @@
         Remove this if you use the .htaccess -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-        <title>default</title>
+        <title>dropDownList</title>
         <meta name="description" content="" />
         <meta name="generator" content="Studio 3 http://aptana.com/" />
         <meta name="author" content="vicanso" />
 
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
         <style type="text/css">
         *
         {
@@ -37,40 +38,41 @@
             color:#a0a0a0;
             font-size:12px;
         }
-        #navigation a
+        #demo
         {
-            font-size:24px;
-            line-height:32px;
-            display:block;
+            width:200px;
+            margin:20px;
         }
         </style>
     </head>
     <body>
-        <h3></h3>
-        <nav>
-            <div id="navigation">
-                <a href="accordion.html">accordion</a>
-                <a href="buttonSet.html">buttonSet</a>
-                <a href="dialog.html">dialog</a>
-                <a href="dropDownList.html">dropDownList</a>
-                <a href="menu.html">menu</a>
-                <a href="progressBar.html">progressBar</a>
-                <a href="slide.html">slide</a>
-                <a href="tabs.html">tabs</a>
-                <a href="tip.html">tip</a>
-            </div>
-        </nav>
-        <footer>
-        </footer>
+        <h3>dropDownList</h3>
+        <p>多选模式。调用代码如下所示：<br />$("#demo").dropDownList({ <br />
+            multiple : true <br />
+        });</p>
+        <div id="demo">
+            <ul>
+                <li>选项1</li>
+                <li>选项2</li>
+                <li>选项3</li>
+                <li>选项4</li>
+                <li>选项5</li>
+                <li>选项6</li>
+                <li>选项7</li>
+                <li>选项8</li>
+                <li>选项9</li>
+                <li>选项10</li>
+            </ul>
+        </div>
     </body>
-    <script type="text/javascript" src="../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
     <script type="text/javascript">
         $(function()
         {
-            var msg = $("#output p");
-            $("#infor h3").click(function()
-            {
-               $(this).nextAll().toggle(); 
+            
+            $("#demo").dropDownList({
+                multiple : true
             });
         });
     </script>

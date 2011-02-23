@@ -25,6 +25,7 @@ body
 #demoContainer
 {
     float:right;
+    margin-right:5px;
 }
 #searchTabs li
 {
@@ -34,6 +35,10 @@ body
     cursor:pointer;
     list-style:inside disc;
     color:black;
+}
+#searchTabs .uiTitleBar
+{
+    margin:0;
 }
 #searchTabs >.tabItem > ul > li
 {
