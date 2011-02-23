@@ -12,7 +12,7 @@
         <meta name="generator" content="Studio 3 http://aptana.com/" />
         <meta name="author" content="vicanso" />
 
-        <link rel="stylesheet" href="../theme/jquery.angela.min.css" />
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
         <style type="text/css">
         *
         {
@@ -38,7 +38,7 @@
             color:#a0a0a0;
             font-size:12px;
         }
-        #demo1, #demo2, #demo3
+        #demo
         {
             width:500px;
             height:10px;
@@ -47,49 +47,32 @@
         </style>
     </head>
     <body>
-        <h3></h3>
-        <nav>
-            <div id="navigation">
-            </div>
-        </nav>
-        <div id="output">
-            <h3>状态显示:</h3>
-            <p></p>
+        <h3>progressBar</h3>
+        <p>演示进度条，通过不断的增加progressBar的value来实现。调用代码如下所示：<br />$("#demo").progressBar({ <br />
+                blockWidth : 6 <br />
+            });</p>
+        <div id="demo">
         </div>
-        <div id="demo1">
-        </div>
-        <div id="demo2">
-        </div>
-        <div id="demo3">
-        </div>
-        <footer>
-        </footer>
     </body>
-    <script type="text/javascript" src="../javascript/jquery.min.js"></script>
-    <script type="text/javascript" src="../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
     <script type="text/javascript">
         $(function()
         {
-            var msg = $("#output p");
-            $("#demo1").progressBar({
-                value : 0.1
-            });
-            $("#demo2").progressBar({
-               type : "scroll" 
-            });
-            $("#demo3").progressBar({
-               blockWidth : 6
+            $("#demo").progressBar({
+                blockWidth : 6
             });
             function test()
             {
-                var currentValue = $("#demo3").progressBar("value") + 0.03;
-                $("#demo3").progressBar("value", currentValue);
+                var currentValue = $("#demo").progressBar("val") + 0.03;
+                $("#demo").progressBar("val", currentValue);
                 if(currentValue < 1)
                 {
                     setTimeout(test, 1000);
                 }
             }
             setTimeout(test, 1000);
+
         });
     </script>
 </html>

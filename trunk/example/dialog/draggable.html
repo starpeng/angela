@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>dialog</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        #infor h3
+        {
+            cursor:pointer;
+        }
+        #infor p.attr
+        {
+            display:none;
+            margin:5px 0;
+        }
+        #infor span.note
+        {
+            color:#a0a0a0;
+            font-size:12px;
+        }
+        #demo
+        {
+            margin:10px;
+            width:500px;
+        }
+        .titleIcon
+        {
+            background:url(icon001.png) no-repeat center;
+        }
+        .titleIcon1
+        {
+            background:url(icon002.png) no-repeat center;
+        }
+        </style>
+    </head>
+    <body>
+        <h3>dialog</h3>
+        <p>可拖动模式。调用代码如下所示：<br />$("#demo").dialog({ <br />
+            position : "center", <br />
+            modal : true, <br />
+            draggable : true <br />
+            });</p>
+        <div id="demo" title="对话框一">
+            <div>
+                <span>歌曲：</span>
+                <input name="music" type="text" size="20" />
+                <br />
+                <span>歌手：</span>
+                <input name="singer" type="text" size="20" />
+                <br />
+                <span>地址：</span>
+                <input name="url" type="text" size="20" />
+                <br />
+                <p>
+                    请教一个问题，怎么用jquery获取checkbox的tooltip属性？北京时间11月14日消息，根据国外媒体报道，下周即将在美国旧金山举行的Web 2.0大会上，目前互联网的两大巨头谷歌与Facebook将分别公布各自对下一代互联网服务的展望。
+                </p>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $("#demo").dialog({
+                position : "center",
+                modal : true,
+                draggable : true
+            });
+        });
+    </script>
+</html>

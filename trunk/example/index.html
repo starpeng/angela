@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>UI DEMO</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+        <link rel="stylesheet" href="../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        html, body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+            background:#f0f0f0;
+            overflow:hidden;
+        }
+        #demoList
+        {
+            width:250px;
+            margin:3px;
+            float:left;
+        }
+        #demoDlg
+        {
+            float:right;
+            margin-right:10px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="demoList" title="UI示例列表">
+            <div>
+                <ul number="0">
+                    <li number="1">accordion</li>
+                    <li number="2">buttonSet</li>
+                    <li number="3">datePicker</li>
+                    <li number="4">dialog</li>
+                    <li number="5">dropDownList</li>                    
+                    <li number="6">list</li>
+                    <li number="7">menu</li>
+                    <li number="8">progressBar</li>
+                    <li number="9">slide</li>
+                    <li number="10">tabs</li>
+                </ul>
+                <ul number="1">
+                    <li url="accordion/default.html">默认模式</li>
+                    <li url="accordion/noAutoHeight.html">固定高度</li>
+                    <li url="accordion/noAutoHide.html">非自动隐藏</li>
+                    <li url="accordion/mouseover.html">鼠标滑过显示</li>
+                    <li url="accordion/icon.html">带标题图标</li>
+                </ul>
+                <ul number="2">
+                    <li url="buttonSet/radio.html">单选按钮</li>
+                    <li url="buttonSet/checkBox.html">复选按钮</li>
+                    <li url="buttonSet/normal.html">普通按钮</li>
+                    <li url="buttonSet/radioIcon.html">单选按钮<span style="font-size:16px;">(带默认图标)</span></li>
+                    <li url="buttonSet/checkBoxIcon.html">复选按钮<span style="font-size:16px;">(带默认图标)</span></li>
+                    <li url="buttonSet/normalIcon.html">普通按钮<span style="font-size:16px;">(带图标)</span></li>
+                    <li url="buttonSet/normalVertical.html">普通按钮<span style="font-size:16px;">(竖排列)</span></li>
+                </ul>
+                <ul number="3">
+                    <li url="datePicker/default.html">默认模式</li>
+                    <li url="datePicker/english.html">英文模式</li>
+                    <li url="datePicker/date.html">设置日期</li>
+                    <li url="datePicker/input.html">添加到input</li>
+                </ul>
+                <ul number="4">
+                    <li url="dialog/default.html">默认模式</li>
+                    <li url="dialog/noControlButton.html">无关闭最小化</li>
+                    <li url="dialog/modal.html">modal模式</li>
+                    <li url="dialog/resizable.html">可拉伸</li>
+                    <li url="dialog/draggable.html">可拖动</li>
+                    <li url="dialog/button.html">带按钮的</li>
+                </ul>
+                <ul number="5">
+                    <li url="dropDownList/default.html">默认模式</li>
+                    <li url="dropDownList/multiple.html">多选模式</li>
+                    <li url="dropDownList/search.html">查找模式</li>
+                </ul>
+                <ul number="6">
+                    <li url="list/default.html">默认模式</li>
+                </ul>
+                <ul number="7">
+                    <li url="menu/default.html">默认模式</li>
+                    <li url="menu/vertical.html">垂直模式</li>
+                </ul>
+                <ul number="8">
+                    <li url="progressBar/default.html">默认模式</li>
+                    <li url="progressBar/scroll.html">来回滚动模式</li>
+                    <li url="progressBar/progress.html">进度条</li>
+                </ul>
+                <ul number="9">
+                    <li url="slide/default.html">默认模式</li>
+                    <li url="slide/vertical.html">垂直模式</li>
+                </ul>
+                <ul number="10">
+                    <li url="tabs/default.html">默认模式</li>
+                    <li url="tabs/noClosable.html">选项不可关闭</li>
+                </ul>
+            </div>
+        </div>
+        <div id="demoDlg" title="UI演示">
+            <div class="viewContainer">
+                <iframe frameborder= "0">
+                </iframe>
+            </div>
+        </div>
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript" src="../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            var windowHeight = $(window).height();
+            var windowWidth = $(window).width();
+            var demoList = $("#demoList").height(windowHeight - 10).list({
+                listClass : "uiBlueBigBorder uiCornerAll",
+                click : function()
+                {
+                    var url = $(this).attr("url");
+                    videFrame.attr("src", url);
+                    demoDlg.dialog("title", "UI演示:" + url);                    
+                }
+            });
+            var demoDlg = $("#demoDlg").height(windowHeight - 10).width(windowWidth - demoList.outerWidth(true) - 25).dialog({
+                dlgClass : "uiBlueBigBorder uiCornerAll",
+                controlButton : false
+            });
+            var viewContainer = demoDlg.children(".viewContainer");
+            var videFrame = demoDlg.find("iframe").width(viewContainer.width())
+                .height(viewContainer.height() - 5);
+        });
+    </script>
+</html>

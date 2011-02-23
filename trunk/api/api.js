@@ -48,7 +48,7 @@ $( function()
         $("#searchTabs").tabs("item", index, "<ul>" + html + "</ul>");
     }
     
-    var serchTabsWidth = $("#searchTabs").height(contentHeight - 4).tabs({
+    var serchTabsWidth = $("#searchTabs").height(contentHeight - 10).tabs({
         closableArray : [],
         tabsItemWidth : 80,
         tabsItemMargin : 10,
@@ -58,7 +58,7 @@ $( function()
         }
     }).outerWidth(true);
     setSearchTabsEvent();
-    $("#demoContainer").width(contentWidth - serchTabsWidth - 10).height(contentHeight - 4).dialog({
+    $("#demoContainer").width(contentWidth - serchTabsWidth - 20).height(contentHeight - 10).dialog({
         controlButton : false
     });
     
@@ -166,7 +166,7 @@ $( function()
                         $(cssData).appendTo("body");
                         demoHTML += ("<h3>CSS</h3><pre>" + item.css + "</pre>");
                     }
-                    demoHTML += ("<h3>CODE</h3><pre><code>" + item.code + "</code></pre>");
+                    demoHTML += ("<h3>CODE</h3><pre><code>" + item.code.replace(/</g, "&lt ").replace(/>/g, "&gt ") + "</code></pre>");
                     demoHTML += "</div>";
                     var func = new Function(item.code);
                     var demoObj = $("#demo");

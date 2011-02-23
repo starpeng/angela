@@ -3,6 +3,7 @@
     <categories>
         <category name="accordion"/>
         <category name="buttonSet"/>
+        <category name="datePicker"/>
         <category name="dialog"/>
         <category name="dropDownList"/>
         <category name="menu"/>
@@ -49,11 +50,16 @@
         </accordion>
         <buttonSet>
             <![CDATA[
-            <div id="demo">
+            <div id="demo" style="margin:10px;">
     <span class="uiRadio" group="abc">测试1测测试1测11</span><span class="uiRadio" group="abc">测试2</span><span class="uiRadio" group="abc">测试3</span><span class="uiRadio" group="abc">测试4</span>
 </div>
             ]]>
         </buttonSet>
+        <datePicker>
+            <![CDATA[
+            <div id="demo"></div>
+            ]]>
+        </datePicker>
         <dialog>
             <![CDATA[
             <div id="demo" title="对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二" style="width:400px;float:left;margin:0 10px;">
@@ -594,6 +600,12 @@ $("#demo").accordion("activate", 2);
                 <argument name="index" type="Number" optional="false">
                     <desc>指定用于获取accordion选项的index</desc>
                 </argument>
+                <argument name="content" type="String" optional="true">
+                    <desc>用于修改accordion选项的content</desc>
+                </argument>
+                <argument name="title" type="String" optional="true">
+                    <desc>用于修改accordion选项的title</desc>
+                </argument>
             </signature>
             <desc>返回index对应的accordion选项</desc>
             <longdesc>
@@ -603,6 +615,7 @@ $("#demo").accordion("activate", 2);
                     <![CDATA[
                 $("#demo").accordion();
 console.debug($("#demo").accordion("item", 2));
+$("#demo").accordion("item", 0, "修改内容", "修改标题");
                 ]]>
                 </code>
                 <html>
@@ -787,7 +800,7 @@ $("#demo").accordion("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").buttonSet({
-    btnClass : "ui40RedGradientBG"
+    btnClass : "ui40CadetBlueGradientBG"
 });
                 ]]>
                 </code>
@@ -808,7 +821,7 @@ $("#demo").accordion("titleIcon", "iconTest1");
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>"uiBlueBorder"</defaultValue>
+                <defaultValue>"uiGrayBorder"</defaultValue>
             </signature>
             <desc>设置button的边框类，在创建buttoSet时设置才有效果</desc>
             <longdesc>
@@ -838,7 +851,7 @@ $("#demo").accordion("titleIcon", "iconTest1");
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>$.angela.hoverGradientBG["40"]</defaultValue>
+                <defaultValue>"ui40LightBlueGradientBG"</defaultValue>
             </signature>
             <desc>用于设置鼠标滑过button时类名</desc>
             <longdesc>
@@ -847,7 +860,7 @@ $("#demo").accordion("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").buttonSet({
-    btnHoverClass : "ui40RedGradientBG"
+    btnHoverClass : "ui40CadetBlueGradientBG"
 });
                 ]]>
                 </code>
@@ -877,7 +890,7 @@ $("#demo").accordion("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").buttonSet({
-    btnSelectedClass : "ui40RedGradientBG"
+    btnSelectedClass : "ui40CadetBlueGradientBG"
 });
                 ]]>
                 </code>
@@ -907,7 +920,7 @@ $("#demo").accordion("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").buttonSet({
-    btnPressClass : "ui40RedGradientBG"
+    btnPressClass : "ui40CadetBlueGradientBG"
 });
                 ]]>
                 </code>
@@ -1514,6 +1527,280 @@ window.globalTimer = setTimeout(function()
             <category name="Attributes"/>
             <category name="Version 0.6.0"/>
         </entry>
+        <entry type="attribute" name="datePicker.datePickerClass">
+            <signature>
+                <added>0.6.0</added>
+                <type>String</type>
+                <defaultValue>"uiBlueBigBorder uiCornerAll uiBlueBoxShadow"</defaultValue>
+            </signature>
+            <desc>添加到datePicker的类名，替换默认值，在创建dialog时设置才有效果</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").datePicker({
+    datePickerClass : "uiBlackBigBorder uiBlackBoxShadow"
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="datePicker"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="datePicker.monthAndYearClass">
+            <signature>
+                <added>0.6.0</added>
+                <type>String</type>
+                <defaultValue>$.angela.selectedGradientBG[40] + " uiCornerTop"</defaultValue>
+            </signature>
+            <desc>添加到datePicker中年月显示栏的类</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").datePicker({
+    monthAndYearClass : "ui40CadetBlueGradientBG uiCornerTop"
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="datePicker"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="datePicker.dateStr">
+            <signature>
+                <added>0.6.0</added>
+                <type>String</type>
+                <defaultValue>null</defaultValue>
+            </signature>
+            <desc>以该字符串的日期来创建datePicker,若为null则以当前日期创建，字符串的格式为"MM/DD/YYYY"</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").datePicker({
+    dateStr : "01/12/2011"
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="datePicker"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="datePicker.weekViewArr">
+            <signature>
+                <added>0.6.0</added>
+                <type>Array</type>
+                <defaultValue>["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]</defaultValue>
+            </signature>
+            <desc>datePicker上用于表示星期几的字符</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").datePicker({
+    weekViewArr : ["日", "一", "二", "三", "四", "五", "六"]
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="datePicker"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="datePicker.monthViewArr">
+            <signature>
+                <added>0.6.0</added>
+                <type>Array</type>
+                <defaultValue>["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]</defaultValue>
+            </signature>
+            <desc>datePicker上用于表示月份的字符</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").datePicker({
+    monthViewArr : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="datePicker"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="datePicker.hoverClass">
+            <signature>
+                <added>0.6.0</added>
+                <type>String</type>
+                <defaultValue>"ui40LightBlueGradientBG"</defaultValue>
+            </signature>
+            <desc>hover时往元素添加的类名</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").datePicker({
+    hoverClass : "ui40GreenGradientBG"
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="datePicker"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="datePicker.todayClass">
+            <signature>
+                <added>0.6.0</added>
+                <type>String</type>
+                <defaultValue>"ui40BlueGradientBG"</defaultValue>
+            </signature>
+            <desc>当前时间元素的类名</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").datePicker({
+    todayClass : "ui40GreenGradientBG"
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="datePicker"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="datePicker.originalDateClass">
+            <signature>
+                <added>0.6.0</added>
+                <type>String</type>
+                <defaultValue>"ui40RoyalBlueGradientBG"</defaultValue>
+            </signature>
+            <desc>添加到dateStr对应的日期元素的类</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").datePicker({
+    dateStr : "01/11/2011",
+    originalDateClass : "ui40GreenGradientBG"
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="datePicker"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="datePicker.select">
+            <signature>
+                <added>0.6.0</added>
+                <type>Function</type>
+                <defaultValue>null</defaultValue>
+            </signature>
+            <desc>添加选择日期的时候调用</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").datePicker({
+    select : function(dateStr)
+    {
+        console.debug(dateStr);
+    }
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="datePicker"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
         <entry type="attribute" name="dialog.dlgClass">
             <signature>
                 <added>0.6.0</added>
@@ -1548,7 +1835,7 @@ window.globalTimer = setTimeout(function()
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>$.angela.defaultGradientBG["40"]</defaultValue>
+                <defaultValue>$.angela.selectedGradientBG["40"]</defaultValue>
             </signature>
             <desc>设置dialog的标题栏的类</desc>
             <longdesc>
@@ -1557,7 +1844,7 @@ window.globalTimer = setTimeout(function()
                 <code>
                     <![CDATA[
                 $("#demo").dialog({
-    titleBarClass : "ui40BlackGradientBG"
+    titleBarClass : "ui40CadetBlueGradientBG"
 });
                 ]]>
                 </code>
@@ -2123,7 +2410,14 @@ window.globalTimer = setTimeout(function()
                 <code>
                     <![CDATA[
                 $("#demo").dialog({
-    destroyOnClose : false
+    destroyOnClose : false,
+    close : function()
+    {
+        setTimeout(function()
+        {
+            $("#demo").dialog("open");
+        }, 1000);
+    }
 });
                 ]]>
                 </code>
@@ -2567,7 +2861,7 @@ $("#demo").dialog("titleIcon", "iconTest1");
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>$.angela.defaultGradientBG["40"] + " uiCornerAll uiBlueBigBorder"</defaultValue>
+                <defaultValue>$.angela.selectedGradientBG["40"] + " uiCornerAll uiBlueBigBorder"</defaultValue>
             </signature>
             <desc>设置添加到dropDownList的类名</desc>
             <longdesc>
@@ -2576,7 +2870,7 @@ $("#demo").dialog("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").dropDownList({
-    dropDownListClass : "ui40BlackGradientBG  uiCornerAll uiBlueBigBorder"
+    dropDownListClass : "ui40CadetBlueGradientBG uiCornerAll uiBlueBigBorder"
 });
                 ]]>
                 </code>
@@ -2817,7 +3111,7 @@ $("#demo").dialog("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").dropDownList({
-    listItemHoverClass : "ui40RedGradientBG"
+    listItemHoverClass : "ui40GreenGradientBG"
 });
                 ]]>
                 </code>
@@ -2880,9 +3174,9 @@ $("#demo").dialog("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").dropDownList({
-    change : function()
+    change : function(value)
     {
-        console.debug('change');
+        console.debug('change:' + value);
     }
 });
                 ]]>
@@ -2934,11 +3228,42 @@ $("#demo").dialog("titleIcon", "iconTest1");
             <category name="Attributes"/>
             <category name="Version 0.6.0"/>
         </entry>
+        <entry type="function" name="dropDownList.val" returnValue="jQuery,Number">
+            <signature>
+                <added>0.6.0</added>
+                <argument name="value" type="String" optional="true">
+                    <desc>用于设置dropDownList的值</desc>
+                </argument>
+            </signature>
+            <desc>获取或设置dropDownList的值</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").dropDownList();
+console.debug($("#demo").dropDownList("val"));
+$("#demo").dropDownList("val", "修改值");
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="dropDownList"/>
+            <category name="Function"/>
+            <category name="Version 0.6.0"/>
+        </entry>
         <entry type="attribute" name="menu.menuClass">
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>$.angela.defaultGradientBG["40"] + " uiBlueBorder uiBorderNoLeft uiBorderNoRight"</defaultValue>
+                <defaultValue>$.angela.selectedGradientBG["40"] + " uiBlueBorder uiBorderNoLeft uiBorderNoRight"</defaultValue>
             </signature>
             <desc>添加到menu的类</desc>
             <longdesc>
@@ -2948,7 +3273,7 @@ $("#demo").dialog("titleIcon", "iconTest1");
                     <![CDATA[
                 $("#demo").menu({
     url : "./menu.json",
-    menuClass : "ui40BlackGradientBG uiBlueBorder uiBorderNoLeft uiBorderNoRight"
+    menuClass : "ui40RoyalBlueGradientBG uiBlueBorder uiBorderNoLeft uiBorderNoRight"
 });
                 ]]>
                 </code>
@@ -3027,6 +3352,37 @@ $("#demo").dialog("titleIcon", "iconTest1");
             <category name="Attributes"/>
             <category name="Version 0.6.0"/>
         </entry>
+        <entry type="attribute" name="menu.listHoverClass">
+            <signature>
+                <added>0.6.0</added>
+                <type>String</type>
+                <defaultValue>"ui40LightBlueGradientBG"</defaultValue>
+            </signature>
+            <desc>list中元素hover状态时添加的类</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").menu({
+    url : "./menu.json",
+    listHoverClass : "ui40GrayGradientBG"
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="menu"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
         <entry type="attribute" name="menu.hoverColor">
             <signature>
                 <added>0.6.0</added>
@@ -3042,6 +3398,35 @@ $("#demo").dialog("titleIcon", "iconTest1");
                 $("#demo").menu({
     url : "./menu.json",
     hoverColor : "#00f"
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="menu"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="menu.url">
+            <signature>
+                <added>0.6.0</added>
+                <type>String</type>
+                <defaultValue>null</defaultValue>
+            </signature>
+            <desc>指向menu对应的json数据请求地址，不能为null，若为null，直接返回。</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").menu({
 });
                 ]]>
                 </code>
@@ -3289,7 +3674,7 @@ $("#demo").dialog("titleIcon", "iconTest1");
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>$.angela.defaultGradientBG["10"] + " uiBlueBorder"</defaultValue>
+                <defaultValue>$.angela.selectedGradientBG["10"] + " uiBlueBorder"</defaultValue>
             </signature>
             <desc>设置添加到progressBar的类</desc>
             <longdesc>
@@ -3298,7 +3683,7 @@ $("#demo").dialog("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").progressBar({
-    progressBarClass : "ui10BlackGradientBG uiBlueBorder",
+    progressBarClass : "ui10CadetBlueGradientBG uiBlueBorder",
     value : 0.3
 });
                 ]]>
@@ -3320,7 +3705,7 @@ $("#demo").dialog("titleIcon", "iconTest1");
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>"ui10GreenGradientBG"</defaultValue>
+                <defaultValue>"ui10LightBlueGradientBG"</defaultValue>
             </signature>
             <desc>设置添加到progressBar中进度条的类</desc>
             <longdesc>
@@ -3329,7 +3714,38 @@ $("#demo").dialog("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").progressBar({
-    progressBlockClass : "ui10RedGradientBG",
+    progressBlockClass : "ui10GreenGradientBG",
+    value : 0.3
+});
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="progressBar"/>
+            <category name="Attributes"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="attribute" name="progressBar.disable">
+            <signature>
+                <added>0.6.0</added>
+                <type>String</type>
+                <defaultValue>"ui10LightBlueGradientBG"</defaultValue>
+            </signature>
+            <desc>设置添加到progressBar中进度条的类</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+                $("#demo").progressBar({
+    progressBlockClass : "ui10GreenGradientBG",
     value : 0.3
 });
                 ]]>
@@ -3469,7 +3885,7 @@ $("#demo").dialog("titleIcon", "iconTest1");
             <category name="Attributes"/>
             <category name="Version 0.6.0"/>
         </entry>
-        <entry type="function" name="progressBar.value" returnValue="jQuery,Number">
+        <entry type="function" name="progressBar.val" returnValue="jQuery,Number">
             <signature>
                 <added>0.6.0</added>
                 <argument name="value" type="Number" optional="true">
@@ -3483,8 +3899,8 @@ $("#demo").dialog("titleIcon", "iconTest1");
                 <code>
                     <![CDATA[
                 $("#demo").progressBar();
-console.debug($("#demo").progressBar("value"));
-$("#demo").progressBar("value", 0.6);
+console.debug($("#demo").progressBar("val"));
+$("#demo").progressBar("val", 0.6);
                 ]]>
                 </code>
                 <html>
@@ -3500,7 +3916,73 @@ $("#demo").progressBar("value", 0.6);
             <category name="Function"/>
             <category name="Version 0.6.0"/>
         </entry>
-
+        <entry type="function" name="progressBar.scroll" returnValue="jQuery,Number">
+            <signature>
+                <added>0.6.0</added>
+            </signature>
+            <desc>设置滚动条滚动（type必须为"scroll"）</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+$("#demo").progressBar({
+    type : "scroll",
+    scrollTime : 500
+});
+$("#demo").progressBar("stopScroll");
+setTimeout(function()
+{
+    $("#demo").progressBar("scroll");
+}, 1000);
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="progressBar"/>
+            <category name="Function"/>
+            <category name="Version 0.6.0"/>
+        </entry>
+        <entry type="function" name="progressBar.stopScroll" returnValue="jQuery,Number">
+            <signature>
+                <added>0.6.0</added>
+            </signature>
+            <desc>停止滚动条滚动（type必须为"scroll"）</desc>
+            <longdesc>
+            </longdesc>
+            <example>
+                <code>
+                    <![CDATA[
+$("#demo").progressBar({
+    type : "scroll",
+    scrollTime : 1500
+});
+setTimeout(function()
+{
+    $("#demo").progressBar("stopScroll");
+}, 1000);
+                ]]>
+                </code>
+                <html>
+                    <![CDATA[
+                ]]>
+                </html>
+                <css>
+                    <![CDATA[
+                    ]]>
+                </css>
+            </example>
+            <category name="progressBar"/>
+            <category name="Function"/>
+            <category name="Version 0.6.0"/>
+        </entry>
         <entry type="attribute" name="slide.mode">
             <signature>
                 <added>0.6.0</added>
@@ -3536,7 +4018,7 @@ $("#demo").progressBar("value", 0.6);
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>$.angela.defaultGradientBG["10"] + " uiBlueBorder uiCornerAll"</defaultValue>
+                <defaultValue>$.angela.selectedGradientBG["10"] + " uiBlueBorder uiCornerAll"</defaultValue>
             </signature>
             <desc>设置添加到slide的类</desc>
             <longdesc>
@@ -3566,7 +4048,7 @@ $("#demo").progressBar("value", 0.6);
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>"uiBlackBorder defaultSliderBG uiCornerAll"</defaultValue>
+                <defaultValue>"uiBlackBorder uiDefaultSliderBG uiCornerAll"</defaultValue>
             </signature>
             <desc>设置添加到slider的类</desc>
             <longdesc>
@@ -3808,7 +4290,7 @@ $("#demo").progressBar("value", 0.6);
             <signature>
                 <added>0.6.0</added>
                 <type>Number</type>
-                <defaultValue>0.05</defaultValue>
+                <defaultValue>0.2</defaultValue>
             </signature>
             <desc>设置滚轮滚动一次的值</desc>
             <longdesc>
@@ -3902,7 +4384,7 @@ $("#demo").progressBar("value", 0.6);
             <category name="Version 0.6.0"/>
         </entry>
         
-        <entry type="function" name="slide.value" returnValue="jQuery,Number">
+        <entry type="function" name="slide.val" returnValue="jQuery,Number">
             <signature>
                 <added>0.6.0</added>
                 <argument name="value" type="Number" optional="true">
@@ -3916,8 +4398,8 @@ $("#demo").progressBar("value", 0.6);
                 <code>
                     <![CDATA[
                 $("#demo").slide();
-$("#demo").slide("value", 80);
-console.debug($("#demo").slide("value"));
+$("#demo").slide("val", 80);
+console.debug($("#demo").slide("val"));
                 ]]>
                 </code>
                 <html>
@@ -4000,7 +4482,7 @@ console.debug($("#demo").slide("sliderLength"));
             <signature>
                 <added>0.6.0</added>
                 <type>String</type>
-                <defaultValue>$.angela.defaultGradientBG["40"]</defaultValue>
+                <defaultValue>$.angela.selectedGradientBG["40"]</defaultValue>
             </signature>
             <desc>设置添加到tabs中titleBar的类</desc>
             <longdesc>
@@ -4032,7 +4514,7 @@ console.debug($("#demo").slide("sliderLength"));
                 <type>Number</type>
                 <defaultValue>0</defaultValue>
             </signature>
-            <desc>设置tabs中选项的宽度，默认为０（不修改默认宽度）</desc>
+            <desc>设置tabs中选项的宽度，默认为null（不修改默认宽度）</desc>
             <longdesc>
             </longdesc>
             <example>
@@ -4062,7 +4544,7 @@ console.debug($("#demo").slide("sliderLength"));
                 <type>Number</type>
                 <defaultValue>0</defaultValue>
             </signature>
-            <desc>设置tabs中选项的间距，默认为０（不修改间默认距值）</desc>
+            <desc>设置tabs中选项的间距，默认为null（不修改间默认距值）</desc>
             <longdesc>
             </longdesc>
             <example>
@@ -4379,7 +4861,7 @@ console.debug($("#demo").tabs("active"));
         <entry type="function" name="tabs.item" returnValue="jQuery">
             <signature>
                 <added>0.6.0</added>
-                <argument name="index" type="Number" optional="true">
+                <argument name="index" type="Number" optional="false">
                     <desc>需要修改的tabs选项的index</desc>
                 </argument>
                 <argument name="content" type="String" optional="true">
