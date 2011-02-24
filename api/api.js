@@ -49,7 +49,7 @@ $( function()
     {
         var src = $(this).html();
         var scrList = src.split(".");
-        var type = $(this).attr("type");
+        var type = $(this).attr("widgetType");
         $("#demoContainer .demoContet iframe").attr("src", "./" + scrList[0] + "/" + type + "/" + scrList[1] + ".html");
         return false; 
     });
