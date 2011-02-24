@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>accordion</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        .demoHTML
+        {            
+            margin:5px 10px;
+        }
+        .demoTitle
+        {
+            color:#f0f0f0;
+            text-indent:1em;
+        }
+        .typeDesc
+        {
+            float:right;
+            margin-right:10px;
+        }
+        .demoHTML p
+        {
+            padding:5px 10px;
+        }
+        .demoHTML p span
+        {
+            font-weight:700;
+        }
+        .demoHTML .signature
+        {
+        }
+        .demoHTML .argDesc
+        {
+            background:#c0c0c0;
+        }
+        .demoHTML h3
+        {
+            cursor:pointer;
+        }
+        .demoHTML pre
+        {
+            display:none;
+        }
+        .iconTest1
+{
+    background:url(icon001.png) no-repeat center left;
+}
+.iconTest2
+{
+    background:url(icon002.png) no-repeat center left;
+}</style>
+    </head>
+    <body>
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG">buttonSet.buttonIcon<span class="typeDesc">function</span></h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery, String</p><p><span>arguments:</span>buttonSet.buttonIcon(index,[icon])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>index(Number):</span>指定button位置</p><p><span>icon(String):</span>用于修改button的图标</p></div></div><p><span>Description:</span>根据index获取或设置buttonSet里button对象的图标</p><h3>HTML</h3><pre>&ltdiv id="demo" style="margin:10px;"&gt
+    &ltspan class="uiRadio" group="abc"&gt测试1测测试1测11&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试2&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试3&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试4&lt/span&gt
+&lt/div&gt</pre><h3>CSS</h3><pre>.iconTest1
+{
+    background:url(icon001.png) no-repeat center left;
+}
+.iconTest2
+{
+    background:url(icon002.png) no-repeat center left;
+}</pre><h3>CODE</h3><pre>$("#demo").buttonSet({
+    iconArray : ["iconTest1", "iconTest2"]
+});
+console.debug($("#demo").buttonSet("buttonIcon", 1));
+$("#demo").buttonSet("buttonIcon", 1, "iconTest1")</pre></div><div id="demo" style="margin:10px;">
+    <span class="uiRadio" group="abc">测试1测测试1测11</span><span class="uiRadio" group="abc">测试2</span><span class="uiRadio" group="abc">测试3</span><span class="uiRadio" group="abc">测试4</span>
+</div></body>
+    <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $(".demoHTML h3").click(function()
+            {
+               $(this).next("pre").toggle(); 
+            });
+        //CODE HERE
+$("#demo").buttonSet({
+    iconArray : ["iconTest1", "iconTest2"]
+});
+console.debug($("#demo").buttonSet("buttonIcon", 1));
+$("#demo").buttonSet("buttonIcon", 1, "iconTest1")
+        });
+    </script>
+</html>
