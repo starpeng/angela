@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>accordion</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        .demoHTML
+        {            
+            margin:5px 10px;
+        }
+        .demoTitle
+        {
+            color:#f0f0f0;
+            text-indent:1em;
+        }
+        .typeDesc
+        {
+            float:right;
+            margin-right:10px;
+        }
+        .demoHTML p
+        {
+            padding:5px 10px;
+        }
+        .demoHTML p span
+        {
+            font-weight:700;
+        }
+        .demoHTML .signature
+        {
+        }
+        .demoHTML .argDesc
+        {
+            background:#c0c0c0;
+        }
+        .demoHTML h3
+        {
+            cursor:pointer;
+        }
+        .demoHTML pre
+        {
+            display:none;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG">accordion.animation<span class="typeDesc">attribute</span></h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>String</p><p><span>Default Value:</span>"toggle"</p></div><p><span>Description:</span>accordion选项展开关闭时的切换动画效果</p><h3>HTML</h3><pre>&ltdiv id="demo" title="测试1" style="width:400px;float:left;margin:10px;"&gt
+    &ltdiv title="WebM格式大提升WebM格式大提升WebM格式大提升WebM格式大提升"&gt
+        &ltp&gt
+            今年早期，Google终于做出了一件众所期待的行动：发布了开源的VP8编码器。它成为WebM项目的一部分，后者在一个Matroshka容器中结合了VP8视频与Vorbis音频。WebM项目的产品管理者John Luther给出了项目进展情况——情势非常好。
+        &lt/p&gt
+    &lt/div&gt
+    &ltdiv title="WebM格式大提升WebM格式大提升WebM格式大提升WebM格式大提升"&gt
+        &ltp&gt
+            WebM见证了一个非常令人难以置信的接受率。它以这样或那样的方式被所有的桌面浏览器所支持；天生就在Firefox, Opera 和 Chrome可用， IE9和Safari用户安装一个编码器也便可用。它成为了Ffmpeg的一部分，运行在x86, ARM 和 PowerPC上，被Windows, Mac OS X, Linux, 和 Android所支持。还有支持DirectShow, Windows Media Foundation, QuickTime 和 gstreamer的编码器。
+        &lt/p&gt
+    &lt/div&gt
+    &ltdiv title="WebM格式大提升"&gt
+        &ltp&gt
+            已经有20个新的合作伙伴了，还有更多伙伴待加入。可以想见的是，WebM前头有着一个非常明媚的春光。第一款VP8 ASIC芯片有望在来年第一季问世，几乎所有大的芯片制造商将有提供。
+        &lt/p&gt
+    &lt/div&gt
+    &ltdiv title="WebM格式大提升"&gt
+        &ltp&gt
+            而且，80% YouTube日常视频已经采用了WebM格式。“我们在努力转码整个YouTube视频库，”Luther说。当然，很少有人看的视频在待转化列表中会排较低优先级。但是最终，它们也会被转码成WebM。
+        &lt/p&gt
+    &lt/div&gt
+    &ltdiv title="WebM格式大提升"&gt
+        &ltp&gt
+            那，WebM所持的发展前路将有怎样一幅图景呢？主要会是大量的改进。Google正努力提升解码速度——当前版本饱经争议的弱点，使之有平均28%的提高。他们同时致力于改善相关开发工具。
+        &lt/p&gt
+    &lt/div&gt
+&lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").accordion({
+    animation : "fadeToggle"
+});</pre></div><div id="demo" title="测试1" style="width:400px;float:left;margin:10px;">
+    <div title="WebM格式大提升WebM格式大提升WebM格式大提升WebM格式大提升">
+        <p>
+            今年早期，Google终于做出了一件众所期待的行动：发布了开源的VP8编码器。它成为WebM项目的一部分，后者在一个Matroshka容器中结合了VP8视频与Vorbis音频。WebM项目的产品管理者John Luther给出了项目进展情况——情势非常好。
+        </p>
+    </div>
+    <div title="WebM格式大提升WebM格式大提升WebM格式大提升WebM格式大提升">
+        <p>
+            WebM见证了一个非常令人难以置信的接受率。它以这样或那样的方式被所有的桌面浏览器所支持；天生就在Firefox, Opera 和 Chrome可用， IE9和Safari用户安装一个编码器也便可用。它成为了Ffmpeg的一部分，运行在x86, ARM 和 PowerPC上，被Windows, Mac OS X, Linux, 和 Android所支持。还有支持DirectShow, Windows Media Foundation, QuickTime 和 gstreamer的编码器。
+        </p>
+    </div>
+    <div title="WebM格式大提升">
+        <p>
+            已经有20个新的合作伙伴了，还有更多伙伴待加入。可以想见的是，WebM前头有着一个非常明媚的春光。第一款VP8 ASIC芯片有望在来年第一季问世，几乎所有大的芯片制造商将有提供。
+        </p>
+    </div>
+    <div title="WebM格式大提升">
+        <p>
+            而且，80% YouTube日常视频已经采用了WebM格式。“我们在努力转码整个YouTube视频库，”Luther说。当然，很少有人看的视频在待转化列表中会排较低优先级。但是最终，它们也会被转码成WebM。
+        </p>
+    </div>
+    <div title="WebM格式大提升">
+        <p>
+            那，WebM所持的发展前路将有怎样一幅图景呢？主要会是大量的改进。Google正努力提升解码速度——当前版本饱经争议的弱点，使之有平均28%的提高。他们同时致力于改善相关开发工具。
+        </p>
+    </div>
+</div></body>
+    <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $(".demoHTML h3").click(function()
+            {
+               $(this).next("pre").toggle(); 
+            });
+        //CODE HERE
+$("#demo").accordion({
+    animation : "fadeToggle"
+});
+        });
+    </script>
+</html>
