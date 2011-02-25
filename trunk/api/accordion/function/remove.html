@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,10 +63,14 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>accordion.remove</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery</p><p><span>arguments:</span>accordion.remove(index)</p><div class="argDesc"><span>参数说明：</span><br /><p><span>index(Number):</span>指定要删除的选项位置</p></div></div><p><span>Description:</span>删除accordion中index对应的选项</p><h3>HTML</h3><pre>&ltdiv id="demo" title="测试1" style="width:400px;float:left;margin:10px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>accordion.remove</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery</p><p><span>arguments:</span>accordion.remove(index)</p><div class="argDesc"><span>参数说明：</span><br /><p><span>index(Number):</span>指定要删除的选项位置</p></div></div><p><span>Description:</span>删除accordion中index对应的选项</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" title="测试1" style="width:400px;float:left;margin:10px;"&gt
     &ltdiv title="WebM格式大提升WebM格式大提升WebM格式大提升WebM格式大提升"&gt
         &ltp&gt
             今年早期，Google终于做出了一件众所期待的行动：发布了开源的VP8编码器。它成为WebM项目的一部分，后者在一个Matroshka容器中结合了VP8视频与Vorbis音频。WebM项目的产品管理者John Luther给出了项目进展情况——情势非常好。
@@ -90,7 +96,7 @@
             那，WebM所持的发展前路将有怎样一幅图景呢？主要会是大量的改进。Google正努力提升解码速度——当前版本饱经争议的弱点，使之有平均28%的提高。他们同时致力于改善相关开发工具。
         &lt/p&gt
     &lt/div&gt
-&lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").accordion();
+&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").accordion();
 $("#demo").accordion("remove", 1);</pre></div><div id="demo" title="测试1" style="width:400px;float:left;margin:10px;">
     <div title="WebM格式大提升WebM格式大提升WebM格式大提升WebM格式大提升">
         <p>

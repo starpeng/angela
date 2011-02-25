@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,10 +63,14 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>dropDownList.listItemHoverClass</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>String</p><p><span>Default Value:</span>$.angela.hoverGradientBG["40"]</p></div><p><span>Description:</span>设置dropDownList中列表选项hover状态时添加的类</p><h3>HTML</h3><pre>&ltdiv id="demo" style="width:300px;float:left;margin:0 20px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>dropDownList.listItemHoverClass</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>String</p><p><span>Default Value:</span>$.angela.hoverGradientBG["40"]</p></div><p><span>Description:</span>设置dropDownList中列表选项hover状态时添加的类</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:300px;float:left;margin:0 20px;"&gt
     &ltul&gt
         &ltli&gt选项1选项1选项1选项1选项1&lt/li&gt
         &ltli&gt选项2&lt/li&gt
@@ -77,7 +83,7 @@
         &ltli&gt选项9&lt/li&gt
         &ltli&gt选项10&lt/li&gt
     &lt/ul&gt
-&lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").dropDownList({
+&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").dropDownList({
     listItemHoverClass : "ui40GreenGradientBG"
 });</pre></div><div id="demo" style="width:300px;float:left;margin:0 20px;">
     <ul>

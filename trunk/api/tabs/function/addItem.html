@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,10 +63,14 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>tabs.addItem</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery</p><p><span>arguments:</span>tabs.addItem([title],[content])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>title(String):</span>添加选项的标题</p><p><span>content(String):</span>添加选项的内容</p></div></div><p><span>Description:</span></p><h3>HTML</h3><pre>&ltdiv id="demo" style="width:500px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>tabs.addItem</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery</p><p><span>arguments:</span>tabs.addItem([title],[content])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>title(String):</span>添加选项的标题</p><p><span>content(String):</span>添加选项的内容</p></div></div><p><span>Description:</span></p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:500px;"&gt
             &ltdiv title="1"&gt
                 &ltp&gt
                     北京时间11月14日消息，根据国外媒体报道，下周即将在美国旧金山举行的Web 2.0大会上，目前互联网的两大巨头谷歌与Facebook将分别公布各自对下一代互联网服务的展望。最近恩怨不断的两大对手将在这次全球瞩目的大会上扮演属于自己的重要角色。
@@ -102,7 +108,7 @@
                     投资者们翘首期盼着能够获知谷歌进军社交领域的具体策略。近几个月来，谷歌已经收购了数个小型社交企业。施密特此前也表示，该公司将于今年秋季在其目前的产品中加入社交元素。
                 &lt/p&gt
             &lt/div&gt
-        &lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").tabs();
+        &lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").tabs();
 $("#demo").tabs("addItem", "添加选项", "OpenSSL是一个强大的安全套接字层密码库，Apache使用它加密HTTPS，OpenSSH使用它加密SSH，但是，你不应该只将其作为一个库来使用，它还是一个多用途的、跨平台的密码工具。");</pre></div><div id="demo" style="width:500px;">
             <div title="1">
                 <p>

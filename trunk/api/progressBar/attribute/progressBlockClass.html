@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,11 +63,15 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>progressBar.progressBlockClass</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>String</p><p><span>Default Value:</span>"ui10LightBlueGradientBG"</p></div><p><span>Description:</span>设置添加到progressBar中进度条的类</p><h3>HTML</h3><pre>&ltdiv id="demo" style="width:400px;height:10px;"&gt
-&lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").progressBar({
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>progressBar.progressBlockClass</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>String</p><p><span>Default Value:</span>"ui10LightBlueGradientBG"</p></div><p><span>Description:</span>设置添加到progressBar中进度条的类</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;"&gt
+&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").progressBar({
     progressBlockClass : "ui10GreenGradientBG",
     value : 0.3
 });</pre></div><div id="demo" style="width:400px;height:10px;">

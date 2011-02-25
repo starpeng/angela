@@ -55,6 +55,14 @@ body
 {
     margin:0;
 }
+#searchTabs  .indexContainer ul
+{
+    overflow:auto;
+}
+#searchTabs  .tabItem .search
+{
+    overflow:hidden;
+}
 .oddItemStyle1
 {
     background:#eff2ff;
@@ -132,4 +140,8 @@ body
 {
     display:block;
     float:right;
+}
+.selectIndex
+{
+    background:#CD5C5C;
 }
