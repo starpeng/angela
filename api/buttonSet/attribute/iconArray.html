@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,26 +63,30 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         .iconTest1
 {
-    background:url(icon001.png) no-repeat center left;
+    background:url(../../icon001.png) no-repeat center left;
 }
 .iconTest2
 {
-    background:url(icon002.png) no-repeat center left;
+    background:url(../../icon002.png) no-repeat center left;
 }</style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>buttonSet.iconArray</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Array</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>设置button的图标，若数组长度小于button数量，后面几个button相同</p><h3>HTML</h3><pre>&ltdiv id="demo" style="margin:10px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>buttonSet.iconArray</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Array</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>设置button的图标，若数组长度小于button数量，后面几个button相同</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="margin:10px;"&gt
     &ltspan class="uiRadio" group="abc"&gt测试1测测试1测11&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试2&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试3&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试4&lt/span&gt
-&lt/div&gt</pre><h3>CSS</h3><pre>.iconTest1
+&lt/div&gt</pre><h3>CSS</h3><pre class="cssContainer">.iconTest1
 {
-    background:url(icon001.png) no-repeat center left;
+    background:url(../../icon001.png) no-repeat center left;
 }
 .iconTest2
 {
-    background:url(icon002.png) no-repeat center left;
-}</pre><h3>CODE</h3><pre>$("#demo").buttonSet({
+    background:url(../../icon002.png) no-repeat center left;
+}</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").buttonSet({
    iconArray : ["iconTest1", "iconTest2"]
 });</pre></div><div id="demo" style="margin:10px;">
     <span class="uiRadio" group="abc">测试1测测试1测11</span><span class="uiRadio" group="abc">测试2</span><span class="uiRadio" group="abc">测试3</span><span class="uiRadio" group="abc">测试4</span>

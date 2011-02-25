@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>accordion</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        .demoHTML
+        {            
+            margin:5px 10px;
+        }
+        .demoTitle
+        {
+            color:#f0f0f0;
+            line-height:30px;
+            height:30px;
+            text-indent:1em;
+        }
+        .typeDesc
+        {
+            float:right;
+            margin-right:10px;
+        }
+        .demoHTML p
+        {
+            padding:5px 10px;
+        }
+        .demoHTML p span
+        {
+            font-weight:700;
+        }
+        .demoHTML .signature
+        {
+        }
+        .demoHTML .argDesc
+        {
+            background:#c0c0c0;
+        }
+        .demoHTML h3
+        {
+            cursor:pointer;
+        }
+        .demoHTML pre
+        {
+            display:none;
+        }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>list.disabled</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Boolean</p><p><span>Default Value:</span>false</p></div><p><span>Description:</span>是否禁用list</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" title="音乐列表" style="width:300px; height:400px; margin:20px;"&gt
+            &ltdiv&gt
+                &ltul number="0"&gt
+                    &ltli number="1"&gt列表1&lt/li&gt
+                    &ltli number="2"&gt列表2&lt/li&gt
+                    &ltli&gt列表3&lt/li&gt
+                    &ltli&gt列表4&lt/li&gt
+                    &ltli&gt列表5&lt/li&gt
+                    &ltli&gt列表6&lt/li&gt
+                    &ltli&gt列表7&lt/li&gt
+                    &ltli&gt列表8&lt/li&gt
+                    &ltli&gt列表9&lt/li&gt
+                    &ltli&gt列表10&lt/li&gt
+                &lt/ul&gt
+                &ltul number="1"&gt
+                    &ltli number="2"&gt列表11&lt/li&gt
+                    &ltli&gt列表11&lt/li&gt
+                    &ltli&gt列表31&lt/li&gt
+                    &ltli&gt列表41&lt/li&gt
+                    &ltli&gt列表5&lt/li&gt
+                    &ltli&gt列表6&lt/li&gt
+                    &ltli&gt列表7&lt/li&gt
+                    &ltli&gt列表8&lt/li&gt
+                    &ltli&gt列表9&lt/li&gt
+                    &ltli&gt列表10&lt/li&gt
+                &lt/ul&gt
+                &ltul number="2"&gt
+                    &ltli&gt列表22&lt/li&gt
+                    &ltli&gt列表22&lt/li&gt
+                    &ltli&gt列表31&lt/li&gt
+                    &ltli&gt列表41&lt/li&gt
+                    &ltli&gt列表5&lt/li&gt
+                    &ltli&gt列表6&lt/li&gt
+                    &ltli&gt列表7&lt/li&gt
+                    &ltli&gt列表8&lt/li&gt
+                    &ltli&gt列表9&lt/li&gt
+                    &ltli&gt列表10&lt/li&gt
+                &lt/ul&gt
+             &lt/div&gt
+        &lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").list({
+    disabled : true
+});</pre></div><div id="demo" title="音乐列表" style="width:300px; height:400px; margin:20px;">
+            <div>
+                <ul number="0">
+                    <li number="1">列表1</li>
+                    <li number="2">列表2</li>
+                    <li>列表3</li>
+                    <li>列表4</li>
+                    <li>列表5</li>
+                    <li>列表6</li>
+                    <li>列表7</li>
+                    <li>列表8</li>
+                    <li>列表9</li>
+                    <li>列表10</li>
+                </ul>
+                <ul number="1">
+                    <li number="2">列表11</li>
+                    <li>列表11</li>
+                    <li>列表31</li>
+                    <li>列表41</li>
+                    <li>列表5</li>
+                    <li>列表6</li>
+                    <li>列表7</li>
+                    <li>列表8</li>
+                    <li>列表9</li>
+                    <li>列表10</li>
+                </ul>
+                <ul number="2">
+                    <li>列表22</li>
+                    <li>列表22</li>
+                    <li>列表31</li>
+                    <li>列表41</li>
+                    <li>列表5</li>
+                    <li>列表6</li>
+                    <li>列表7</li>
+                    <li>列表8</li>
+                    <li>列表9</li>
+                    <li>列表10</li>
+                </ul>
+             </div>
+        </div></body>
+    <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $(".demoHTML h3").click(function()
+            {
+               $(this).next("pre").toggle(); 
+            });
+        //CODE HERE
+$("#demo").list({
+    disabled : true
+});
+        });
+    </script>
+</html>

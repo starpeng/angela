@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,12 +63,16 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>buttonSet.vertical</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Boolean</p><p><span>Default Value:</span>false</p></div><p><span>Description:</span>设置buttonSet是否垂直排列</p><h3>HTML</h3><pre>&ltdiv id="demo" style="margin:10px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>buttonSet.vertical</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Boolean</p><p><span>Default Value:</span>false</p></div><p><span>Description:</span>设置buttonSet是否垂直排列</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="margin:10px;"&gt
     &ltspan class="uiRadio" group="abc"&gt测试1测测试1测11&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试2&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试3&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试4&lt/span&gt
-&lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").buttonSet({
+&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").buttonSet({
    vertical : true 
 });</pre></div><div id="demo" style="margin:10px;">
     <span class="uiRadio" group="abc">测试1测测试1测11</span><span class="uiRadio" group="abc">测试2</span><span class="uiRadio" group="abc">测试3</span><span class="uiRadio" group="abc">测试4</span>

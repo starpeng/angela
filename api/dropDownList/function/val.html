@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,10 +63,14 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>dropDownList.val</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery,Number</p><p><span>arguments:</span>dropDownList.val([value])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>value(String):</span>用于设置dropDownList的值</p></div></div><p><span>Description:</span>获取或设置dropDownList的值</p><h3>HTML</h3><pre>&ltdiv id="demo" style="width:300px;float:left;margin:0 20px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>dropDownList.val</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery,Number</p><p><span>arguments:</span>dropDownList.val([value])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>value(String):</span>用于设置dropDownList的值</p></div></div><p><span>Description:</span>获取或设置dropDownList的值</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:300px;float:left;margin:0 20px;"&gt
     &ltul&gt
         &ltli&gt选项1选项1选项1选项1选项1&lt/li&gt
         &ltli&gt选项2&lt/li&gt
@@ -77,8 +83,8 @@
         &ltli&gt选项9&lt/li&gt
         &ltli&gt选项10&lt/li&gt
     &lt/ul&gt
-&lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").dropDownList();
-console.debug($("#demo").dropDownList("val"));
+&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").dropDownList();
+alert($("#demo").dropDownList("val"));
 $("#demo").dropDownList("val", "修改值");</pre></div><div id="demo" style="width:300px;float:left;margin:0 20px;">
     <ul>
         <li>选项1选项1选项1选项1选项1</li>
@@ -104,7 +110,7 @@ $("#demo").dropDownList("val", "修改值");</pre></div><div id="demo" style="wi
             });
         //CODE HERE
 $("#demo").dropDownList();
-console.debug($("#demo").dropDownList("val"));
+alert($("#demo").dropDownList("val"));
 $("#demo").dropDownList("val", "修改值");
         });
     </script>

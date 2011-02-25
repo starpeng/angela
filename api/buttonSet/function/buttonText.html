@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,13 +63,17 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>buttonSet.buttonText</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery, String</p><p><span>arguments:</span>buttonSet.buttonText(index,[text])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>index(Number):</span>指定button位置</p><p><span>text(String):</span>用于修改button的字符串</p></div></div><p><span>Description:</span>根据index获取或设置buttonSet里button对象的文本</p><h3>HTML</h3><pre>&ltdiv id="demo" style="margin:10px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>buttonSet.buttonText</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery, String</p><p><span>arguments:</span>buttonSet.buttonText(index,[text])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>index(Number):</span>指定button位置</p><p><span>text(String):</span>用于修改button的字符串</p></div></div><p><span>Description:</span>根据index获取或设置buttonSet里button对象的文本</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="margin:10px;"&gt
     &ltspan class="uiRadio" group="abc"&gt测试1测测试1测11&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试2&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试3&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试4&lt/span&gt
-&lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").buttonSet();
-console.debug($("#demo").buttonSet("buttonText", 1));
+&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").buttonSet();
+alert($("#demo").buttonSet("buttonText", 1));
 $("#demo").buttonSet("buttonText", 1, "文本修改")</pre></div><div id="demo" style="margin:10px;">
     <span class="uiRadio" group="abc">测试1测测试1测11</span><span class="uiRadio" group="abc">测试2</span><span class="uiRadio" group="abc">测试3</span><span class="uiRadio" group="abc">测试4</span>
 </div></body>
@@ -82,7 +88,7 @@ $("#demo").buttonSet("buttonText", 1, "文本修改")</pre></div><div id="demo" 
             });
         //CODE HERE
 $("#demo").buttonSet();
-console.debug($("#demo").buttonSet("buttonText", 1));
+alert($("#demo").buttonSet("buttonText", 1));
 $("#demo").buttonSet("buttonText", 1, "文本修改")
         });
     </script>

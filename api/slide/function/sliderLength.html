@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,12 +63,16 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>slide.sliderLength</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery,Number</p><p><span>arguments:</span>slide.sliderLength([value])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>value(Number):</span>指定设置slider的值</p></div></div><p><span>Description:</span>获取或设置slider的宽度</p><h3>HTML</h3><pre>&ltdiv id="demo" style="width:400px;height:10px;margin:10px;"&gt&lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").slide();
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>slide.sliderLength</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery,Number</p><p><span>arguments:</span>slide.sliderLength([value])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>value(Number):</span>指定设置slider的值</p></div></div><p><span>Description:</span>获取或设置slider的宽度</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;margin:10px;"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").slide();
 $("#demo").slide("sliderLength", 80);
-console.debug($("#demo").slide("sliderLength"));</pre></div><div id="demo" style="width:400px;height:10px;margin:10px;"></div></body>
+alert($("#demo").slide("sliderLength"));</pre></div><div id="demo" style="width:400px;height:10px;margin:10px;"></div></body>
     <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
     <script type="text/javascript" src="../../../javascript/jquery.angela.min.js"></script>
     <script type="text/javascript">
@@ -79,7 +85,7 @@ console.debug($("#demo").slide("sliderLength"));</pre></div><div id="demo" style
         //CODE HERE
 $("#demo").slide();
 $("#demo").slide("sliderLength", 80);
-console.debug($("#demo").slide("sliderLength"));
+alert($("#demo").slide("sliderLength"));
         });
     </script>
 </html>

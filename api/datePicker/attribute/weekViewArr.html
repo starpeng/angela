@@ -31,6 +31,8 @@
         .demoTitle
         {
             color:#f0f0f0;
+            line-height:30px;
+            height:30px;
             text-indent:1em;
         }
         .typeDesc
@@ -61,10 +63,14 @@
         {
             display:none;
         }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>datePicker.weekViewArr</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Array</p><p><span>Default Value:</span>["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]</p></div><p><span>Description:</span>datePicker上用于表示星期几的字符</p><h3>HTML</h3><pre>&ltdiv id="demo"&gt&lt/div&gt</pre><h3>CODE</h3><pre>$("#demo").datePicker({
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>datePicker.weekViewArr</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Array</p><p><span>Default Value:</span>["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]</p></div><p><span>Description:</span>datePicker上用于表示星期几的字符</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").datePicker({
     weekViewArr : ["日", "一", "二", "三", "四", "五", "六"]
 });</pre></div><div id="demo"></div></body>
     <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
