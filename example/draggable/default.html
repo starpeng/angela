@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>default</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        #infor h3
+        {
+            cursor:pointer;
+        }
+        #infor p.attr
+        {
+            display:none;
+            margin:5px 0;
+        }
+        #infor span.note
+        {
+            color:#a0a0a0;
+            font-size:12px;
+        }
+        #demo1
+        {
+            width:200px;
+            border:1px solid black;
+            z-index:9;
+        }
+        #demo1 .title
+        {
+            height:30px;
+            line-height:30px;
+            color:white;
+        }
+        #demo2
+        {
+            position:absolute;
+            left:300px;
+            top:300px;
+            height:300px;
+            width:300px;
+            border:1px solid black;
+        }
+        #demoList
+        {
+            margin:50px;
+            width:200px;
+            border:1px solid black;
+        }
+        #demoList li
+        {
+            list-style:none;
+            width:200px;
+            height:40px;
+            line-height:40px;
+            color:#f0f0f0;
+        }
+        </style>
+    </head>
+    <body>
+        <h3>draggable</h3>
+        <div id="demo1" class="uiNoSelectText uiCornerAll">
+            <div class="title ui30BlueGradientBG uiDraggalbe">拖动测试</div>
+            <p>Web.Go 跟 web.py 类似，但使用的是 Go 编程语言实现的 Web 应用开发框架。</p>
+        </div>
+        
+        <div id="demo2">
+        </div>
+        
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            
+            $("#demo1").draggable({
+                dest : $("#demo2"),
+                event : {
+                    start : function(){
+                        var i = 0;
+                    }, 
+                    doing : function(offset){
+                        var i = 0;
+                    }, 
+                    stop : function(offset){
+                        $(this).css("position", "absolute").css(offset);
+                    }
+                },
+                cross : function(cross)
+                {
+                    if(cross)
+                    {
+                        $("#demo2").css("background", "red");
+                    }
+                    else
+                    {
+                        $("#demo2").css("background", "white");
+                    }
+                }
+            });
+        });
+    </script>
+</html>
