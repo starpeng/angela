@@ -128,7 +128,7 @@
 
     $.angela = $.angela || {};
     $.extend( $.angela, {
-        version : "0.6.1",
+        version : "0.6.2",
         defaultGradientBG : {
             "10" : "ui10GrayGradientBG",
             "20" : "ui20GrayGradientBG",
