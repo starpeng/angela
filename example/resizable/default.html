@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>default</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        #infor h3
+        {
+            cursor:pointer;
+        }
+        #infor p.attr
+        {
+            display:none;
+            margin:5px 0;
+        }
+        #infor span.note
+        {
+            color:#a0a0a0;
+            font-size:12px;
+        }
+        #demo1, #demo2, #demo3
+        {
+            width:200px;
+            height:200px;
+            margin:20px;
+            border:1px solid black;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="demo1" class="uiNoSelectText">
+            <p>Mozilla刚刚发布了Firefox 4的Beta 12版本，我们知道，一大堆问题阻碍了Firefox 4.0的发布</p>
+        </div>
+        <div id="demo2" class="uiNoSelectText">
+            <p>由于开发中遇到的问题，Firefox 4.0 Beta 12也许并不是RC候选版之前的最后一个Beta版，可能还会需要Beta 13。</p>
+        </div>
+        <div id="demo3" class="uiNoSelectText">
+            <p>一位Firefox发布主管Christian Legnitto上周表示，如果Beta 12开发顺利，那么之后就是RC，但是不排除Beta 13的可能。</p>
+        </div>
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $("#demo1, #demo2, #demo3").resizable({
+                event : {
+                    start : null, 
+                    doing : null, 
+                    stop : function(width, height)
+                    {
+                        $(this).width(width).height(height);
+                    }
+                },
+                maxWidth : 600
+            });
+            setTimeout(function()
+            {
+                $("#demo3").resizable("destroy")
+            }, 10000);
+        });
+    </script>
+</html>
