@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>accordion</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        .demoHTML
+        {            
+            margin:5px 10px;
+        }
+        .demoTitle
+        {
+            color:#f0f0f0;
+            line-height:30px;
+            height:30px;
+            text-indent:1em;
+        }
+        .typeDesc
+        {
+            float:right;
+            margin-right:10px;
+        }
+        .demoHTML p
+        {
+            padding:5px 10px;
+        }
+        .demoHTML p span
+        {
+            font-weight:700;
+        }
+        .demoHTML .signature
+        {
+        }
+        .demoHTML .argDesc
+        {
+            background:#c0c0c0;
+        }
+        .demoHTML h3
+        {
+            cursor:pointer;
+        }
+        .demoHTML pre
+        {
+            display:none;
+        }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
+        .css3Color1
+        {
+            color:#f0f0f0;
+            background:rgb(186, 85, 211);
+            background:rgba(186, 85, 211, 0.9);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ba55d3',endColorstr='#4b0082', GradientType='0');
+            -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ba55d3',endColorstr='#4b0082', GradientType='0');
+            background:-webkit-gradient(linear,0 0,0 100%,color-stop(0%,rgba(186, 85, 211, 0.9)),color-stop(100%,rgba(75, 0, 130, 0.9)));
+            background:-moz-linear-gradient(top, rgba(186, 85, 211, 0.9), rgba(75, 0, 130, 0.9));
+            background:linear-gradient(top, rgba(186, 85, 211, 0.9), rgba(75, 0, 130, 0.9));
+        }</style>
+    </head>
+    <body>
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>datePicker.monthAndYearItemHoverClass</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>String</p><p><span>Default Value:</span>"uiBlueCss3GradientBG uiBlueBorder uiCornerAll"</p></div><p><span>Description:</span>添加到月、年选择列表hover状态时的类</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo"&gt&lt/div&gt</pre><h3>CSS</h3><pre class="cssContainer">.css3Color1
+        {
+            color:#f0f0f0;
+            background:rgb(186, 85, 211);
+            background:rgba(186, 85, 211, 0.9);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ba55d3',endColorstr='#4b0082', GradientType='0');
+            -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ba55d3',endColorstr='#4b0082', GradientType='0');
+            background:-webkit-gradient(linear,0 0,0 100%,color-stop(0%,rgba(186, 85, 211, 0.9)),color-stop(100%,rgba(75, 0, 130, 0.9)));
+            background:-moz-linear-gradient(top, rgba(186, 85, 211, 0.9), rgba(75, 0, 130, 0.9));
+            background:linear-gradient(top, rgba(186, 85, 211, 0.9), rgba(75, 0, 130, 0.9));
+        }</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").datePicker({
+    monthAndYearItemHoverClass : "css3Color1 uiBlueBorder uiCornerAl"
+});</pre></div><div id="demo"></div></body>
+    <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $(".demoHTML h3").click(function()
+            {
+               $(this).next("pre").toggle(); 
+            });
+        //CODE HERE
+$("#demo").datePicker({
+    monthAndYearItemHoverClass : "css3Color1 uiBlueBorder uiCornerAl"
+});
+        });
+    </script>
+</html>
