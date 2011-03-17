@@ -3947,6 +3947,7 @@
                 {
                     $(">.uiDateContainer >.uiMonthAndYearContainer >.uiPrevMonth", this).click();
                 }
+                return false;
             });
             return self;
         },
