@@ -94,13 +94,13 @@
     function RandomString(legalCharList)
     {
         var defaultLegalChar = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        if(typeof(legalCharList) != "undefined")
+        if(legalCharList === undefined)
         {
-            this._legalCharList = legalCharList.split("");
+            this._legalCharList = defaultLegalChar.split("");
         }
         else
         {
-            this._legalCharList = defaultLegalChar.split("");
+            this._legalCharList = legalCharList.split("");
         }
     }
 
@@ -108,7 +108,7 @@
         
         getRandomStr : function(length)
         {
-            if(typeof length == "undefined")
+            if(length === undefined)
             {
                 length = 10;
             }
@@ -128,7 +128,7 @@
 
     $.angela = $.angela || {};
     $.extend( $.angela, {
-        version : "0.6.2",
+        version : "0.6.3",
         defaultGradientBG : {
             "10" : "ui10GrayGradientBG",
             "20" : "ui20GrayGradientBG",
@@ -157,7 +157,7 @@
         
         getWidgetOptions : function(key)
         {
-            if(typeof this.widgetOptionsDictionary[key] != "undefined")
+            if(this.widgetOptionsDictionary[key] !== undefined)
             {
                 return this.widgetOptionsDictionary[key];
             }
@@ -172,7 +172,7 @@
         
         removeWidgetOptions : function(key)
         {
-            if(typeof this.widgetOptionsDictionary[key] != "undefined")
+            if(this.widgetOptionsDictionary[key] !== undefined)
             {
                 var setting = this.widgetOptionsDictionary[key];
                 this.widgetOptionsDictionary[key] = null;
@@ -402,7 +402,7 @@
             
             else
             {
-                if(typeof self.attr("widget") != "undefined")
+                if(self.attr("widget") !== undefined)
                 {
                     return self;
                 }
@@ -427,6 +427,7 @@
                     obj.css("visibility", "hidden");
                     widgetSetting.init.call(obj, opts);
                     $.style(obj[0], "visibility", visibilityValue);
+                    
                 });
             }
             return self;
@@ -435,7 +436,7 @@
         option : function()
         {
             var self = this, opts = self.opts;
-            if(typeof opts[arguments[0]] == "undefined")
+            if(opts[arguments[0]] === undefined)
             {
                 return null;
             }
@@ -533,7 +534,7 @@
         
         removeWidgetOptions : function(key)
         {
-            if(typeof key != "undefined")
+            if( key !== undefined)
             {
                 return $.angela.removeWidgetOptions(key);
             }
@@ -561,15 +562,12 @@
                 $$.removeWidgetOptions($(this).removeClass("uiWidget").attr("widget"));
             });
             widgetKey = self.attr("widget");
-            if(typeof widgetKey == "undefined")
-            {
-                widgetKey = opts.widgetKey;
-            }
             $$.removeWidgetOptions(widgetKey);
             if(revert)
             {
                 opts.clone.insertAfter(self);
             }
+            opts.clone = null;
             opts = null;
             return self.remove();
         },
@@ -1015,7 +1013,7 @@
         btnSetBorderClass : "uiGrayBorder",
         btnHoverClass : "ui40LightBlueGradientBG",
         btnSelectedClass : $.angela.selectedGradientBG["40"],
-        btnPressClass : $.angela.selectedGradientBG["40"],
+        btnPressClass : "ui40CadetBlueGradientBG",
         btnWidth : null,
         btnMargin : null,
         
@@ -1149,45 +1147,14 @@
         initEvent : function()
         {
             var self = this, opts = self.opts, mouseDownFlag = false;
-            self.children(".uiButton, .uiImgButton").bind({
-                "mouseenter.uiButtonSet" : function()
+            self.children(".uiButton, .uiImgButton").bind("mouseenter.uiButtonSet mouseleave.uiButtonSet mousedown.uiButtonSet mouseup.uiButtonSet click.uiButtonSet", function(e)
+            {
+                if(opts.disabled)
                 {
-                    if(opts.disabled)
-                    {
-                        return false;
-                    }
-                    $$.setStatusClass.call(this, opts, opts.btnHoverClass);
-                },
-                "mouseleave.uiButtonSet" : function()
+                    return false;
+                }
+                if(e.type === "click")
                 {
-                    if(opts.disabled)
-                    {
-                        return false;
-                    }
-                    $$.removeStatusClass.call(this, opts, opts.btnHoverClass);
-                },
-                "mousedown.uiButtonSet" : function()
-                {
-                    if(opts.disabled)
-                    {
-                        return false;
-                    }
-                    $$.setStatusClass.call(this, opts, opts.btnPressClass);
-                },
-                "mouseup.uiButtonSet" : function()
-                {
-                    if(opts.disabled)
-                    {
-                        return false;
-                    }
-                    $$.removeStatusClass.call(this, opts, opts.btnPressClass);
-                },
-                "click.uiButtonSet" : function(e)
-                {
-                    if(opts.disabled)
-                    {
-                        return false;
-                    }
                     if($.isFunction(opts.click))
                     {
                         if(opts.click.call(this, e) === false)
@@ -1196,7 +1163,30 @@
                         }
                     }
                     $$.changeButtonStatus.call(this, opts);
+                    return ;
                 }
+                var classValue;
+                var funcValue ;
+                switch(e.type)
+                {
+                    case "mouseenter":
+                        classValue = opts.btnHoverClass;
+                        funcValue = "setStatusClass";
+                        break;
+                    case "mouseleave":
+                        classValue = opts.btnHoverClass;
+                        funcValue = "removeStatusClass";
+                        break;
+                    case "mousedown":
+                        classValue = opts.btnPressClass;
+                        funcValue = "setStatusClass";
+                        break;
+                    case "mouseup":
+                        classValue = opts.btnPressClass;
+                        funcValue = "removeStatusClass";
+                        break;
+                }
+                $$[funcValue].call(this, opts, classValue);
             });
             return self;
         },
@@ -1280,7 +1270,7 @@
         clickButton : function(index)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
                 return $();
             }
@@ -1290,7 +1280,7 @@
         button : function(index)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
                 return $();
             }
@@ -1299,7 +1289,7 @@
         buttonText : function(index, text)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
                 return $();
             }
@@ -1314,31 +1304,32 @@
         buttonIcon : function(index, icon)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined" || !$.isArray(opts.iconArray))
+            if(index === undefined || !$.isArray(opts.iconArray))
             {
                 return $();
             }
             var obj = self.children().eq(index);
             var arrayIndex = opts.iconArray.length - 1;            
             var iconClass;
-            if(index <= arrayIndex)
+            if(index > arrayIndex)
             {
-                arrayIndex = index;
+                index = arrayIndex;
             }
-            iconClass = opts.iconArray[arrayIndex];
+            iconClass = opts.iconArray[index];
             if(typeof icon == "undefined")
             {
                 return iconClass;
             }
             obj.children("span").removeClass(iconClass).addClass(icon);
+            opts.iconArray[index] = icon;
             return self;
         },
         val : function(index, checked)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
-                return $();
+                return ;
             }
             var obj = self.children().eq(index);
             var hasStatus = false;
@@ -1352,9 +1343,9 @@
             });
             if(!hasStatus)
             {
-                return $();
+                return ;
             }
-            if(typeof checked == "undefined")
+            if(checked === undefined)
             {
                 if(obj.hasClass(opts.btnSelectedClass))
                 {
@@ -1381,7 +1372,7 @@
         removeButton : function(index)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
                 return self;
             }
@@ -1416,7 +1407,7 @@
         tabsItemClass : '<div class="uiTabsItem uiCornerTop"></div>',
         contentHTML : '<div class="uiContent"></div>',
         controlHTML : '<div class="uiLeftArrow"></div><div class="uiRightArrow"></div>',
-        closeHTML : '<div class="uiCloseBtn"></div>',
+        closeHTML : '<div class="uiCloseItemBtn"></div>',
         itemContent : '<div class="uiHidden"><p></p></div>',
 
         
@@ -1496,7 +1487,7 @@
                     return false;
                 }
                 var target = $(e.target), index;
-                if(target.hasClass("uiCloseBtn"))
+                if(target.hasClass("uiCloseItemBtn"))
                 {
                     if($.isFunction(opts.close))
                     {
@@ -1574,20 +1565,8 @@
                         }
                     }
                     var scrollLeftValue = opts.tabsItemOuterWidth * opts.tabsItemViewIndex;
-                    if(clickFunc == "rightClick")
-                    {
-                        target.css("right", -scrollLeftValue)
-                        .siblings(".uiLeftArrow").css("left", scrollLeftValue)
-                        target.parent().stop().animate({scrollLeft : scrollLeftValue});
-                    }
-                    else
-                    {
-                        target.css("left",scrollLeftValue)
-                        .siblings(".uiRightArrow").css("right", -scrollLeftValue)
-                        .parent().stop().animate({scrollLeft : scrollLeftValue});
-                    }
+                    target.siblings(".uiListContent").stop().animate({left : -scrollLeftValue});
                     $$.checkItemViewStatus.call(self);
-                    return ;
                 }
             });
             $("> .uiTabsList", self).bind("mousewheel.uiTabs", function(e, delta)
@@ -1671,7 +1650,7 @@
         active : function(index)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
                 return opts.activateIndex;
             }
@@ -1681,18 +1660,18 @@
         item : function(index, content, title)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
                 return self;
             }
             var item = $(">.uiTabsContent", self).eq(index);
             var titleBar = $("> .uiTabsList > .uiListContent > div >.uiTabsItem", self).eq(index);            
-            if(typeof content == "undefined")
+            if(content === undefined)
             {
                 return item;
             }
             item.html(content);
-            if(typeof title == "undefined")
+            if(title === undefined)
             {
                 return item;
             }
@@ -1722,6 +1701,7 @@
         step : 0.2,
         
         
+        animation : true,
         widgetKey : null,
         slideLength : 0,
         slideValue : 0,
@@ -1729,6 +1709,7 @@
         slideBegin : 0,
         panelHTML : '<div class="uiPanel"></div>',
         sliderHTML : '<div class="uiSlider"></div>',
+        slideDrag : false,
 
         
         click : null,
@@ -1754,7 +1735,7 @@
             {
                 opts.slideClass = opts.slideClass.replace($.angela.selectedGradientBG["10"], "ui10BlueGradientBGVertical");
             }
-            self.addClass("uiSlide uiWidget " + opts.slideClass).append($(opts.panelHTML).append($(opts.sliderHTML).addClass(opts.sliderClass)));
+            self.addClass("uiSlide uiWidget uiNoSelectText " + opts.slideClass).append($(opts.panelHTML).append($(opts.sliderHTML).addClass(opts.sliderClass)));
             var slider = $("> .uiPanel > .uiSlider", self);
             
             if(opts.mode == "vertical")
@@ -1815,7 +1796,7 @@
                     beginValue = e.clientX + self.parent().scrollLeft();
                 }
                 var percent = (beginValue - opts.slideBegin - (opts.sliderLength >> 1)) / opts.slideMax;
-                $$.setSlide.call(self, Math.floor(percent * (opts.max - opts.min) + opts.min), true);
+                $$.setSlide.call(self, Math.floor(percent * (opts.max - opts.min) + opts.min), opts.animation);
             })
             .bind("mousewheel.uiSlide", function(e, delta)
             {
@@ -1829,8 +1810,39 @@
                     positionStr = "top";
                 }
                 var percent = parseInt($("> .uiSlider", this).css(positionStr)) / opts.slideMax + opts.step * (-delta/2);
-                $$.setSlide.call(self, Math.floor(percent * (opts.max - opts.min) + opts.min), true, true);
+                $$.setSlide.call(self, Math.floor(percent * (opts.max - opts.min) + opts.min), false);
                 return false;
+            });
+            var mouseMoveEvent = "mousemove." + opts.widgetKey;
+            var mouseUpEvent = "mouseup." + opts.widgetKey;
+            $("> .uiPanel > .uiSlider", self).bind("mousedown.uiSlide", function(e)
+            {
+                if(opts.disabled)
+                {
+                    return false;
+                }
+                opts.slideDrag = true;
+            });
+            $(document).bind(mouseMoveEvent, function(e)
+            {
+                if(opts.slideDrag)
+                {
+                    var beginValue;
+                    if(opts.mode == "vertical")
+                    {
+                        beginValue = e.clientY + self.parent().scrollTop();
+                    }
+                    else
+                    {
+                        beginValue = e.clientX + self.parent().scrollLeft();
+                    }
+                    var percent = (beginValue - opts.slideBegin - (opts.sliderLength >> 1)) / opts.slideMax;
+                    $$.setSlide.call(self, Math.floor(percent * (opts.max - opts.min) + opts.min), false);
+                }
+            })
+            .bind(mouseUpEvent, function()
+            {
+                opts.slideDrag = false;
             });
             return self;
         },
@@ -1838,7 +1850,7 @@
         setSlide : function(value, animate, jumpToEnd)
         {
             var self = this, opts = self.opts, obj = $("> .uiPanel > .uiSlider", self);
-            if(typeof value == "undefined")
+            if(value === undefined)
             {
                 return self;
             }
@@ -1879,7 +1891,7 @@
         val : function(value)
         {
             var self = this, opts = self.opts;
-            if(typeof value == "undefined")
+            if(value === undefined)
             {
                 return opts.slideValue;
             }
@@ -1890,7 +1902,7 @@
         {
             var self = this, opts = self.opts;
             var slider = $("> .uiPanel > .uiSlider", self);
-            if(typeof value == "undefined")
+            if(value === undefined)
             {
                return opts.sliderLength;
             }
@@ -1914,7 +1926,8 @@
         },
         beforeDestroy : function()
         {
-            
+            var self = this, opts = self.opts;
+            $(document).unbind("." + opts.widgetKey);
         }
     });
 })(jQuery);
@@ -1987,14 +2000,14 @@
             {
                 var contentClass = "uiHidden", titleBarClass = opts.itemTitleBarClass, buttonClass = "";
                 
-                if(opts.active == "all" || ($.isArray(opts.active) && $.inArray(n, opts.active) != -1))
+                if(opts.active == "all" || $.inArray(n, opts.active) != -1)
                 {
                     contentClass = "";
                     titleBarClass = opts.activeClass + " uiActive";
                     buttonClass = "uiArrowUp";
                 }
                 
-                $(opts.itemHTML).filter(".uiTitleBar").addClass(titleBarClass)
+                $(opts.itemHTML).addClass(titleBarClass)
                 .children(".uiUserBtn").addClass(buttonClass)
                 .siblings(".uiTitle").html($(this).attr("title")).end().end()
                 .insertBefore($(this).addClass("uiContent " + contentClass).height(opts.height));
@@ -2029,39 +2042,36 @@
                         return ;
                     }
                 }
-                if(target.hasClass("uiTitleBar"))
+                if(!opts.toggle)
                 {
-                    if(!opts.toggle)
+                    if(target.hasClass(opts.activeClass))
                     {
-                        if(target.hasClass(opts.activeClass))
-                        {
-                            return ;
-                        }
+                        return ;
                     }
-                    var obj = target.next(".uiContent")[0];
-                    if($.isFunction(opts.changeStart))
-                    {
-                        if(opts.changeStart.call(obj, e) === false)
-                        {
-                            return false;
-                        }
-                    }
-                    opts.animating = true;
-                    var selectedList = opts.hideOthers == true? $("> ." + opts.activeClass, self).not(target).removeClass(opts.activeClass + " uiActive").addClass(opts.itemTitleBarClass) : null;
-                    target.toggleClass(opts.itemTitleBarClass).toggleClass(opts.activeClass + " uiActive").add(selectedList)
-                    .children(".uiUserBtn").toggleClass("uiArrowUp").end()
-                    .next(".uiContent").stop(true, true)[opts.animation]( function()
-                    {
-                        if($(this).is(":visible"))
-                        {
-                            if($.isFunction(opts.change))
-                            {
-                                opts.change.call(obj, e);
-                            }
-                        }
-                        opts.animating = false;
-                    });
                 }
+                if($.isFunction(opts.changeStart))
+                {
+                    if(opts.changeStart.call(self[0], e) === false)
+                    {
+                        return false;
+                    }
+                }
+                opts.animating = true;
+                var selectedList = opts.hideOthers == true? $("> ." + opts.activeClass, self).not(target).removeClass(opts.activeClass + " uiActive").addClass(opts.itemTitleBarClass) : null;
+                target.toggleClass(opts.itemTitleBarClass).toggleClass(opts.activeClass + " uiActive").add(selectedList)
+                .children(".uiUserBtn").toggleClass("uiArrowUp").end()
+                .next(".uiContent").stop(true, true)[opts.animation]( function()
+                {
+                    if($(this).is(":visible"))
+                    {
+                        if($.isFunction(opts.change))
+                        {
+                            opts.change.call(self[0], e);
+                        }
+                    }
+                    opts.animating = false;
+                });
+                
             });
             return self;
         },
@@ -2069,7 +2079,7 @@
         activate : function(index)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
                 var activateArr = [];
                 var titleBarList = $("> .uiTitleBar", self);
@@ -2093,19 +2103,18 @@
         item : function(index, content, title)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
-                //return $("> .uiTitleBar", self).eq(index).next();
                 return $();
             }
             var titleBar = $("> .uiTitleBar", self).eq(index);
-            if(typeof content == "undefined")
+            if(content === undefined)
             {
                 return titleBar.next();
             }
-            if(typeof title == "undefined")
+            if(title === undefined)
             {
-                return titleBar.next().html(title);
+                return titleBar.next().html(content);
             }
             return titleBar.html(title).next().html(content);
         },
@@ -2113,7 +2122,7 @@
         add : function(item)
         {
             var self = this, opts = self.opts, item = $(item);
-            $(opts.itemHTML).filter(".uiTitleBar").addClass(opts.itemTitleBarClass)
+            $(opts.itemHTML).addClass(opts.itemTitleBarClass)
             .children(".uiTitle").html(item.attr("title")).end().appendTo(self);
             item.addClass("uiContent uiHidden").height(opts.height).appendTo(self);
             return self;
@@ -2141,7 +2150,7 @@
         titleIcon : function(titleIcon)
         {
             var self = this, opts = self.opts;
-            if(typeof titleIcon == "undefined")
+            if(titleIcon === undefined)
             {
                 return opts.titleIcon;
             }
@@ -2206,7 +2215,7 @@
             var self = this;
 
             
-            var multiple = opts.multiple === true? "uiMultiple" : "";
+            var multiple = opts.multiple? "uiMultiple" : "";
             
             var selectList = self.children().addClass(multiple + " uiSelectList " + opts.selectListClass);
             opts.selectItemTotal = $("> li", selectList).length;
@@ -2397,7 +2406,7 @@
         selectItem : function(index)
         {
             var self = this, opts = self.opts;
-            if(typeof index == "undefined")
+            if(index === undefined)
             {
                 return $();
             }
@@ -2471,7 +2480,7 @@
         val : function(value)
         {
             var self = this, opts = self.opts, selectedValue = "";
-            if(typeof value == "undefined")
+            if(value === undefined)
             {
                 self.children(".selected").each( function()
                 {
@@ -2558,6 +2567,7 @@
         titleBarHTML : '<div class="uiTitleBar"><span class="uiTitle"></span></div>',
         contentHTML : '<div class="uiContent"></div>',
         resizeHTML :'<div class="uiResizable"></div>',
+        selectList : null,
         
         
         
@@ -2640,7 +2650,19 @@
             
             if(opts.modal)
             {
-                $("<div />").addClass("uiMask").appendTo("body");
+                var maskObj = $("<div />").addClass("uiMask").appendTo("body");
+                if($.browser.msie && $.browser.version == "6.0")
+                {
+                    opts.selectList = $("select:visible").filter(function(i)
+                    {
+                        if($(this).css("visibility") != "hidden")
+                        {
+                            return true;
+                        }
+                        return false;
+                    }).css("visibility", "hidden");
+                    maskObj.height($(document).height());
+                }
             }
             
             if(opts.buttonSet != null)
@@ -2812,7 +2834,7 @@
                         }
                     });
                 }
-                self.mousedown( function(e)
+                self.bind("mousedown.uiDialog", function(e)
                 {
                     if(opts.disabled)
                     {
@@ -2848,8 +2870,8 @@
             {
                 $(".uiResizable", self).hide();
             }
-            var position = self.css("position");
-            if(position === "static" || position === "relative")
+            var positionStr = self.css("position");
+            if(positionStr === "static" || positionStr === "relative")
             {
                 opts.overflowStatus = self.css("overflow");
                 self.height(opts.dlgMinHeight).css("overflow", "hidden");
@@ -2861,18 +2883,18 @@
                 {
                     oldPos[key] = self.css(key);
                 });
-                if(position == "absolute")
+                if(positionStr == "absolute")
                 {
                     oldPos["top"] = parseInt(oldPos["top"]) - $(document).scrollTop();
                 }
                 opts.dlgPosition = oldPos;
-                var positionStr = "fixed";
+                positionStr = "fixed";
                 
                 if($.browser.msie && $.browser.version == "6.0")
                 {
                     positionStr = "absolute";
                 }
-                self.css({right : null, bottom : null}).animate({height : opts.dlgMinHeight, width : opts.minStatusWidth, left : 0, top : 0, position : positionStr}, 300);
+                self.css({right : null, bottom : null, position : positionStr}).animate({height : opts.dlgMinHeight, width : opts.minStatusWidth, left : 0, top : 0}, 300);
                 //self.height(opts.dlgMinHeight).width(opts.minStatusWidth).css({left : 0, top : 0, right : null, bottom : null, position : positionStr});
             }
             if($.isFunction(opts.min))
@@ -2906,7 +2928,7 @@
                 }
                 var tmpSetting = $.extend({}, opts.dlgPosition, {height : opts.dlgHeight, width : opts.dlgWidth});
                 //self.height(opts.dlgHeight).width(opts.dlgWidth).css(opts.dlgPosition);
-                self.animate(tmpSetting, 300);
+                self.css(tmpSetting);
             }
             if($.isFunction(opts.resume))
             {
@@ -2923,6 +2945,10 @@
             var self = this, opts = self.opts;
             if(opts.modal)
             {
+                if($.browser.msie && $.browser.version == "6.0")
+                {
+                    opts.selectList.css("visibility", "visible");
+                }
                 $(".uiMask").remove();
             }
             self[opts.closeAnimate]( function()
@@ -2987,7 +3013,7 @@
         {
             var self = this, opts = self.opts;
             var obj = $("> .uiTitleBar > .uiTitle", self);
-            if(typeof title == "undefined")
+            if(title === undefined)
             {
                 return obj.text();
             }
@@ -2998,7 +3024,7 @@
         titleIcon : function(titleIcon)
         {
             var self = this, opts = self.opts;
-            if(typeof titleIcon == "undefined")
+            if(titleIcon === undefined)
             {
                 return opts.titleIcon;
             }
@@ -3445,7 +3471,7 @@
         val : function(value)
         {
             var self = this, opts = self.opts;
-            if(typeof value == "undefined")
+            if(value === undefined)
             {
                 return opts.value;
             }
@@ -3674,10 +3700,13 @@
         weekViewArr : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
         //monthViewArr : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         monthViewArr : ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+        dayClass : "uiDayTD",
+        specialDayList : null,
         hoverClass : "ui40LightBlueGradientBG",
         todayClass : "ui40BlueGradientBG",
         originalDateClass : "ui40RoyalBlueGradientBG",
-        
+        monthAndYearListClass : "uiBlueCss3GradientBG uiBlueBorder uiCornerAll",
+        monthAndYearItemHoverClass : "ui30LightBlueGradientBG",
         
         select : null,
         
@@ -3691,8 +3720,9 @@
         },
         origDateObj : null,
         dateContainerHTML : '<div class="uiDateContainer"></div>',
-        monthAndYearHTML : '<div class="uiMonthAndYearContainer"><span class="uiPrevMonth uiArrowLeft"></span><span class="uiMonthAndYear"></span><span class="uiNextMonth uiArrowRight"></span></div>',
-        dayContainerHTML : '<div class="uiDayContainer"></div>'
+        monthAndYearHTML : '<div class="uiMonthAndYearContainer"><span class="uiPrevMonth uiArrowLeft"></span><span class="uiMonthAndYear"><span class="uiMonth"><span></span></span><span class="uiYear"><span></span></span></span><span class="uiNextMonth uiArrowRight"></span></div>',
+        dayContainerHTML : '<div class="uiDayContainer"></div>',
+        weeksHTML : null
     };
     $.fn.datePicker = function()
     {
@@ -3731,36 +3761,50 @@
             var monthAndYearContainer = $(opts.monthAndYearHTML).addClass(opts.monthAndYearClass);
             var dayContainer = $(opts.dayContainerHTML);            
             self.append(dateContainer.append(monthAndYearContainer).append(dayContainer));
+            opts.weeksHTML = "<tr>";
+            for(var i = 0; i < 7; i++)
+            {
+                opts.weeksHTML += ('<td class="uiWeekTD">' + opts.weekViewArr[i] + "</td>");
+            }
+            opts.weeksHTML += "</tr>";
             $$.setDate.call(self);
+
+            var monthListHTML = '<ul class="uiMonthList ' + opts.monthAndYearListClass + '">';
+            for(var i = 0, len = opts.monthViewArr.length; i < len; i++)
+            {
+                monthListHTML += ("<li>" + opts.monthViewArr[i] + "</li>");
+            }
+            monthListHTML += "</ul>";
+            $("> .uiMonthAndYear > .uiMonth", monthAndYearContainer).append(monthListHTML); 
+            var yearListHTML = '<ul class="uiYearList ' + opts.monthAndYearListClass + '">';
+            var currentYear = opts.currentDate.getFullYear();
+            for(var i = 6; i > -6; i--)
+            {
+                yearListHTML += ("<li>" + (currentYear + i) + "</li>");
+            }
+            yearListHTML += "</ul>";
+            $("> .uiMonthAndYear > .uiYear", monthAndYearContainer).append(yearListHTML);
+            
+            var isHidden = self.is(":hidden");
+            if(isHidden)
+            {
+                self.show();
+            }
+            self.width($("> .uiDateContainer > .uiDayContainer > table", self).outerWidth(true) + 10);
+            if(isHidden)
+            {
+                self.hide();
+            }
             $$.initEvent.call(self);
             return self;
         },
         initEvent : function()
         {
             var self = this, opts = self.opts;
-            $(">.uiDateContainer >.uiMonthAndYearContainer >.uiPrevMonth", self).bind("click.uiDatePicker", function(e)
-            {
-                if(opts.disabled)
-                {
-                    return false;
-                }
-                opts.currentDate.setMonth(opts.currentDate.getMonth() - 1);        
-                $$.setDate.call(self, "prev");    
-            })
-            .siblings(".uiNextMonth").bind("click.uiDatePicker", function(e)
-            {
-                if(opts.disabled)
-                {
-                    return false;
-                }
-                opts.currentDate.setMonth(opts.currentDate.getMonth() + 1); 
-                $$.setDate.call(self, "next"); 
-            });
-
             $(">.uiDateContainer >.uiDayContainer", self).bind({
                 "mouseover.uiDatePicker" : function(e)
                 {
-                    var target = $(e.target);
+                    var target = $(e.target).parent();
                     if(target.hasClass("uiNormalTD"))
                     {                        
                         target.removeClass("uiNormalTD").addClass(opts.hoverClass);
@@ -3768,7 +3812,7 @@
                 },
                 "mouseout.uiDatePicker" : function(e)
                 {
-                    var target = $(e.target);
+                    var target = $(e.target).parent();
                     if(target.hasClass(opts.hoverClass))
                     {
                         target.removeClass(opts.hoverClass).addClass("uiNormalTD");
@@ -3780,7 +3824,7 @@
                     {
                         return false;
                     }
-                    var target = $(e.target);
+                    var target = $(e.target).parent();
                     if(target.hasClass("uiNormalTD") || target.hasClass(opts.hoverClass))
                     {
                         var monthStr = opts.dateObj.month + 1;
@@ -3794,8 +3838,117 @@
                             opts.select.call(self, dateStr);
                         }
                     }
+                    $("> .uiDateContainer > .uiMonthAndYearContainer", self).find(".uiMonthList, .uiYearList").hide();
                 }
             });
+            $(">.uiDateContainer >.uiMonthAndYearContainer", self).click(function(e)
+            {
+                if(opts.disabled)
+                {
+                    return false;
+                }
+                var target = $(e.target);
+                if(target.hasClass("uiPrevMonth"))
+                {
+                    opts.currentDate.setMonth(opts.currentDate.getMonth() - 1);        
+                    $$.setDate.call(self, "prev");  
+                }
+                else if(target.hasClass("uiNextMonth"))
+                {
+                    opts.currentDate.setMonth(opts.currentDate.getMonth() + 1); 
+                    $$.setDate.call(self, "next");
+                }
+                else if(target.parent().hasClass("uiMonth"))
+                {
+                    target.siblings(".uiMonthList").slideToggle();
+                    $("> .uiDateContainer > .uiMonthAndYearContainer", self).find(".uiYearList").hide();
+                    return false;
+                }
+                else if(target.parent().hasClass("uiYear"))
+                {
+                    target.siblings(".uiYearList").slideToggle();
+                    $("> .uiDateContainer > .uiMonthAndYearContainer", self).find(".uiMonthList").hide();
+                    return false;
+                }
+                else if(target.parent(".uiMonthList").length)
+                {
+                    var month = $.inArray(target.text(), opts.monthViewArr);
+                    if(month != -1)
+                    {        
+                        var status = "next"; 
+                        var currentMonth = opts.currentDate.getMonth();
+                        if(currentMonth != month)
+                        {                            
+                            if(currentMonth > month)
+                            {
+                                status = "prev";
+                            }
+                            opts.currentDate.setMonth(month);
+                            $$.setDate.call(self, status);
+                        }                        
+                    }
+                    target.parent(".uiMonthList").hide();
+                    return false;
+                }
+                else if(target.parent(".uiYearList").length)
+                {
+                    var year = parseInt(target.text());
+                    var currentYear = opts.currentDate.getFullYear();
+                    if(currentYear != year)
+                    {            
+                        var status = "next";             
+                        target.siblings().andSelf().each(function(i)
+                        {
+                           $(this).text(year + 6 - i); 
+                        });
+                        if(currentYear > year)
+                        {
+                            status = "prev";
+                        }
+                        opts.currentDate.setFullYear(year);
+                        $$.setDate.call(self, status);
+                    }
+                    target.parent(".uiYearList").hide();
+                    return false;
+                }
+                $("> .uiDateContainer > .uiMonthAndYearContainer", self).find(".uiMonthList, .uiYearList").hide();
+            })
+            .find(".uiMonthList").add($(">.uiDateContainer >.uiMonthAndYearContainer .uiYearList", self)).bind({
+                mousewheel : function(e, delta)
+                {
+                    if(delta < 0)
+                    {
+                        $(this).children(":lt(6)").hide();
+                    }
+                    else
+                    {
+                        $(this).children(":lt(6)").show();
+                    }
+                    return false;
+                },
+                mouseover : function(e)
+                {
+                    var target = $(e.target);
+                    target.addClass(opts.monthAndYearItemHoverClass);
+                },
+                mouseout : function(e)
+                {
+                    var target = $(e.target);
+                    target.removeClass(opts.monthAndYearItemHoverClass);
+                }
+            });
+            self.bind("mousewheel.uiDatePicker", function(e, delta)
+            {
+                if(delta < 0)
+                {
+                    $(">.uiDateContainer >.uiMonthAndYearContainer >.uiNextMonth", this).click();
+                }
+                else
+                {
+                    $(">.uiDateContainer >.uiMonthAndYearContainer >.uiPrevMonth", this).click();
+                }
+            });
+            return self;
         },
         setDate : function(status)
         {
@@ -3817,7 +3970,15 @@
             var html = '<table cellspacing="0" cellpadding="0"><tbody>';
             var firstDayWeek = (opts.dateObj.week - opts.dateObj.day + 36) % 7;
             var dayContainer = $(">.uiDateContainer >.uiDayContainer", self);
-            var monthAndYearContainer = $(">.uiDateContainer >.uiMonthAndYearContainer", self);   
+            var monthAndYearContainer = $(">.uiDateContainer >.uiMonthAndYearContainer", self); 
+            
+
+            var monthStr = opts.dateObj.month + 1;
+            if(monthStr < 10)
+            {
+                monthStr = "0" + monthStr;
+            }
+            
             if(todayObj.year == opts.dateObj.year && todayObj.month == opts.dateObj.month) 
             {
                 todayFlag = true;
@@ -3830,13 +3991,8 @@
                     origDateFlag = true;
                 }
             }        
-            monthAndYearContainer.children(".uiMonthAndYear").html(opts.monthViewArr[opts.dateObj.month] + " " + opts.dateObj.year);
-            html += "<tr>";
-            for(var i = 0; i < 7; i++)
-            {
-                html += ("<td>" + opts.weekViewArr[i] + "</td>");
-            }
-            html += "</tr>";
+            monthAndYearContainer.find("> .uiMonthAndYear > .uiMonth > span:first").html(opts.monthViewArr[opts.dateObj.month]).end().find("> .uiMonthAndYear > .uiYear > span:first").html(opts.dateObj.year);
+            html += opts.weeksHTML;
             var total = 30;
             if(opts.dateObj.month == 1)
             {
@@ -3869,7 +4025,7 @@
                     {
                         dayStr = "0" + dayStr;
                     }
-                    var tdClass = "uiNormalTD";
+                    var tdClass = "uiNormalTD " + opts.dayClass;
                     if(todayFlag && day == todayObj.day)
                     {
                         tdClass += " uiTodayTD " + opts.todayClass;                        
@@ -3878,7 +4034,18 @@
                     {
                         tdClass += " uiTodayTD " + opts.originalDateClass;
                     }
-                    html += ('<td class="'+ tdClass + '">' + dayStr + "</td>");
+                    var dayClass = "";
+                    var title = "";
+                    if(opts.specialDayList != null)
+                    {
+                        var dateStr = monthStr + "/" + dayStr + "/" + opts.dateObj.year;
+                        if(opts.specialDayList[dateStr] !== undefined)
+                        {
+                            dayClass = opts.specialDayList[dateStr].specialClass;
+                            title = opts.specialDayList[dateStr].desc;
+                        }
+                    }
+                    html += ('<td class="'+ tdClass + '"><div class="' + dayClass + '" title="' + title + '">' + dayStr + "</div></td>");
                     day++;
                 }
                 if(i % 7 == 6)
@@ -3888,9 +4055,9 @@
             }
             html += '</tbody></table>';
             var newTable = $(html);
-            if(typeof status == "undefined")
+            if(status === undefined)
             {                
-                dayContainer.append(newTable);
+                dayContainer.empty().append(newTable);
             }
             else if(status == "prev")
             {                
@@ -3918,11 +4085,63 @@
                     oldTalbe.remove();
                 }); 
             }
+            return self;            
+        },
+        setSpecialDayList : function(dayList)
+        {
+            var self = this, opts = self.opts; 
+            opts.specialDayList = dayList;
+            if($$.checkView(dayList, opts.currentDate))
+            {
+                $$.setDate.call(self);  
+            }     
+            return self;       
+        },
+        addSpecialDayList : function(dayList)
+        {
+            var self = this, opts = self.opts; 
+            opts.specialDayList = $.extend({}, opts.specialDayList, dayList);
+            if($$.checkView(dayList, opts.currentDate))
+            {
+                $$.setDate.call(self);  
+            } 
+            return self;
+        },
+        removeSpecialDayList : function(key)
+        {
+            var self = this, opts = self.opts;
+            if(opts.specialDayList != null & opts.specialDayList[key] !== undefined)
+            {
+                var dayList = {};
+                dayList[key] = opts.specialDayList[key];
+                opts.specialDayList[key] = null;
+                delete opts.specialDayList[key];
+                if($$.checkView(dayList, opts.currentDate))
+                {
+                    $$.setDate.call(self);  
+                } 
+            }
+            return self;
+        },
+        checkView : function(dayList, currentDate)
+        {
+            var view = false;
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth() + 1;
             
+            $.each(dayList, function(key, value)
+            {
+                var dateArr = key.split("/");
+                if(parseInt(dateArr[0]) == month && dateArr[2] == year)
+                {
+                    view = true;
+                    return false;
+                }
+            });
+            return view;
         }
     });
-})(jQuery);
-// JavaScript Document
+})(jQuery);// JavaScript Document
 ;
 (function($)
 {
@@ -4048,7 +4267,36 @@
             return self;
         }
     });
-})(jQuery);// JavaScript Document
+})(jQuery);;
+(function($)
+{
+    $.angela.hack = $.angela.hack || {};
+    var $$ = $.extend($.angela.hack, {
+        fixedPosition : function(element)
+        {
+            if($.browser.msie && $.browser.version == "6.0")
+            {
+                var scrollTimer = 0;
+                var obj = $(element);
+                var originTopValue = obj.offset().top;
+                var originLeftValue = obj.offset().left;
+                $(window).scroll(function()
+                {
+                    clearTimeout(scrollTimer);
+                    obj.hide();
+                    scrollTimer = setTimeout(function()
+                    {
+                        var topValue = originTopValue + $(window).scrollTop();
+                        var leftValue = originLeftValue + $(window).scrollLeft();
+                        obj.css({position : "absolute", top : topValue, left : leftValue}).show();
+                        scrollTimer = 0;
+                    }, 300);
+                });
+            }
+        }
+    });
+})(jQuery);
+// JavaScript Document
 ;
 (function($)
 {
