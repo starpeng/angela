@@ -89,7 +89,7 @@
     destroyOnClose : false,
     close : function()
     {
-        setTimeout(function()
+        window.globalTimer = setTimeout(function()
         {
             $("#demo").dialog("open");
         }, 1000);
@@ -124,7 +124,7 @@ $("#demo").dialog({
     destroyOnClose : false,
     close : function()
     {
-        setTimeout(function()
+        window.globalTimer = setTimeout(function()
         {
             $("#demo").dialog("open");
         }, 1000);

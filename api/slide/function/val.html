@@ -70,9 +70,12 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>slide.val</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery,Number</p><p><span>arguments:</span>slide.val([value])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>value(Number):</span>指定设置slide的值,该值介于min与max之间</p></div></div><p><span>Description:</span>获取或设置slide的值</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;margin:10px;"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").slide();
-$("#demo").slide("val", 80);
-alert($("#demo").slide("val"));</pre></div><div id="demo" style="width:400px;height:10px;margin:10px;"></div></body>
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>slide.val</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery,Number</p><p><span>arguments:</span>slide.val([value],[animate])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>value(Number):</span>指定设置slide的值,该值介于min与max之间</p><p><span>animate(Boolean):</span>是否使用动画的方式</p></div></div><p><span>Description:</span>获取或设置slide的值</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;margin:10px;"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").slide();
+$("#demo").slide("val", 80, true);
+window.globalTimer = setTimeout(function()
+{
+    alert($("#demo").slide("val"));
+}, 2000);</pre></div><div id="demo" style="width:400px;height:10px;margin:10px;"></div></body>
     <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
     <script type="text/javascript" src="../../../javascript/jquery.angela.min.js"></script>
     <script type="text/javascript">
@@ -84,8 +87,11 @@ alert($("#demo").slide("val"));</pre></div><div id="demo" style="width:400px;hei
             });
         //CODE HERE
 $("#demo").slide();
-$("#demo").slide("val", 80);
-alert($("#demo").slide("val"));
+$("#demo").slide("val", 80, true);
+window.globalTimer = setTimeout(function()
+{
+    alert($("#demo").slide("val"));
+}, 2000);
         });
     </script>
 </html>

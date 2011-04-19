@@ -70,15 +70,15 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>progressBar.scroll</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery,Number</p><p><span>arguments:</span>progressBar.scroll()</p><div class="argDesc"><span>参数说明：</span><br /></div></div><p><span>Description:</span>设置滚动条滚动（type必须为"scroll"）</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>progressBar.scroll</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery,Number</p><p><span>arguments:</span>progressBar.scroll(scrolling)</p><div class="argDesc"><span>参数说明：</span><br /><p><span>scrolling(Boolean):</span>指定progressBar是否滚动</p></div></div><p><span>Description:</span>设置滚动条滚动状态（type必须为"scroll"），scrolling为true滚动，为false停止滚动</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;"&gt
 &lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").progressBar({
     type : "scroll",
     scrollTime : 500
 });
-$("#demo").progressBar("stopScroll");
-setTimeout(function()
+$("#demo").progressBar("scroll", false);
+window.globalTimer = setTimeout(function()
 {
-    $("#demo").progressBar("scroll");
+    $("#demo").progressBar("scroll", true);
 }, 1000);</pre></div><div id="demo" style="width:400px;height:10px;">
 </div></body>
     <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
@@ -95,10 +95,10 @@ $("#demo").progressBar({
     type : "scroll",
     scrollTime : 500
 });
-$("#demo").progressBar("stopScroll");
-setTimeout(function()
+$("#demo").progressBar("scroll", false);
+window.globalTimer = setTimeout(function()
 {
-    $("#demo").progressBar("scroll");
+    $("#demo").progressBar("scroll", true);
 }, 1000);
         });
     </script>

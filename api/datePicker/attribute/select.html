@@ -71,7 +71,7 @@
     </head>
     <body>
     <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>datePicker.select</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>添加选择日期的时候调用</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").datePicker({
-    select : function(dateStr)
+    select : function(dateStr, dateObj)
     {
         alert(dateStr);
     }
@@ -87,7 +87,7 @@
             });
         //CODE HERE
 $("#demo").datePicker({
-    select : function(dateStr)
+    select : function(dateStr, dateObj)
     {
         alert(dateStr);
     }
