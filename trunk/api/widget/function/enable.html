@@ -87,7 +87,7 @@
 &lt/div&gt
 &lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").dialog();
                 $("#demo").dialog("disable");
-setTimeout(function()
+window.globalTimer = setTimeout(function()
 {
     $("#demo").dialog("enable");
 }, 3000);</pre></div><div id="demo" title="对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二" style="width:400px;float:left;margin:0 10px;">
@@ -118,7 +118,7 @@ setTimeout(function()
         //CODE HERE
 $("#demo").dialog();
                 $("#demo").dialog("disable");
-setTimeout(function()
+window.globalTimer = setTimeout(function()
 {
     $("#demo").dialog("enable");
 }, 3000);

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>accordion</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="../../../theme/jquery.angela.min.css" />
+        <style type="text/css">
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        body
+        {
+            font-family: "Times New Roman", "\5B8B\4F53";
+            font-size:16px;
+        }
+        .demoHTML
+        {            
+            margin:5px 10px;
+        }
+        .demoTitle
+        {
+            color:#f0f0f0;
+            line-height:30px;
+            height:30px;
+            text-indent:1em;
+        }
+        .typeDesc
+        {
+            float:right;
+            margin-right:10px;
+        }
+        .demoHTML p
+        {
+            padding:5px 10px;
+        }
+        .demoHTML p span
+        {
+            font-weight:700;
+        }
+        .demoHTML .signature
+        {
+        }
+        .demoHTML .argDesc
+        {
+            background:#c0c0c0;
+        }
+        .demoHTML h3
+        {
+            cursor:pointer;
+        }
+        .demoHTML pre
+        {
+            display:none;
+        }
+        .demoHTML pre.codeContainer
+        {
+            display:block;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>dropDownList.animateTime</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Number</p><p><span>Default Value:</span>$.angela.defaultAnimateDuration</p></div><p><span>Description:</span>设置dropDownList中动画的运行时间</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:300px;float:left;margin:0 20px;"&gt
+    &ltul&gt
+        &ltli&gt选项1选项1选项1选项1选项1&lt/li&gt
+        &ltli&gt选项2&lt/li&gt
+        &ltli&gt选项3&lt/li&gt
+        &ltli&gt选项4&lt/li&gt
+        &ltli&gt选项5&lt/li&gt
+        &ltli&gt选项6&lt/li&gt
+        &ltli&gt选项7&lt/li&gt
+        &ltli&gt选项8&lt/li&gt
+        &ltli&gt选项9&lt/li&gt
+        &ltli&gt选项10&lt/li&gt
+    &lt/ul&gt
+&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").dropDownList({
+    animateTime : 1000
+});</pre></div><div id="demo" style="width:300px;float:left;margin:0 20px;">
+    <ul>
+        <li>选项1选项1选项1选项1选项1</li>
+        <li>选项2</li>
+        <li>选项3</li>
+        <li>选项4</li>
+        <li>选项5</li>
+        <li>选项6</li>
+        <li>选项7</li>
+        <li>选项8</li>
+        <li>选项9</li>
+        <li>选项10</li>
+    </ul>
+</div></body>
+    <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../javascript/jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $(".demoHTML h3").click(function()
+            {
+               $(this).next("pre").toggle(); 
+            });
+        //CODE HERE
+$("#demo").dropDownList({
+    animateTime : 1000
+});
+        });
+    </script>
+</html>
