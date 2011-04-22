@@ -1,0 +1,1487 @@
+.uiWidget *
+{
+    margin:0;
+    padding:0;
+}
+/*GradientBG*/
+/**
+*����CHROME��CSS3�������һЩС���⣬���ж���Ч���ʱ�򣬽�����ʱ������OOXX
+*IE�˾�ʵ�ֵĽ���Ҳ�ᵼ��һЩɾ�µ����⡣��OOXX
+*FIREFOX��ʱû�������⡣
+*��˾�����������ͼƬʵ�ֽ������ˡ�
+*/
+/*
+.uiBlackGradientBG
+{
+    background: #404040;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#404040',endColorstr='#050505');
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#404040',endColorstr='#050505');
+	background:-webkit-gradient(linear,0 0,0 100%,color-stop(0%,#404040),color-stop(100%,#050505));
+	background:-moz-linear-gradient(top, #404040, #050505);
+	background:linear-gradient(top, #404040, #050505);
+}
+.uiBlueGradientBG
+{
+    background: #315389;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#315389',endColorstr='#0f1e3b');
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#315389',endColorstr='#0f1e3b');
+	background:-webkit-gradient(linear,0 0,0 100%,color-stop(0%,#315389),color-stop(100%,#0f1e3b));
+	background:-moz-linear-gradient(top, #315389, #0f1e3b);
+	background:linear-gradient(top, #315389, #0f1e3b);
+}
+.uiRedGradientBG
+{
+    background:rgb(#cd5c5c);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cd5c5c',endColorstr='#800000', GradientType='0');
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cd5c5c',endColorstr='#800000', GradientType='0');
+    background:-webkit-gradient(linear,0 0,0 100%,color-stop(0%,#cd5c5c),color-stop(100%,#800000));
+    background:-moz-linear-gradient(top, #cd5c5c, #800000);
+    background:linear-gradient(top, #cd5c5c, #800000);
+}
+*/
+.ui10BlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 0;
+}
+.ui10CadetBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -10px;
+}
+.ui10RoyalBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -20px;
+}
+.ui10GrayGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -30px;
+}
+.ui10GreenGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -40px;
+}
+.ui10LightBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -50px;
+}
+.ui20BlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -60px;
+}
+.ui20CadetBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -80px;
+}
+.ui20RoyalBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -100px;
+}
+.ui20GrayGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -120px;
+}
+.ui20GreenGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -140px;
+}
+.ui20LightBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -160px;
+}
+.ui30BlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -180px;
+}
+.ui30CadetBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -210px;
+}
+.ui30RoyalBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -240px;
+}
+.ui30GrayGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -270px;
+}
+.ui30GreenGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -300px;
+}
+.ui30LightBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -330px;
+}
+.ui40BlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -360px;
+}
+.ui40CadetBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -400px;
+}
+.ui40RoyalBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -440px;
+}
+.ui40GrayGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -480px;
+}
+.ui40GreenGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -520px;
+}
+.ui40LightBlueGradientBG
+{
+    background:url(images/gradientBG.png) repeat-x 0 -560px;
+}
+
+.ui10BlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y 0 0;
+}
+.ui10CadetBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -10px 0;
+}
+.ui10RoyalBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -20px 0;
+}
+.ui10GrayGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -30px 0;
+}
+.ui10GreenGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -40px 0;
+}
+.ui10LightBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -50px 0;
+}
+.ui20BlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -60px 0;
+}
+.ui20CadetBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -80px 0;
+}
+.ui20RoyalBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -100px 0;
+}
+.ui20GrayGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -120px 0;
+}
+.ui20GreenGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -140px 0;
+}
+.ui20LightBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -160px 0;
+}
+.ui30BlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -180px 0;
+}
+.ui30CadetBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -210px 0;
+}
+.ui30RoyalBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -240px 0;
+}
+.ui30GrayGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -270px 0;
+}
+.ui30GreenGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -300px 0;
+}
+.ui30LightBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -330px 0;
+}
+.ui40BlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -360px 0;
+}
+.ui40CadetBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -400px 0;
+}
+.ui40RoyalBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -440px 0;
+}
+.ui40GrayGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -480px 0;
+}
+.ui40GreenGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -520px 0;
+}
+.ui40LightBlueGradientBGVertical
+{
+    background:url(images/gradientBGVertical.png) repeat-y -560px 0;
+}
+
+
+.uiBlueCss3GradientBG
+{
+    background: #315389;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#315389',endColorstr='#0f1e3b');
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#315389',endColorstr='#0f1e3b');
+	background:-webkit-gradient(linear,0 0,0 100%,color-stop(0%,#315389),color-stop(100%,#0f1e3b));
+	background:-moz-linear-gradient(top, #315389, #0f1e3b);
+	background:linear-gradient(top, #315389, #0f1e3b);
+}
+.uiBlackCss3GradientBG
+{
+    background: #404040;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#404040',endColorstr='#050505');
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#404040',endColorstr='#050505');
+    background:-webkit-gradient(linear,0 0,0 100%,color-stop(0%,#404040),color-stop(100%,#050505));
+    background:-moz-linear-gradient(top, #404040, #050505);
+    background:linear-gradient(top, #404040, #050505);
+}
+
+
+/*Border*/
+.uiBlackBorder
+{
+    border:1px solid #404040;
+}
+.uiBlackBigBorder
+{
+    border:2px solid #404040;
+}
+.uiBlueBorder
+{
+    border:1px solid #6f829f;
+}
+.uiBlueBigBorder
+{
+    border:2px solid #6f829f;
+}
+.uiRedBorder
+{
+    border:1px solid #cd5c5c;
+}
+.uiRedBigBorder
+{
+    border:2px solid #cd5c5c;
+}
+.uiGreenBorder
+{
+    border:1px solid #006400;
+}
+.uiGreenBigBorder
+{
+    border:2px solid #006400;
+}
+.uiGrayBorder
+{
+    border:1px solid #a0a0a0;
+}
+.uiGrayBigBorder
+{
+    border:2px solid #a0a0a0;
+}
+
+
+.uiBorderNoTop
+{
+	border-top-style:none;
+}
+.uiBorderNoBottom
+{
+	border-bottom-style:none;
+}
+.uiBorderNoLeft
+{
+	border-left-style:none;
+}
+.uiBorderNoRight
+{
+	border-right-style:none;
+}
+.uiBorderTop
+{
+    border-style:none;
+	border-top-style:solid;
+}
+.uiBorderBottom
+{
+	border-style:none;
+	border-bottom-style:solid;
+}
+.uiBorderLeft
+{
+    border-style:none;
+	border-left-style:solid;
+}
+.uiBorderRight
+{
+    border-style:none;
+	border-right-style:solid;
+}
+
+/*Buttons*/
+.uiUserBtn
+{
+    cursor:pointer;
+    width:24px;
+    height:100%;
+    display:inline-block;
+    background-image:url(images/angelaIcon.png);
+    background-repeat:no-repeat;
+}
+.uiUserBtn
+{
+    +display:inline;
+    -display:inline;
+}
+.uiCloseBtn
+{
+    background-position:-120px center;
+}
+.uiCloseBtn:hover
+{
+    background-position:-168px center;
+}
+.uiMinBtn
+{
+    background-position:-216px center;
+}
+.uiMinBtn:hover
+{
+    background-position:-192px center;
+}
+.uiResumeBtn
+{
+    background-position:-48px center;
+}
+.uiResumeBtn:hover
+{
+    background-position:-96px center;
+}
+.uiArrowRight
+{
+    width:9px;
+    background:url(images/angelaSmallIcon.png) no-repeat -256px center;
+}
+.uiArrowLeft
+{
+    width:9px;
+    background:url(images/angelaSmallIcon.png) no-repeat -175px center;
+}
+.uiArrowDown
+{
+    width:13px;
+    background:url(images/angelaSmallIcon.png) no-repeat -162px center;
+}
+.uiArrowUp
+{
+    width:13px;
+    background:url(images/angelaSmallIcon.png) no-repeat -265px center;
+}
+.uiSelected
+{
+    width:16px;
+    background:url(images/angelaSmallIcon.png) no-repeat -72px center;
+}
+
+
+/* Corner radius */
+.uiCornerTl
+{
+	-moz-border-radius-topleft: 4px;
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.uiCornerTr
+{
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.uiCornerBl
+{
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.uiCornerBr
+{
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.uiCornerTop
+{
+	-moz-border-radius-topleft: 4px;
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.uiCornerBottom
+{
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.uiCornerRight
+{
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.uiCornerLeft
+{
+	-moz-border-radius-topleft: 4px;
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.uiCornerAll
+{
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+/*Box shadow*/
+.uiBlackBoxShadow {
+    -moz-box-shadow: 3px 3px 6px #000000;
+    -webkit-box-shadow: 3px 3px 6px #000000;
+    box-shadow: 3px 3px 6px #000000;
+}
+.uiGrayBoxShadow {
+    -moz-box-shadow: 3px 3px 6px #a0a0a0;
+    -webkit-box-shadow: 3px 3px 6px #a0a0a0;
+    box-shadow: 3px 3px 6px #a0a0a0;
+}
+.uiBlueBoxShadow {
+    -moz-box-shadow: 3px 3px 6px #315389;
+    -webkit-box-shadow: 3px 3px 6px #315389;
+    box-shadow: 3px 3px 6px #315389;
+}
+.uiRedBoxShadow {
+    -moz-box-shadow: 3px 3px 6px #cd5c5c;
+    -webkit-box-shadow: 3px 3px 6px #cd5c5c;
+    box-shadow: 3px 3px 6px #cd5c5c;
+}
+.uiHidden
+{
+    display:none;
+}
+.uiMask
+{
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0px;
+    top:0px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter:alpha(opacity=30);
+    opacity: .3;
+    z-index: 99;
+    background:#000;
+    _position:absolute;
+}
+.uiClearBoth
+{
+    clear:both;
+}
+.uiNoSelectText
+{
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+}
+.uiWidgetDisalbed, .uiInactive
+{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter:alpha(opacity=70);
+    opacity: .7;
+}/* CSS Document */
+.uiResizable
+{
+    position:absolute;
+    bottom:2px;
+    right:2px;
+    width:18px;
+    height:18px;
+    background:url(images/angelaSmallIcon.png) no-repeat -278px center;;
+    cursor:nw-resize;
+}
+.uiInteractionMask
+{
+    z-index:9999;
+    background:#eeeeee;
+    position:absolute;
+}
+.uiDraggalbe
+{
+	cursor:move;
+}
+.uiSlide > .uiPanel
+{
+    margin:0;
+    padding:0;
+    position:relative;
+    height:100%;
+    width:100%;
+    cursor:pointer;
+}
+.uiSlide > .uiPanel > .uiSlider
+{
+    position:absolute;
+    overflow:hidden;
+}
+.uiSlide > .uiPanel > .uiDefaultSliderBG
+{
+    background:white;
+}
+
+.uiButtonSet
+{
+    display:inline-block;
+    margin:0;
+    padding:0;
+}
+.uiButtonSet > .uiButton, .uiButtonSet > .uiImgButton
+{
+	width:110px;
+	height:35px;
+	line-height:35px;
+    font-size:16px;
+	text-align:center;
+	display:block;
+	cursor:pointer;
+    color:#505050;
+    font-weight:500;
+    overflow:hidden;
+    float:left;
+}
+.uiButtonSet > .uiButton >.uiIcon
+{
+    height:100%;
+    width:32px;
+    float:left;
+    margin-left:5px;
+}
+.uiButtonSet > .uiButton >.uiIconFloatRight
+{
+    float:right;
+    margin-right:5px;
+}
+.uiButtonSet > .uiImgRadio > .uiIcon, .uiButtonSet > .uiImgRadioChecked > .uiIcon, .uiButtonSet > .uiImgCheckBox > .uiIcon, .uiButtonSet > .uiImgCheckBoxChecked > .uiIcon
+{
+    float:left;
+    width:24px;
+    background-image:url(images/angelaIcon.png);    
+    background-repeat:no-repeat;
+}
+.uiButtonSet > .uiImgRadio > .uiIcon
+{
+    background-position:0px center;
+}
+.uiButtonSet > .uiImgRadioChecked > .uiIcon
+{
+    background-position:-24px center;
+}
+.uiButtonSet > .uiImgCheckBox > .uiIcon
+{
+    background-position:-72px center;
+}
+.uiButtonSet > .uiImgCheckBoxChecked > .uiIcon
+{
+    background-position:-144px center;
+}
+.uiButtonSet > .uiActive
+{
+    color:#f0f0f0;
+}
+.uiButtonSet > .uiButtonPressed
+{
+    line-height:42px;
+}
+.uiButtonSet
+{
+   *display:inline; 
+   *zoom:1; 
+}
+.uiAccordion 
+{
+    padding:0;
+    margin:0;
+}
+.uiAccordion > .uiAccordionTitleBar
+{
+    height:30px;
+    font-size:16px;
+    line-height:30px;
+    overflow:hidden;
+    color:#f0f0f0;
+}
+.uiAccordion > .uiAccordionTitleBar > .uiTitleIcon
+{
+	width:24px;
+	display:block;
+	height:100%;
+	float:left;
+}
+.uiAccordion > .uiTitleBar
+{
+    height:40px;
+    line-height:40px;
+    font-size:18px;
+    cursor:pointer;
+    overflow:hidden;
+    border-top:1px solid #a0a0a0;
+
+}
+.uiAccordion > .uiTitleBar > .uiUserBtn
+{
+    float:right;
+    margin:0 5px;
+}
+.uiAccordion > .uiContent
+{
+    padding:5px;
+    background:white;
+    overflow:auto;
+    font-size:16px;
+    line-height:24px;
+}
+.uiAccordion > .uiAccordionTitleBar, .uiAccordion > .uiTitleBar
+{
+	padding-left:10px;
+}
+.uiAccordion > .uiActive
+{
+    color:#f0f0f0;
+}
+.uiDialog
+{
+    margin:0;
+    padding:0;
+    background:white;
+    overflow:hidden;
+}
+.uiDialog > .uiTitleBar
+{
+    height:35px;
+    margin:2px;
+    position:relative;
+}
+.uiDialog > .uiTitleBar > .uiTitle
+{
+    font-size:18px;
+    height:100%;
+    width:70%;
+    line-height:35px;
+    padding-left:10px;
+    color:#f0f0f0;
+    display:block;
+    overflow:hidden;
+}
+.uiDialog > .uiTitleBar > .uiTitle > .uiTitleIcon
+{
+	width:24px;
+	height:35px;
+	display:block;
+	float:left;
+}
+.uiDialog > .uiTitleBar > .uiDlgButtonSet
+{
+    position:absolute;
+    right:5px;
+    top:0;
+    height:100%;
+}
+.uiDialog > .uiContent
+{
+    padding:10px;
+    font-size:16px;
+    line-height:24px;
+    overflow:auto;
+}
+.uiDialog > .uiContent > p
+{
+}
+.uiDialog > .uiTitleBar > .uiButtonSet > .uiUserBtn
+{
+    margin:0 1px;
+}
+.uiDialog > .uiButtonSet
+{
+    float:right;
+    margin:0px 10px 10px;
+}
+
+.uiTabs
+{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+.uiTabs > .uiTitleBar
+{
+    height:35px;
+    position:relative;
+}
+.uiTabs > .uiTitleBar > .uiRightArrow, .uiTabs > .uiTitleBar > .uiLeftArrow
+{
+    position:absolute;
+    top:0px;
+    background-image:url(images/angelaSmallIcon.png);
+    background-repeat:no-repeat;
+    width:9px;
+    height:18px;
+    z-index:99;
+    display:none;
+    cursor:pointer;
+}
+.uiTabs > .uiTitleBar > .uiRightArrow
+{    
+    right:0px;
+    background-position: -256px center;
+}
+.uiTabs > .uiTitleBar > .uiLeftArrow
+{
+    left:0px;
+    background-position: -175px center;
+}
+.uiTabs > .uiTabsList
+{
+    overflow:hidden;
+    width:100%;
+}
+.uiTabs > .uiTabsList > .uiListContent
+{
+    position:absolute;
+	width: 10000%;
+	overflow:hidden;
+}
+.uiTabs > .uiTabsList > .uiListContent > div
+{
+	overflow:hidden;
+}
+.uiTabs > .uiTabsList > .uiListContent > div > .uiTabsItem
+{
+    position:relative;
+    display:inline-block;
+	text-align:center;
+	height:25px;
+	font-size:16px;
+	line-height:25px;
+	width:120px;
+	margin:6px 0 0 20px;
+	padding:2px;
+	cursor:pointer;
+    color:#f0f0f0;
+    overflow:hidden;
+}
+.uiTabs > .uiTabsList > .uiListContent > div > .uiTabsItem
+{
+    +display:inline;
+    -display:inline;
+}
+.uiTabs > .uiTabsList > .uiListContent > div > .selected
+{
+    background:white;
+    color:#0c0c0c;
+}
+
+.uiTabs > .uiTabsContent
+{
+    margin:5px;
+    font-size:16px;
+    line-height:24px;
+    overflow:auto;
+}
+.uiTabs > .uiTabsList > .uiListContent > div > .uiTabsItem > .uiCloseItemBtn
+{
+    display:none;
+}
+.uiTabs > .uiTabsList > .uiListContent > div > .selected > .uiCloseItemBtn
+{
+    position:absolute;
+    background:url(images/angelaSmallIcon.png) no-repeat -184px top;
+    height:100%;
+    width:18px;
+    display:block;
+    right:2px;
+    top:2px;
+}
+.uiTabs > .uiTabsList > .uiListContent > div > .selected > .uiCloseItemBtn:hover
+{
+    background:url(images/angelaSmallIcon.png) no-repeat -202px top;
+}
+
+.uiDorpDownList
+{
+    margin:0;
+    padding:0;
+    color:#f0f0f0;
+}
+.uiDorpDownList > .uiDropDown, .uiDorpDownList > .uiDropDown > span
+{
+    height:30px;
+    font-size:16px;
+    line-height:30px;
+}
+.uiDorpDownList > .uiDropDown
+{
+    padding:0 5px;
+}
+.uiDorpDownList > .uiDropDown > span
+{
+    display:block;
+    overflow:hidden;
+}
+.uiDorpDownList > .uiDropDown > .uiDropDownBtn
+{
+    float:right;
+    padding:0 3px;
+    width:13px;
+    height:100%;
+    cursor:pointer;
+    background:url(images/angelaSmallIcon.png) no-repeat -238px center;
+    border-style:none;
+	border-left-style:solid;
+}
+.uiDorpDownList > .uiDropDown > input
+{
+    color:#ccc;
+    display:block;
+    height:24px;
+    line-height:24px;
+}
+.uiDorpDownList > .uiDropDown > input.selected
+{
+    color:#000;
+}
+.uiDorpDownList > .uiSelectList
+{
+    position:absolute;
+    margin:3px 0 0 0;
+    z-index:9;
+    overflow:hidden;
+    padding:2px;
+    list-style:none;
+    text-align:center;
+}
+.uiDorpDownList > .uiSelectList > li
+{
+    height:32px;
+    cursor:pointer;
+    display:block;
+    padding:0 10px;
+    width:100px;    
+    font-size:16px;
+    line-height:32px;
+    overflow:hidden;
+}
+
+.uiDorpDownList > ul.uiMultiple  > li > .uiSelected
+{
+    display:none;
+}
+.uiDorpDownList > ul.uiMultiple  > li.selected > .uiSelected
+{
+    display:block;
+    float:left;
+}
+.uiMenu
+{
+    margin:0;
+    padding:0;
+    color:#f0f0f0;
+}
+.uiMenu a
+{
+    text-decoration:none;
+    color:white;
+    outline:none;
+    border:none;
+}
+.uiMenu > ul
+{
+    margin:auto;
+    list-style:none;
+}
+
+.uiMenu li
+{
+	height:40px;
+	font-size:16px;
+	line-height:40px;
+	padding:0 40px;
+	font-weight:700;
+	overflow:hidden;
+}
+.uiMenu a
+{
+    cursor:pointer;
+}
+.uiMenu li > .uiListIcon
+{
+	width:24px;
+	height:100%;
+	display:block;
+	padding:0 10px;
+	float:left;
+}
+.uiMenu > ul.uiTopLevel > li
+{
+	display:inline-block;	
+}
+.uiMenu > ul.verticalList > li
+{
+	display:block;	
+	text-align:left;
+	min-width:150px;
+	_width:150px;
+	padding:0 10px 0 20px;
+}
+.uiMenu > .uiSubLevel
+{
+    position:absolute;
+    z-index:999;
+    display:none;
+}
+.uiMenu > .uiSubLevel > li
+{
+	display:block;
+	overflow:hidden;
+	width:150px;
+	padding:0 10px 0 20px;
+}
+.uiMenu li.hasListIcon
+{
+    padding:0 10px 0 0;
+    width:170px;
+}
+.uiMenu > ul.uiTopLevel > li
+{
+    *display:inline; 
+    *zoom:1; 
+}.uiProgressBar
+{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+.uiProgressBar > .progressValue
+{
+    height:100%;
+    width:0;
+    overflow:hidden;
+}
+
+.uiProgressBar > .progressValue >.progressBlock
+{
+    height:100%;
+    width:12px;
+    margin:0 2px 0 0;
+    float:left;
+}.uiList
+{
+    padding:0;
+    margin:0;
+    overflow:hidden;
+}
+.uiList ul
+{
+    width:10%;
+    overflow:auto;
+    float:left;
+}
+.uiList li
+{
+    list-style:none;
+    height:40px;
+    padding:0 10px;
+    line-height:40px;
+    font-size:24px;
+    border-bottom:1px solid #a0a0a0;
+    cursor:pointer;
+}
+.uiList > .uiListContent
+{
+    width:1000%;
+}
+.uiList > .uiListTitleBar
+{
+    height:30px;
+    font-size:16px;
+    line-height:30px;
+    overflow:hidden;
+    color:#f0f0f0;
+    padding-left:10px;
+}
+.uiList > .uiListTitleBar > .uiTitleIcon
+{
+    width:24px;
+    display:block;
+    height:100%;
+    float:left;
+}
+.uiList li.uiListMore > .uiListMoreBtn, .uiList li.uiListBack > .uiListBackBtn
+{
+    display:block;
+    float:right;
+    margin:0 5px;
+    height:100%;
+}
+.uiList li.uiListItem
+{    
+    background:#fafafa;
+}
+.uiTree
+{
+    cursor:default;
+}
+.uiTree li
+{
+    list-style:none;
+}
+.uiTree .uiTreeItem
+{
+    clear:both;
+    line-height:16px;
+    overflow:hidden;
+}
+.uiTree .uiTreeItem .uiItem
+{
+    position:relative;
+    cursor:pointer;
+    display:inline-block;
+}
+.uiTree .uiTreeItem .uiItem > .uiInsertTip
+{
+    width:18px;
+    height:18px;
+    left:-10px;
+    display:block;
+    height:100%;
+    position:absolute;
+    background:url(images/angelaSmallIcon.png) no-repeat -296px center;
+}
+.uiTree .uiTreeItem .uiItem > .uiInsertBefore
+{
+    top:-5px;
+}
+.uiTree .uiTreeItem .uiItem > .uiInsertAfter
+{
+    top:5px;
+}
+.uiTree .uiTreeItem .uiItemHover
+{
+    background:#eff2ff;
+}
+.uiTree .uiTreeItem .uiItemInsert
+{
+    background:#c8e1fd;
+}
+.uiTree .uiTreeItem  .uiTreeIcon
+{
+    width:18px;
+    height:18px;
+    display:block;
+    float:left;
+    background:url(images/angelaSmallIcon.png) no-repeat;
+}
+.uiTree .uiTreeItem > .uiPlus
+{
+    cursor:pointer;
+    background-position:-126px center;
+}
+.uiTree .uiTreeItem > .uiMinus
+{
+    cursor:pointer;
+    background-position:-108px center;
+}
+.uiTree .uiTreeItem > .uiUnChecked
+{
+    cursor:pointer;
+    background-position:-90px center;
+}
+.uiTree .uiTreeItem > .uiChecked
+{
+    cursor:pointer;
+    background-position:-220px center;
+}
+.uiTree .uiTreeItem > .uiItem > .uiFolder
+{
+    background-position:-36px center;
+}
+.uiTree .uiTreeItem > .uiItem > .uiFile
+{
+    background-position:-144px center;
+}
+.uiTree .uiTreeItem > .uiLine1
+{
+    background-position:-54px center;
+}
+.uiTree .uiTreeItem > .uiLine2
+{
+    background-position:0px center;
+}
+.uiTree .uiTreeItem > .uiLine3
+{
+    background-position:-18px center;
+}
+.uiTree .uiTreeItem > .uiSpace
+{
+    background:none;
+}
+.uiTree .uiTreeItem .uiItem
+{
+    *zoom:1
+    *display:inline;
+}
+.uiGrid
+{
+    
+}
+.uiGrid > .uiTitleBar
+{
+    height:30px;
+    position:relative;
+}
+.uiGrid > .uiTitleBar > .uiTitle
+{
+    font-size:18px;
+    height:100%;
+    width:70%;
+    line-height:30px;
+    padding-left:10px;
+    color:#f0f0f0;
+    display:block;
+    overflow:hidden;
+}
+.uiGrid > .uiTitleBar > .uiTitle > .uiTitleIcon
+{
+    width:24px;
+    height:30px;
+    display:block;
+    float:left;
+}
+.uiGrid > .uiTitleBar > .uiGridButtonSet
+{
+    position:absolute;
+    right:5px;
+    top:0;
+    height:100%;
+}
+.uiGrid > .uiContent
+{
+    position:relative;
+    overflow:hidden;
+}
+.uiGrid > .uiContent > .uiColumnTable .uiSortIcon
+{
+    display:block;
+    float:right;
+    height:30px;
+    margin-right:5px;
+    visibility:hidden;
+}
+.uiGrid > .uiContent > .uiDataContainer
+{
+    overflow:auto;
+}
+.uiGrid > .uiContent > .uiDataContainer tr.uiTrOdd
+{
+    background:#eff2ff;
+}
+.uiGrid > .uiContent > .uiDataContainer tr.uiTrEven
+{
+    background:#f7f7f7;
+}
+.uiGrid > .uiContent > .uiDataContainer tr.uiTrHover
+{
+    background:url(images/gradientBG.png) repeat-x 0 -330px;
+}
+.uiGrid > .uiContent > .uiSeparator
+{
+    position:absolute;
+    top:0;
+    height:100%;
+    width:4px;
+    cursor:col-resize;
+    z-index:9;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+}
+.uiGrid > .uiContent > .uiSeparatorShow, .uiGrid > .uiContent > .uiSeparator:hover
+{
+    background:url(images/separator.png) repeat-y 2px center;
+}
+.uiGrid > .uiContent table
+{
+    table-layout:fixed;
+    border-collapse:collapse;
+}
+.uiGrid > .uiContent table td
+{
+    font-weight:500;
+    text-align:center;
+    font-size:18px;
+    line-height:30px;
+    cursor:pointer;
+    border:1px solid #dddddd;
+    vertical-align:middle;
+    text-overflow:ellipsis; 
+    word-break:keep-all;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.uiGrid > .uiGridButtonSet
+{
+    height:30px;
+    width:100%;
+}
+.uiGrid > .uiGridButtonSet > .uiBtnSeparator
+{
+    border-left:1px solid #ccc;
+    border-right:1px solid #fff;
+    float:left;
+    height:24px;
+    margin:3px;
+}
+.uiGrid > .uiGridButtonSet > .uiPageShowSelect
+{
+    margin:3px 5px;
+    float:left;
+}
+.uiGrid > .uiGridButtonSet > .uiPageSetting
+{
+    margin:3px 5px;
+    float:left;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer
+{
+    float:left;
+    margin:3px;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer:hover
+{
+    margin:2px;
+    border:1px solid #ccc;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer > .uiGridButton
+{
+    cursor:pointer;
+    margin:3px;
+    width:18px;
+    height:18px;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer > .uiSearchBtn
+{
+    background:url(images/angelaSmallIcon.png) no-repeat -386px center;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer > .uiPrevBtn
+{
+    background:url(images/angelaSmallIcon.png) no-repeat -314px center;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer > .uiNextBtn
+{
+    background:url(images/angelaSmallIcon.png) no-repeat -296px center;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer > .uiGoToFirstBtn
+{
+    background:url(images/angelaSmallIcon.png) no-repeat -350px center;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer > .uiGoToLastBtn
+{
+    background:url(images/angelaSmallIcon.png) no-repeat -332px center;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer > .uiRefreshBtn
+{
+    background:url(images/angelaSmallIcon.png) no-repeat -368px center;
+}
+.uiGrid > .uiGridButtonSet > .uiGridButtonContainer > .uiLoading
+{
+    background:url(images/load.gif) no-repeat center;
+}
+.uiDatePicker
+{
+}
+.uiDatePicker > .uiDateContainer
+{
+    margin:5px;
+    overflow:hidden;
+}
+.uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer
+{
+    position:relative;
+    height:40px;
+    z-index:100;
+}
+.uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiPrevMonth, .uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiNextMonth
+{
+    height:100%;
+    position:absolute;
+    cursor:pointer;
+}
+.uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiPrevMonth
+{
+    left:20px;
+}
+.uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiNextMonth
+{
+    right:20px;
+}
+.uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiMonthAndYear
+{
+    height:100%;
+    position:absolute;
+    left:50px;
+    right:50px;
+    text-align:center;
+    font-size:24px;
+    line-height:40px;
+    color:#f0f0f0;
+}
+.uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiMonthAndYear > .uiMonth, .uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiMonthAndYear > .uiYear
+{
+    margin:10px;
+    cursor:pointer;
+    position:relative;
+}
+.uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiMonthAndYear > .uiMonth > .uiMonthList, .uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiMonthAndYear > .uiYear > .uiYearList
+{
+    position:absolute;
+    left:-15px;
+    top:30px;
+    list-style:none;
+    font-size:16px;
+    height:180px;
+    width:80px;
+    overflow:hidden;
+    display:none;
+}
+.uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiMonthAndYear > .uiMonth > .uiMonthList li, .uiDatePicker > .uiDateContainer > .uiMonthAndYearContainer > .uiMonthAndYear > .uiYear > .uiYearList li
+{
+    height:30px;
+    line-height:30px;
+    cursor:pointer;
+}
+
+.uiDatePicker > .uiDateContainer > .uiDayContainer
+{
+    width:1000%;
+    z-index:99;
+}
+.uiDatePicker > .uiDateContainer > .uiDayContainer > table
+{
+    border-collapse:collapse;
+    float:left;
+    background:#eeeeee;
+}
+.uiDatePicker > .uiDateContainer > .uiDayContainer td
+{
+    font-weight:500;
+    text-align:center;
+    font-size:18px;
+    cursor:pointer;
+    border:1px solid #cdcdcd;
+    vertical-align:middle;
+}
+.uiDatePicker > .uiDateContainer > .uiDayContainer td > div
+{
+    width:100%;
+    height:100%;
+}
+.uiDatePicker > .uiDateContainer > .uiDayContainer td.uiWeekTD
+{
+    height:34px;
+    line-height:34px;
+}
+.uiDatePicker > .uiDateContainer > .uiDayContainer td.uiDayTD
+{
+    width:38px;
+    height:34px;
+    line-height:34px;
+}
+.uiDatePicker > .uiDateContainer > .uiDayContainer td.uiNormalTD
+{    
+    color:#6b6b6b;
+}
+.uiDatePicker > .uiDateContainer > .uiDayContainer td.uiTodayTD
+{
+    color:#f0f0f0;
+}
+.uiDatePicker > .uiDateContainer > .uiDayContainer td.disable
+{
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter:alpha(opacity=50);
+    opacity: .5;
+}
+
+.uiTip
+{
+    margin:0;
+    padding:0;
+    display:inline-block;
+    position:absolute;
+    border:1px #ddd solid;
+    background:#f3f3f3;
+    line-height:1.5;
+    text-align:center;
+}
+.uiTip > .uiTipContent
+{
+    margin:1px -2px; 
+    padding:0 6px;
+}
+.uiTip > .uiTipArrowStyle1
+{
+    position:absolute;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-top:10px solid transparent;  
+    border-bottom:10px solid transparent; 
+    border-left:10px dotted transparent;
+    border-right:10px dotted transparent;
+}
+.uiTip > .uiTipArrowStyle2
+{
+    position:absolute;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-left:10px solid transparent;  
+    border-right:10px solid transparent; 
+    border-top:10px dotted transparent;
+    border-bottom:10px dotted transparent;
+}
+.uiTip
+{
+    *display:inline;
+    *zoom:1;
+}

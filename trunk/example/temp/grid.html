@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <title>default</title>
+        <meta name="description" content="" />
+        <meta name="generator" content="Studio 3 http://aptana.com/" />
+        <meta name="author" content="vicanso" />
+
+        <link rel="stylesheet" href="theme/jquery.angela.css" />
+        <style type="text/css">
+            html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,
+            img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+            {
+                margin:0;
+                padding:0;
+                border:0;
+                outline:0;
+                font-weight:inherit;
+                font-style:inherit;
+                font-size:100%;
+                font-family:inherit;
+                vertical-align:baseline;
+            }
+            body
+            {
+                font-family: "Times New Roman", "\5B8B\4F53";
+                font-size:16px;
+            }
+            #infor h3
+            {
+                cursor:pointer;
+            }
+            #infor p.attr
+            {
+                display:none;
+                margin:5px 0;
+            }
+            #infor span.note
+            {
+                color:#a0a0a0;
+                font-size:12px;
+            }
+            #demo, #demo1
+            {
+                width:600px;
+                height:300px;
+                margin:50px;
+            }
+            .titleIcon1
+            {
+                background:url(icon002.png) no-repeat center;
+            }
+        </style>
+    </head>
+    <body class="uiNoSelectText">
+        <a href="bin.bin.gz">aaaaaaaaaa</a>
+        <div id="info"></div>
+        <div id="demo1"></div>
+        
+        <footer>
+        </footer>
+    </body>
+    <script type="text/javascript" src="jquery.min.js">
+    </script>
+    <script type="text/javascript" src="jquery.angela.min.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $("#demo1").grid({
+                titleText : "表格",
+                getData : function(param, callback)
+                {
+                    $.getJSON("gridMore.json", function(data)
+                    {
+                        callback(data);
+                    });
+                }
+            });
+        });
+    </script>
+</html>
