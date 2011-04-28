@@ -70,8 +70,8 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>slide.click</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>设置点击slide时调用的方法，return false可阻止默认实现（设置slider的位置）</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;margin:10px;"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").slide({
-    click : function()
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>slide.click</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>设置点击slide时调用的方法，return false可阻止默认实现（设置slider的位置），this指向slide对象，target指向触发事件的对象，e是jQuery封装的event事件参数</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;margin:10px;"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").slide({
+    click : function(target, e)
     {
         alert("click");
         return false;
@@ -88,7 +88,7 @@
             });
         //CODE HERE
 $("#demo").slide({
-    click : function()
+    click : function(target, e)
     {
         alert("click");
         return false;

@@ -1,0 +1,123 @@
+[
+    {
+        "name" : "玄幻·奇幻",
+        "type" : "uiFolder",
+        "children" : [
+            {
+                "name": "千修",
+                "type": "uiFile",
+                "children" : [
+                    {"name" : "永生之门", "type" : "uiFile"},
+                    {"name" : "超级合成", "type" : "uiFile"},
+                    {"name" : "纨绔疯子", "type" : "uiFile"},
+                    {"name" : "修仙技能树", "type" : "uiFile"},
+                    {"name" : "蜀山之穿石", "type" : "uiFile"},
+                    {
+                        "name": "金刚法神",
+                        "type": "uiFolder",
+                        "ajax" : true
+                    }
+                ]
+            },
+            {"name" : "寂灭魔灵", "type" : "uiFile"},
+            {"name" : "永世不朽", "type" : "uiFile"},
+            {"name" : "寂灭魔灵", "type" : "uiFile"},
+            {"name" : "光明号角", "type" : "uiFile"},
+            {"name" : "战兽雕刻师", "type" : "uiFile"}
+        ]
+    },
+    {
+        "name" : "武侠·仙侠",
+        "type" : "uiFolder",
+        "children" : [
+            {"name" : "永生之门", "type" : "uiFile"},
+            {"name" : "超级合成", "type" : "uiFile"},
+            {"name" : "纨绔疯子", "type" : "uiFile"},
+            {"name" : "修仙技能树", "type" : "uiFile"},
+            {"name" : "蜀山之穿石", "type" : "uiFile"},
+            {"name" : "金刚法神", "type" : "uiFile"}
+        ]
+    },
+    {
+        "name" : "都市·言情",
+        "type" : "uiFolder",
+        "children" : [
+            {"name" : "永生之门", "type" : "uiFile"},
+            {"name" : "超级合成", "type" : "uiFile"},
+            {"name" : "纨绔疯子", "type" : "uiFile"},
+            {"name" : "修仙技能树", "type" : "uiFile"},
+            {"name" : "蜀山之穿石", "type" : "uiFile"},
+            {"name" : "金刚法神", "type" : "uiFile"}
+        ]
+    },
+    {
+        "name" : "历史·军事",
+        "type" : "uiFolder",
+        "children" : [
+            {"name" : "永生之门", "type" : "uiFile"},
+            {"name" : "超级合成", "type" : "uiFile"},
+            {"name" : "纨绔疯子", "type" : "uiFile"},
+            {"name" : "修仙技能树", "type" : "uiFile"},
+            {"name" : "蜀山之穿石", "type" : "uiFile"},
+            {"name" : "金刚法神", "type" : "uiFile"}
+        ]
+    },
+    {
+        "name" : "游戏·竞技",
+        "type" : "uiFolder",
+        "children" : [
+            {"name" : "永生之门", "type" : "uiFile"},
+            {"name" : "超级合成", "type" : "uiFile"},
+            {"name" : "纨绔疯子", "type" : "uiFile"},
+            {"name" : "修仙技能树", "type" : "uiFile"},
+            {"name" : "蜀山之穿石", "type" : "uiFile"},
+            {"name" : "金刚法神", "type" : "uiFile"}
+        ]
+    },
+    {
+        "name" : "科幻·灵异",
+        "type" : "uiFolder",
+        "children" : [
+            {"name" : "永生之门", "type" : "uiFile"},
+            {"name" : "超级合成", "type" : "uiFile"},
+            {"name" : "纨绔疯子", "type" : "uiFile"},
+            {"name" : "修仙技能树", "type" : "uiFile"},
+            {"name" : "蜀山之穿石", "type" : "uiFile"},
+            {"name" : "金刚法神", "type" : "uiFile"}
+        ]
+    },
+    {
+        "name" : "同人·漫画",
+        "type" : "uiFolder",
+        "children" : [
+            {
+                "name": "千修",
+                "type": "uiFile",
+                "children" : [
+                    {"name" : "永生之门", "type" : "uiFile"},
+                    {"name" : "超级合成", "type" : "uiFile"},
+                    {"name" : "纨绔疯子", "type" : "uiFile"},
+                    {"name" : "修仙技能树", "type" : "uiFile"},
+                    {"name" : "蜀山之穿石", "type" : "uiFile"},
+                    {
+                        "name": "金刚法神",
+                        "type": "uiFile",
+                        "children" : [
+                            {"name" : "永生之门", "type" : "uiFile"},
+                            {"name" : "超级合成", "type" : "uiFile"},
+                            {"name" : "纨绔疯子", "type" : "uiFile"},
+                            {"name" : "修仙技能树", "type" : "uiFile"},
+                            {"name" : "蜀山之穿石", "type" : "uiFile"},
+                            {"name" : "金刚法神", "type" : "uiFile"}
+                        ]
+                    }
+                ]
+            },
+            {"name" : "寂灭魔灵", "type" : "uiFile"},
+            {"name" : "永世不朽", "type" : "uiFile"},
+            {"name" : "寂灭魔灵", "type" : "uiFile"},
+            {"name" : "光明号角", "type" : "uiFile"},
+            {"name" : "战兽雕刻师", "type" : "uiFile"}
+        ]
+    }
+]

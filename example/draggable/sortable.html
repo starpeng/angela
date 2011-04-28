@@ -107,10 +107,10 @@
                     start : function(){
                         var i = 0;
                     }, 
-                    doing : function(offset){
+                    doing : function(mask, offset){
                         var i = 0;
                     }, 
-                    stop : function(offset){
+                    stop : function(mask, offset){
                         var index = Math.floor((offset.top - listOffset.top) / listItemHeight);
                         
                         index = Math.min(totalListItem - 1, index);

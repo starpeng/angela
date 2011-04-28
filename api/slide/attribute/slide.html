@@ -70,8 +70,8 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>slide.slide</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>slide的值变化时调用的方法。</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;margin:10px;"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").slide({
-    slide : function()
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>slide.slide</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>slide的值变化时调用的方法，this指向slide对象，value是slide当前的值</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:400px;height:10px;margin:10px;"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").slide({
+    slide : function(value)
     {
         alert("slide");
     }
@@ -87,7 +87,7 @@
             });
         //CODE HERE
 $("#demo").slide({
-    slide : function()
+    slide : function(value)
     {
         alert("slide");
     }
