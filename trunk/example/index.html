@@ -150,9 +150,9 @@
             var windowWidth = $(window).width();
             var demoList = $("#demoList").height(windowHeight - 10).list({
                 listClass : "uiBlueBigBorder uiCornerAll",
-                click : function()
+                click : function(obj)
                 {
-                    var url = $(this).attr("url");
+                    var url = obj.attr("url");
                     videFrame.attr("src", url);
                     demoDlg.dialog("title", "UI演示:" + url);                    
                 }
