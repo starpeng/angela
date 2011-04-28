@@ -70,7 +70,7 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>list.click</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>点击选项是调用</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" title="音乐列表" style="width:300px; height:400px; margin:20px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>list.click</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>点击选项是调用，this指向list对象，target指向触发事件的对象，e为jQuery封装的event事件参数</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" title="音乐列表" style="width:300px; height:400px; margin:20px;"&gt
             &ltdiv&gt
                 &ltul number="0"&gt
                     &ltli number="1"&gt列表1&lt/li&gt
@@ -110,7 +110,7 @@
                 &lt/ul&gt
              &lt/div&gt
         &lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").list({
-    click : function()
+    click : function(target, e)
     {
         alert('aaaaaaaaaa');
     }
@@ -165,7 +165,7 @@
             });
         //CODE HERE
 $("#demo").list({
-    click : function()
+    click : function(target, e)
     {
         alert('aaaaaaaaaa');
     }

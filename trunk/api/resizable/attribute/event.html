@@ -70,7 +70,7 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>resizable.event</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Object</p><p><span>Default Value:</span>{start : null, doing : null, stop : null}</p></div><p><span>Description:</span>拉伸时的各状态时调用的方法</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" class="uiNoSelectText uiBlueBigBorder uiCornerAll" style="width:200px;height:200px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>resizable.event</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Object</p><p><span>Default Value:</span>{start : null, doing : null, stop : null}，this指向resize对象，mask指向拖动时的遮罩对象，width,height为新的宽度高度</p></div><p><span>Description:</span>拉伸时的各状态时调用的方法</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" class="uiNoSelectText uiBlueBigBorder uiCornerAll" style="width:200px;height:200px;"&gt
                 &ltdiv class="title ui30BlueGradientBG uiDraggalbe" style="height:30px;line-height:30px;color:white;"&gt拉伸测试&lt/div&gt
                 &ltp&gtWeb.Go 跟 web.py 类似，但使用的是 Go 编程语言实现的 Web 应用开发框架。&lt/p&gt
             &lt/div&gt
@@ -80,13 +80,13 @@
         {
             $("#demo2").html("start");
         },
-        doing : function(width, height)
+        doing : function(mask, width, height)
         {
-            $("#demo2").html("resizing, width:" + width + ";height:" + height);
+            alert("resizing, width:" + width + ";height:" + height);
         },
-        stop : function(width, height)
+        stop : function(mask, width, height)
         {
-            $("#demo2").html("finish, width:" + width + ";height:" + height);
+            alert("finish, width:" + width + ";height:" + height);
         }
     }
 });</pre></div><div id="demo" class="uiNoSelectText uiBlueBigBorder uiCornerAll" style="width:200px;height:200px;">
@@ -110,13 +110,13 @@ $("#demo").resizable({
         {
             $("#demo2").html("start");
         },
-        doing : function(width, height)
+        doing : function(mask, width, height)
         {
-            $("#demo2").html("resizing, width:" + width + ";height:" + height);
+            alert("resizing, width:" + width + ";height:" + height);
         },
-        stop : function(width, height)
+        stop : function(mask, width, height)
         {
-            $("#demo2").html("finish, width:" + width + ";height:" + height);
+            alert("finish, width:" + width + ";height:" + height);
         }
     }
 });

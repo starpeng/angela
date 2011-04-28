@@ -70,7 +70,7 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>draggable.event</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Object</p><p><span>Default Value:</span>{start : null, doing : null, stop : null}</p></div><p><span>Description:</span>拖动时的各状态时调用的方法</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" class="uiNoSelectText uiBlueBigBorder uiCornerAll" style="width:200px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>draggable.event</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Object</p><p><span>Default Value:</span>{start : null, doing : null, stop : null}, this指向拖动对象，mask指向拖动时的遮罩对象，position为拖动的位置</p></div><p><span>Description:</span>拖动时的各状态时调用的方法</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" class="uiNoSelectText uiBlueBigBorder uiCornerAll" style="width:200px;"&gt
                 &ltdiv class="title ui30BlueGradientBG uiDraggalbe" style="height:30px;line-height:30px;color:white;"&gt拖动测试&lt/div&gt
                 &ltp&gtWeb.Go 跟 web.py 类似，但使用的是 Go 编程语言实现的 Web 应用开发框架。&lt/p&gt
             &lt/div&gt
@@ -80,13 +80,13 @@
         {
             $("#dest").html("start");
         },
-        doing : function(offset)
+        doing : function(mask, position)
         {
-            $("#dest").html("dragging, left:" + offset.left + ";top:" + offset.top);
+            alert("dragging, left:" + position.left + ";top:" + position.top);
         },
-        stop : function(offset)
+        stop : function(mask, position)
         {
-            $("#dest").html("finish left:" + offset.left + ";top:" + offset.top);
+            alert("dragging, left:" + position.left + ";top:" + position.top);
         }
     }
 });</pre></div><div id="demo" class="uiNoSelectText uiBlueBigBorder uiCornerAll" style="width:200px;">
@@ -110,13 +110,13 @@ $("#demo").draggable({
         {
             $("#dest").html("start");
         },
-        doing : function(offset)
+        doing : function(mask, position)
         {
-            $("#dest").html("dragging, left:" + offset.left + ";top:" + offset.top);
+            alert("dragging, left:" + position.left + ";top:" + position.top);
         },
-        stop : function(offset)
+        stop : function(mask, position)
         {
-            $("#dest").html("finish left:" + offset.left + ";top:" + offset.top);
+            alert("dragging, left:" + position.left + ";top:" + position.top);
         }
     }
 });

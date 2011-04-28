@@ -70,7 +70,8 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>dropDownList.change</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>点击dropDownList中的选择项变化时调用</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:300px;float:left;margin:0 20px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>dropDownList.change</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>
+                点击dropDownList中的选择项变化时调用，this指向dropDownList对象，target指向触发事件的对象，value选择的值，e是jQuery封装有event参数</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:300px;float:left;margin:0 20px;"&gt
     &ltul&gt
         &ltli&gt选项1选项1选项1选项1选项1&lt/li&gt
         &ltli&gt选项2&lt/li&gt
@@ -84,7 +85,7 @@
         &ltli&gt选项10&lt/li&gt
     &lt/ul&gt
 &lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").dropDownList({
-    change : function(value)
+    change : function(target, value, e)
     {
         alert('change:' + value);
     }
@@ -113,7 +114,7 @@
             });
         //CODE HERE
 $("#demo").dropDownList({
-    change : function(value)
+    change : function(target, value, e)
     {
         alert('change:' + value);
     }

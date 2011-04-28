@@ -70,7 +70,7 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>dialog.beforeClose(beforeOpen)</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>dialog关闭或打开前调用该函数，若return false可阻止默认实现（打开关闭dialog)</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" title="对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二" style="width:400px;float:left;margin:0 10px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>dialog.beforeClose(beforeOpen)</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>dialog关闭或打开前调用该函数，若return false可阻止默认实现（打开关闭dialog)，target指向触发关闭的对象，e是jQuery封装的event事件参数</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" title="对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二" style="width:400px;float:left;margin:0 10px;"&gt
 &ltdiv&gt
     &ltspan&gt歌曲：&lt/span&gt
     &ltinput name="music" type="text" size="20" /&gt
@@ -86,9 +86,9 @@
     &lt/p&gt
 &lt/div&gt
 &lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").dialog({
-    beforeClose : function()
+    beforeClose : function(target, e)
     {
-        alert("beforeClose");
+        alert("beforeClose " + target.html());
         return false;
     }
 });</pre></div><div id="demo" title="对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二对话框二" style="width:400px;float:left;margin:0 10px;">
@@ -118,9 +118,9 @@
             });
         //CODE HERE
 $("#demo").dialog({
-    beforeClose : function()
+    beforeClose : function(target, e)
     {
-        alert("beforeClose");
+        alert("beforeClose " + target.html());
         return false;
     }
 });

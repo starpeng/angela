@@ -70,7 +70,7 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>tabs.rightClick</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>当点击tabs的往右按钮时调用该方法，return false可阻止默认实现（选项栏右移）</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:500px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>tabs.rightClick</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Function</p><p><span>Default Value:</span>null</p></div><p><span>Description:</span>当点击tabs的往右按钮时调用该方法，return false可阻止默认实现（选项栏右移），this指向tabs对象，target指向触发事件的标题对象，e为jQuery封装的event事件参数</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:500px;"&gt
             &ltdiv title="1"&gt
                 &ltp&gt
                     北京时间11月14日消息，根据国外媒体报道，下周即将在美国旧金山举行的Web 2.0大会上，目前互联网的两大巨头谷歌与Facebook将分别公布各自对下一代互联网服务的展望。最近恩怨不断的两大对手将在这次全球瞩目的大会上扮演属于自己的重要角色。
@@ -109,7 +109,7 @@
                 &lt/p&gt
             &lt/div&gt
         &lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").tabs({
-    rightClick : function()
+    rightClick : function(target, e)
     {
         alert("rightClick");
     }
@@ -163,7 +163,7 @@
             });
         //CODE HERE
 $("#demo").tabs({
-    rightClick : function()
+    rightClick : function(target, e)
     {
         alert("rightClick");
     }
