@@ -70,12 +70,34 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>buttonSet.btnSelectedClass</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>String</p><p><span>Default Value:</span>$.angela.selectedGradientBG["40"] + " .uiActive"</p></div><p><span>Description:</span>用于button选中时类名</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="margin:10px;"&gt
-    &ltspan class="uiRadio" group="abc"&gt测试1测测试1测11&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试2&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试3&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试4&lt/span&gt
-&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").buttonSet({
-    btnSelectedClass : "ui40CadetBlueGradientBG"
-});</pre></div><div id="demo" style="margin:10px;">
-    <span class="uiRadio" group="abc">测试1测测试1测11</span><span class="uiRadio" group="abc">测试2</span><span class="uiRadio" group="abc">测试3</span><span class="uiRadio" group="abc">测试4</span>
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>dropDownList.hasScrollBar</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>Boolean</p><p><span>Default Value:</span>false</p></div><p><span>Description:</span>设置dropDownList是否带滚动条</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="width:300px;float:left;margin:0 20px;"&gt
+    &ltul&gt
+        &ltli&gt选项1选项1选项1选项1选项1&lt/li&gt
+        &ltli&gt选项2&lt/li&gt
+        &ltli&gt选项3&lt/li&gt
+        &ltli&gt选项4&lt/li&gt
+        &ltli&gt选项5&lt/li&gt
+        &ltli&gt选项6&lt/li&gt
+        &ltli&gt选项7&lt/li&gt
+        &ltli&gt选项8&lt/li&gt
+        &ltli&gt选项9&lt/li&gt
+        &ltli&gt选项10&lt/li&gt
+    &lt/ul&gt
+&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").dropDownList({
+    hasScrollBar : true
+});</pre></div><div id="demo" style="width:300px;float:left;margin:0 20px;">
+    <ul>
+        <li>选项1选项1选项1选项1选项1</li>
+        <li>选项2</li>
+        <li>选项3</li>
+        <li>选项4</li>
+        <li>选项5</li>
+        <li>选项6</li>
+        <li>选项7</li>
+        <li>选项8</li>
+        <li>选项9</li>
+        <li>选项10</li>
+    </ul>
 </div></body>
     <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
     <script type="text/javascript" src="../../../javascript/jquery.angela.min.js"></script>
@@ -87,8 +109,8 @@
                $(this).next("pre").toggle(); 
             });
         //CODE HERE
-$("#demo").buttonSet({
-    btnSelectedClass : "ui40CadetBlueGradientBG"
+$("#demo").dropDownList({
+    hasScrollBar : true
 });
         });
     </script>

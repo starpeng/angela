@@ -70,13 +70,21 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">attribute</span>buttonSet.btnSelectedClass</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>Type:</span>String</p><p><span>Default Value:</span>$.angela.selectedGradientBG["40"] + " .uiActive"</p></div><p><span>Description:</span>用于button选中时类名</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="margin:10px;"&gt
-    &ltspan class="uiRadio" group="abc"&gt测试1测测试1测11&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试2&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试3&lt/span&gt&ltspan class="uiRadio" group="abc"&gt测试4&lt/span&gt
-&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").buttonSet({
-    btnSelectedClass : "ui40CadetBlueGradientBG"
-});</pre></div><div id="demo" style="margin:10px;">
-    <span class="uiRadio" group="abc">测试1测测试1测11</span><span class="uiRadio" group="abc">测试2</span><span class="uiRadio" group="abc">测试3</span><span class="uiRadio" group="abc">测试4</span>
-</div></body>
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>tree.closeItem</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery</p><p><span>arguments:</span>tree.closeItem(dest)</p><div class="argDesc"><span>参数说明：</span><br /><p><span>dest(Array, jQuery):</span>用于指定关闭的位置或元素</p></div></div><p><span>Description:</span>关闭dest指向的元素</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" style="margin:20px;"&gt&lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").tree({
+      url : "../../tree.json",
+      select : function(item, e)
+      {
+          var arr = $("#demo").tree("getItemIndexArray", item);
+          $("#demo").tree("closeItem", arr);
+      },
+      getMoreData : function(indexArray ,callBack)
+      {
+          $.getJSON("../../tree.json", function(data)
+          {
+               callBack(data);
+          });
+      }
+});</pre></div><div id="demo" style="margin:20px;"></div></body>
     <script type="text/javascript" src="../../../javascript/jquery.min.js"></script>
     <script type="text/javascript" src="../../../javascript/jquery.angela.min.js"></script>
     <script type="text/javascript">
@@ -87,8 +95,20 @@
                $(this).next("pre").toggle(); 
             });
         //CODE HERE
-$("#demo").buttonSet({
-    btnSelectedClass : "ui40CadetBlueGradientBG"
+$("#demo").tree({
+      url : "../../tree.json",
+      select : function(item, e)
+      {
+          var arr = $("#demo").tree("getItemIndexArray", item);
+          $("#demo").tree("closeItem", arr);
+      },
+      getMoreData : function(indexArray ,callBack)
+      {
+          $.getJSON("../../tree.json", function(data)
+          {
+               callBack(data);
+          });
+      }
 });
         });
     </script>
