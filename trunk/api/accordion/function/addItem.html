@@ -70,7 +70,7 @@
         </style>
     </head>
     <body>
-    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>accordion.item</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery</p><p><span>arguments:</span>accordion.item(index,[content],[title])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>index(Number):</span>指定用于获取accordion选项的index</p><p><span>content(String):</span>用于修改accordion选项的content（若为null，则不修改content） </p><p><span>title(String):</span>用于修改accordion选项的title</p></div></div><p><span>Description:</span>返回index对应的accordion选项</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" title="测试1" style="width:400px;float:left;margin:10px;"&gt
+    <div class="demoHTML uiBlueBigBorder uiCornerAll"><h3 class="demoTitle ui30BlueGradientBG"><span class="typeDesc">function</span>accordion.addItem</h3><div class="signature"><p><span>Version Added:</span>0.6.0</p><p><span>return :</span>jQuery</p><p><span>arguments:</span>accordion.addItem(item,[title],[index])</p><div class="argDesc"><span>参数说明：</span><br /><p><span>item(String,jQuery,Object):</span>指定要添加到accordion的选项</p><p><span>title(String):</span>指定添加选项的title，若未提供该参数，则使用DOM元素的属性title</p><p><span>index(Number):</span>指定添加选择要插入的index位置，若未提供该参数，则插入到最后面</p></div></div><p><span>Description:</span>往accordion添加一个选项</p><h3>HTML</h3><pre class="htmlContainer">&ltdiv id="demo" title="测试1" style="width:400px;float:left;margin:10px;"&gt
     &ltdiv title="WebM格式大提升WebM格式大提升WebM格式大提升WebM格式大提升"&gt
         &ltp&gt
             今年早期，Google终于做出了一件众所期待的行动：发布了开源的VP8编码器。它成为WebM项目的一部分，后者在一个Matroshka容器中结合了VP8视频与Vorbis音频。WebM项目的产品管理者John Luther给出了项目进展情况——情势非常好。
@@ -97,8 +97,7 @@
         &lt/p&gt
     &lt/div&gt
 &lt/div&gt</pre><h3>CODE</h3><pre class="codeContainer">$("#demo").accordion();
-alert($("#demo").accordion("item", 2));
-$("#demo").accordion("item", 0, "修改内容", "修改标题");</pre></div><div id="demo" title="测试1" style="width:400px;float:left;margin:10px;">
+$("#demo").accordion("addItem", '&ltdiv&gt&ltp&gt已经有20个新的合作伙伴了，还有更多伙伴待加入Google正努力提升解码速度——当前版本饱经争议的弱点，使之有平均28%的提高。他们同时致力于改善相关开发工具。&lt/p&gt&lt/div&gt', "新增加元素", 1);</pre></div><div id="demo" title="测试1" style="width:400px;float:left;margin:10px;">
     <div title="WebM格式大提升WebM格式大提升WebM格式大提升WebM格式大提升">
         <p>
             今年早期，Google终于做出了一件众所期待的行动：发布了开源的VP8编码器。它成为WebM项目的一部分，后者在一个Matroshka容器中结合了VP8视频与Vorbis音频。WebM项目的产品管理者John Luther给出了项目进展情况——情势非常好。
@@ -136,8 +135,7 @@ $("#demo").accordion("item", 0, "修改内容", "修改标题");</pre></div><div
             });
         //CODE HERE
 $("#demo").accordion();
-alert($("#demo").accordion("item", 2));
-$("#demo").accordion("item", 0, "修改内容", "修改标题");
+$("#demo").accordion("addItem", '<div><p>已经有20个新的合作伙伴了，还有更多伙伴待加入Google正努力提升解码速度——当前版本饱经争议的弱点，使之有平均28%的提高。他们同时致力于改善相关开发工具。</p></div>', "新增加元素", 1);
         });
     </script>
 </html>
