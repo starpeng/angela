@@ -116,13 +116,13 @@
             btnMargin : 5,
             btnWidth : 50,
             btnClass : "ui40BlueGradientBG",
-            click : function(e)
+            click : function(target, e)
             {
-                var page = parseInt($(this).text());
+                var page = parseInt(target.text());
                 $("#content").html("现在显示第" + page + "页");
                 page -= 3;
                 page = Math.max(Math.min(page, totalPage - buttonTotal + 1), 1);
-                $(this).siblings().andSelf().each(function(n)
+                target.siblings().andSelf().each(function(n)
                 {
                     if(n == buttonTotal - 1)
                     {
@@ -138,9 +138,9 @@
         $("#demo2").buttonSet({
             btnWidth : 60,
             btnClass : "css3Color1",
-            click : function(e)
+            click : function(target, e)
             {
-                var pageText = $(this).text();
+                var pageText = target.text();
                 if(pageText == "FIRST")
                 {
                     pageText = 1;
@@ -153,7 +153,7 @@
                 $("#content").html("现在显示第" + page + "页");
                 page -= 3;
                 page = Math.max(Math.min(page, totalPage - buttonTotal + 1 + 2), 1);
-                $(this).siblings().andSelf().each(function(n)
+                target.siblings().andSelf().each(function(n)
                 {
                     if(n == 0 || n == buttonTotal - 1)
                     {

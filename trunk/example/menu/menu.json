@@ -7,7 +7,7 @@
         {"content" : "表单验证", "href" : "angelaView.html?src=http://code.google.com/p/validity/"}
     ]},
     {"content" : "vicanso", "pos" : "bottom", "children" : [
-        {"content" : "autoComplete", "href" : "angelaView.html?src=vicanso/autoComplete.html", "listIcon" : "titleIcon"},
+        {"content" : "autoComplete", "href" : "angelaView.html?src=vicanso/autoComplete.html", "listIcon" : "titleIcon", "target" : "_blank"},
         {"content" : "音乐播放器", "href" : "angelaView.html?src=vicanso/musicPlayer.html"},
         {"content" : "文件管理器", "href" : "angelaView.html?src=vicanso/fileManager.html"},
         {"content" : "动画效果", "href" : "angelaView.html?src=vicanso/animate.html"},

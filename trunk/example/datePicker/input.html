@@ -119,7 +119,7 @@
                 var offset = obj.offset();
                 datePicker = $("<div />").hide().appendTo("body").css({left : offset.left, top : offset.top + obj.outerHeight(true) + 2});
                 datePicker.datePicker({
-                    select : function(dateStr)
+                    select : function(target, dateStr, dateObj, e)
                     {
                         $("#inputDemo").val(dateStr);
                         datePicker.datePicker("destroy", true);
