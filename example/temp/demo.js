@@ -21,7 +21,7 @@
             }
             var nowPosX = [];
             var pos1 = Math.floor((((fx.end[0] - fx.start[0]) * fx.pos) + fx.start[0]) / 100) * 100;
-            var pos2 = Math.floor((((fx.end[1] - fx.start[1]) * fx.pos) + fx.start[1]) / 100) * 100;
+            var pos2 = Math.floor((((fx.end[1] - fx.start[1]) * fx.pos) + fx.start[1]) / 79) * 79;
             //console.log(pos1 + " " + pos2);
             nowPosX[0] = pos1 + fx.unit[0];
             nowPosX[1] = pos2 + fx.unit[1];
